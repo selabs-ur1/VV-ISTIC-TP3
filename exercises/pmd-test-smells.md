@@ -15,3 +15,8 @@ Include the improved test code in this file.
 
 ## Answer
 
+PMD Result : 
+```txt
+AkimaSplineInterpolatorTest.java:249:      UseAssertEqualsInsteadOfAssertTrue:     Use assertEquals(x, y) instead of assertTrue(x.equals(y))
+```
+It is best to use assertEquals instead of assertTrue with .equals() for readability and it is the purpose of the assertEquals.
