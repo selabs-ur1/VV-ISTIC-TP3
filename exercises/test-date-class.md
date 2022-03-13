@@ -65,7 +65,7 @@ Listing the constraints gave a set of values to use in the tests.
 Breaking the ifs as much as possible reduces the number of predicates with multiple operators, meaning I did not had to add tests.
 
 ### PIT 
-![Screenshot](pit-report/screenshort.png)  
-[PIT report](./pit-report/index.html)  
+![Screenshot](pit-report-date/screenshort.png)  
+[PIT report](pit-report-date/index.html)  
 Pit managed to mutate 94% of the code, leading to 2 mutations surviving and 2 without coverage.
 The tests are strong enough.

@@ -25,4 +25,17 @@ Write below the actions you took on each step and the results you obtained.
 Use the project in [tp3-balanced-strings](../code/tp3-balanced-strings) to complete this exercise.
 
 ## Answer
+### Tests
+The code is not very easy to test because there are a very large amount of possible values.  
+I went for a maximum of differences, categorizing inputs with only the `[]{}()` symbols, then with letters in-between, and then also with
+various non-alphanumeric characters. Each situation saw a valid input and multiple invalid inputs : missing bracket, overlapping brackets.
 
+### Coverage
+100% coverage was achieved :
+![coverage](balancedString-coverage.png)
+
+### PIT
+![Pit report](pit-report-balancedString/screenshot.png)  
+[PIT report](./pit-report-balancedString/index.html)  
+Because of regex, it is much more difficult to use mutations to check if tests are strong. Here we see that the only mutations done were on the check for null
+and the two return values that were permuted (because boolean values). Only permuting the boolean condition resulted in a timeout.
