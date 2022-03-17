@@ -40,3 +40,36 @@ Use the following steps to design the test suite:
 Use the project in [tp3-heap](../code/tp3-heap) to complete this exercise.
 
 ## Answer
+
+##### 1. Utilisation de l'input space partitioning 
+Pour chacune des méthodes présentées dans la classe BinaryHeap, nous nous appuyons sur les spécifications données par le TP pour établir nos premiers tests. Ces derniers tiennent compte des différentes méthodes proposées. Les blocs identifiés dans le cas des arbres binaires portent sur la possibilité que les valeurs (Integer) soient négatives, positives ou vides au départ. 
+Nous allons donc établir dans un premier temps deux tests pour chaque spécification présentée par le TP. La première reprenant les données valides et l'autre celles non valides. Nous nous assurons aussi que les tests qui doivent échouer lèvent les bonnes exceptions. Afin de s'assurer du fonctionnement, trois listes sont créées : une vide, une contenant des nombres aléatoires et une dernière contenant uniquement des doublons. 
+
+##### 2. Evaluation de la couverture des instructions des cas de test
+Le taux de couverture est de 100% pour les lignes de code. Il n'est pas nécessaire de rajouter des tests à ce niveau. 
+
+##### 3. Prédicat utilisant plus de deux opérateurs booléens
+Nous ne rencontrons pas ce cas de figure ici. Nous avons néanmoins dans la méthode `rearrangeMaxHeap()` trois conditions if venant chacune vérifier quelle est la plus grosse valeur afin de déplacer cette dernière au nœud parent. Nous nous sommes assurés dans les tests précédemment écrits que nous passons dans ces différentes parties du code. 
+
+##### 4. Utilisation de PIT pour évaluer la suite de test
+A la première utilisation de la commande `Pitest:mutationCoverage`, nous atteignons un taux de couverture de mutation de 85%, soit 27 mutants créés et 23 tués. 
+Ainsi à la lecture du rapport, nous avons pu constater que le mutant ou les mutants se rapportant aux lignes suivantes n'étaient pas tués : 
+```java
+for (int i = nbElement; i >= 0; i--){
+    rearrangeMaxHeap(nbElement,i);
+    // ...
+}
+```    
+
+Nous avons décidé de rajouter un cas de test afin d'affiner notre suite de test : 
+```java
+@Test
+public void testSortEmptyBinaryHeap2(){
+    binaryHeapEmpty.push(90);
+    binaryHeapEmpty.push(0);
+    binaryHeapEmpty.sort();
+    assertEquals(binaryHeapEmpty.count(), 2);
+    assertEquals(binaryHeapEmpty.peek(), 0);
+}
+```
+L'ajout de ce cas de test améliore considérablement notre taux de couverture car nous avons maintenant 26 mutants tués pour 27 mutants créés, soit un taux de 96%.  

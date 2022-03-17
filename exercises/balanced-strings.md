@@ -26,3 +26,43 @@ Use the project in [tp3-balanced-strings](../code/tp3-balanced-strings) to compl
 
 ## Answer
 
+```java
+public static boolean isBalanced(String str) {
+    while (str.contains("()") || str.contains("[]") || str.contains("{}") || str.matches("(.*)\\b(.*)")){
+            str = str.replaceAll("\\(\\)", "")
+                    .replaceAll("\\[\\]", "")
+                    .replaceAll("\\{\\}", "")
+                    .replaceAll("[^[\\(\\)][\\[\\]][\\{\\}]]", "");
+        }
+        return (str.length() == 0);
+}
+```
+##### 1. Utilisation de l'input space partitioning
+Dans le cas de l'utilisation de l'`input space partitioning`, la granularité choisie porte sur la méthode. La méthode lit des chaînes de caractères pouvant contenir différentes parenthèses. Le but est de s'assurer que celles-ci, une fois ouvertes, sont correctement fermées. Ainsi deux cas de figures se posent : soit la chaîne est dite équilibrée si chaque symbole ouvert {\[\( a un symbole fermé correspondant )]}, soit elle ne l'est pas. A noter qu'une chaîne vide est considérée comme équilibrée. Ainsi nous avons repéré comme blocs, les différentes compositions possibles des strings, à savoir vide, avec seulement des parenthèses, et contenant des parenthèses.
+
+**Exemple :**
+
+| String                 | Correcte | Fausse |
+|------------------------| -------- | -------- |
+| vide                   | ""     | impossible     |
+| alphabet               | "test"     | impossible     |
+| parenthèses            | "{[][]}({})"     | "{(}){}"     |
+| parenthèses + alphabet | "(t[]e{s}t)"     | "{(}ar)tr{}"     |
+
+A la lecture de ces exemples possibles, deux tests ont été réalisés. Le premier test correspond aux différentes configurations où la chaîne de caractères est correcte. Le deuxième concerne des valeurs fausses. 
+
+##### 2. Evaluation de la couverture des instructions des cas de test
+Lorsque nous portons notre attention au taux de couvrance, celui-ci atteints les 100% de ligne de code. 
+Ainsi les tests, tels qu'ils ont été pensés avant, tiennent aussi compte de la nécessité de passer par les différents chemins possibles du while. Ainsi, plusieurs cas de figure ont été posés tel que la possibilité d'avoir trois types de parenthèses possibles : `(), {}, []`. Chacun de ces couples de parenthèses supposent un traitement spécifique avec l'utilisation du replaceAll. Enfin, un dernier cas de figure se pose dans le cas où la chaîne de caractères contient d'autres éléments que des parenthèses. Ce dernier point est traité par le dernier prédicat qui est une regex.
+Ainsi, les tests réalisés plus haut tiennent compte de ces différentes possibilités afin de couvrir le plus de cas possible en un minimum de tests. 
+
+Cependant, il peut être intéressant de rajouter un test pour vérifier la solidité du code en venant tester le cas où la suite de parenthèses est erronée, mais où chaque parenthèse ouverte à tout de même sa parenthèse fermée : `"{(}){}"`
+
+##### 3. Prédicat utilisant plus de deux opérateurs booléens
+Comme expliqué précédemment la fonction `ìsBalanced` débute sur une boucle while venant vérifier quatre prédicats possibles. Ainsi, les tests tels que réfléchit précédemment ont été prévu afin qu'ils passent au moins par tous les chemins en un test : `“(t[]e{s}t)”`, idem concernant les tests voués à échouer.
+
+##### 4. Utilisation de PIT pour évaluer la suite de test
+Après utilisation de la commande `pitest:mutationCoverage`, nous obtenons les informations suivantes : 
+1 mutant a été créé portant sur la modification du retour de valeur du booléen. 
+5 mutants ont été généré et portaient sur l'inversion des conditions (ex : `==` devient `!=`), 1 est tué, les 4 autres sont "tués" car ils ont atteint un time_out, c'est-à-dire que la génération de ce mutant a créé une boucle infinie dans le code qui a été tué par arrêté par un "time_out". 
+
