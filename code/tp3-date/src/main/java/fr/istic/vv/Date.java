@@ -42,8 +42,13 @@ class Date implements Comparable<Date> {
         if(month<1 || month>12){
             return false;
         }
-        if(day==29 && month==2){
-            return isLeapYear(year);
+        if(month==2){
+            if(isLeapYear(year)){
+                return day<=29;
+            }
+            else{
+                return day<=28;
+            }
         }
         if(!longMonths.contains(month) && day==31){
             return false;
@@ -84,7 +89,17 @@ class Date implements Comparable<Date> {
                     return new Date(31, month-1, year);
                 }
                 else{
-                    return new Date(30, month-1, year);
+                    //case march 1st in bissextile years
+                    if(isLeapYear(year) && month == 3){
+                        return new Date(29,month-1, year);
+                    }
+                    //case march 1st in non-bissextile years
+                    else if(month == 3){
+                        return new Date(28, month-1, year);
+                    }
+                    else {
+                        return new Date(30, month-1, year);
+                    }
                 }
             }
         }
