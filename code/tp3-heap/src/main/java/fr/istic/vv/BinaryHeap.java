@@ -1,6 +1,7 @@
 package fr.istic.vv;
 
 
+import java.lang.management.GarbageCollectorMXBean;
 import java.util.Comparator;
 import java.util.Objects;
 
@@ -20,20 +21,21 @@ class BinaryHeap<T> {
     }
 
     public BinaryHeap(Comparator<T> comparator) {
+        Objects.requireNonNull(comparator);
         this.comparator=comparator;
     }
 
     public T pop() {
         T v = value;
-        if(left!=null){
-            value = left.pop();
+        if(right!=null) {
+            value = right.pop();
         }
         else{
-            if(right!=null){
-                value = right.pop();
+            if(left!=null){
+                value = left.pop();
             }
             else{
-                value = null;//delete this
+                value = null;//pas d'enfants
             }
         }
         return v;
@@ -44,18 +46,28 @@ class BinaryHeap<T> {
     }
 
     public void push(T element) {
-        if(comparator.compare(value, element)<=0){
-            if(left==null){
-                value = element;
+        Objects.requireNonNull(element);
+        if(value==null){
+            value = element;
+        }
+        //TODO : check that left or right < element < value to keep tree organized
+        else if(comparator.compare(value, element)>=0){
+            //will go to left side
+            if(left!=null){
+                    left.push(element);
             }
             else {
+                left = new BinaryHeap<T>(comparator);
                 left.push(element);
             }
         }
         else{
-            if(right==null){
-                value = element;
-            }else{
+            //will go to right side
+            if(right!=null){
+                right.push(element);
+            }
+            else {
+                right = new BinaryHeap<T>(comparator);
                 right.push(element);
             }
         }
