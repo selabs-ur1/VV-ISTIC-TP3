@@ -52,4 +52,7 @@ Use the following steps to design the test suite:
 Use the project in [tp3-date](../code/tp3-date) to complete this exercise.
 
 ## Answer
+1.Il faut considérer les changements de jour, de mois, d'année pour rédiger les tests. Il faut également veiller à utiliser les méthodes annexes comme isValidDate, isLeapYear, ...
+2.Le taux de couverture de mes tests est de 100% de la class, 100% des méthodes, 100%des lignes.
+4.
 

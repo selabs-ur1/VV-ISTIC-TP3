@@ -25,4 +25,20 @@ Write below the actions you took on each step and the results you obtained.
 Use the project in [tp3-balanced-strings](../code/tp3-balanced-strings) to complete this exercise.
 
 ## Answer
+1. Voici les blocs testés : 
+    - chaîne vide
+    - chaînes avec unique char
+    - chaînes simples et correctes (), [], {}
+    - chaînes avec char unique et imbriquée (), [], {}
+    - chaînes mix 
+2. Avec ces cas de tests j'ai couverts 100% de la classes, 100% des méthodes et 100% des lignes.
+3. Prédicats :
+    - nombre impair
+    - char (, [, {
+    - taille de la liste de char ouvert
+    - type de char ouvert+fermé
+   
+Ayant réalisé mes tests selon les prédicats ci dessus, il ne devrait pas rester de condition non testé.
+4. Les tests produit initialement a permis de tuer 12 mutants sur les 13 créés.
+Mutant restant : VoidMethodCallMutator.
 
