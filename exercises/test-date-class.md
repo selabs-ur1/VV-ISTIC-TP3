@@ -53,3 +53,13 @@ Use the project in [tp3-date](../code/tp3-date) to complete this exercise.
 
 ## Answer
 
+1. For the isValidDate, we have to try one leap year, one 31 days month, one 30 days month, and make sure the 31 day on 30days months aren't valid, as well as 29 feb when not leap, isLeapYear is tested on a %4 year and also on a %100 year.
+nextDate on three possible cases : day+1, month+1, year+1
+same for previousDate
+
+2. the statement coverage cover everything i think.
+
+3. No more than two booleans on one check
+
+4. 81% score, sysout flagged, ahead of several checks not checked.
+86% after two other tests + remove of sysout.

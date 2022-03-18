@@ -26,3 +26,11 @@ Use the project in [tp3-balanced-strings](../code/tp3-balanced-strings) to compl
 
 ## Answer
 
+1. The blocks i tested were the simple ones `() {} []`, then some more complicated that are balanced like intricated ones `([{}])` then all simple ones at once `()[]{}`And then two failed cases, one with good numbers of opens and closes, but not in the right spot `([)]`, and one close without open `{})`
+
+2. The statement coverage work with only given characters without other characters, so i added a last test with regular characters
+
+3. I never have more than two booleans operators check
+
+4. PIT generate a 94% line coverge and 72% mutation coverages, with 2 more tests i reach 89% muration coverage.
+
