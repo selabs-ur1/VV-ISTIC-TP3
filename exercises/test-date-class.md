@@ -53,3 +53,19 @@ Use the project in [tp3-date](../code/tp3-date) to complete this exercise.
 
 ## Answer
 
+### Coverage
+A pleasing 100% test coverage was achieved :  
+![coverage](date-coverage.png)
+
+### Tests
+Tests are available [here](../code/tp3-date/src/test/java/fr/istic/vv/DateTest.java). They were created by checking the conditions
+in the code tested to generate a set of values.  
+For example, the values of days and month cannot be lower than 1, whichever year it is. But the day can be 30 in every month except february.
+Listing the constraints gave a set of values to use in the tests.
+Breaking the ifs as much as possible reduces the number of predicates with multiple operators, meaning I did not had to add tests.
+
+### PIT 
+![Screenshot](pit-report-date/screenshort.png)  
+[PIT report](pit-report-date/index.html)  
+Pit managed to mutate 94% of the code, leading to 2 mutations surviving and 2 without coverage.
+The tests are strong enough.
