@@ -1,55 +1,51 @@
-# Test the Date class
+1 -
 
-Implement a class `Date` with the interface shown below:
+isValidDate :
 
-```java
-class Date implements Comparable<Date> {
+| Characteristics | b1 | b2 | b3 | b4 | b5 |
+|--|--|--|--|--|--|
+|Year value| <0 |  0 | year%4=0(validLeapYear)| else(validCommonYear)|
+|Month value| Month <= 0 | 1,3,5,7,8,10,12 (31 days Month) | 4,6,9,11 (30 days month) | 2 | >12|
+|Day value| <=0 | >= 1 && <= max(month,year) | > max(month,year)
 
-    public Date(int day, int month, int year) { ... }
+isLeapYear:
 
-    public static boolean isValidDate(int day, int month, int year) { ... }
+| Characteristics | b1 | b2 | b3 | b4 |
+|--|--|--|--|--|
+|Year value| <0 |  0 | year%4=0(validLeapYear)| else(validCommonYear)|
 
-    public static boolean isLeapYear(int year) { ... }
+nextDate :
+| Characteristics | b1 | b2 | b3 | b4 |
+|--|--|--|--|--|
+|Day value| <=0 | >= 1  && < max(month,year) | =max(month,year) |> max(month,year)|
+|Month value| Month <= 0 | <12 | 12 | >12|
+|Year value| <0 |  0 | year%4=0(validLeapYear)| else(validCommonYear)|
 
-    public Date nextDate() { ... }
+previousDate :
+| Characteristics | b1 | b2 | b3 | b4 |
+|--|--|--|--|--|
+|Day value| <=0 | 1 | 1 && <= max(month,year) |> max(month,year)|
+|Month value| Month <= 0 | 1 | > 1 && <= 12| > 12
+|Year value| <0 |  0 | year%4=0(validLeapYear)| else(validCommonYear)|
 
-    public Date previousDate { ... }
+compareTo :
+| Characteristics | b1 | b2 | b3|
+|--|--|--|--|
+|year1 value| <year2 | =year2 | > year2|
+|month1 value| year1==year2 &&  < month2 | year1==year2 &&  =month2 | year1==year2 &&  >month2|
+|day1 value| year1 == year2 && month1==month2 && <day2 |  year1 == year2 && month1==month2 && =day2 | year1 == year2 && month1==month2 && >day2|
 
-    public int compareTo(Date other) { ... }
+2 - With IntelliJ Idea the coverage of statements was 100%
 
-}
+4 - When we first runed the PIT analysis we got
+
+```
+- Statistics
+================================================================================
+>> Generated 8 mutations Killed 8 (100%)
+>> Ran 10 tests (1.25 tests per mutation)
+
 ```
 
-The constructor throws an exception if the three given integers do not form a valid date.
-
-`isValidDate` returns `true` if the three integers form a valid year, otherwise `false`.
-
-`isLeapYear` says if the given integer is a leap year.
-
-`nextDate` returns a new `Date` instance representing the date of the following day.
-
-`previousDate` returns a new `Date` instance representing the date of the previous day.
-
-`compareTo` follows the `Comparable` convention:
-
-* `date.compareTo(other)` returns a positive integer if `date` is posterior to `other`
-* `date.compareTo(other)` returns a negative integer if `date` is anterior to `other`
-* `date.compareTo(other)` returns `0` if `date` and `other` represent the same date.
-* the method throws a `NullPointerException` if `other` is `null` 
-
-Design and implement a test suite for this `Date` class.
-You may use the test cases discussed in classes as a starting point. 
-Also, feel free to add any extra method you may need to the `Date` class.
-
-
-Use the following steps to design the test suite:
-
-1. With the help of *Input Space Partitioning* design a set of initial test inputs for each method. Write below the characteristics and blocks you identified for each method. Specify which characteristics are common to more than one method.
-2. Evaluate the statement coverage of the test cases designed in the previous step. If needed, add new test cases to increase the coverage. Describe below what you did in this step.
-3. If you have in your code any predicate that uses more than two boolean operators check if the test cases written to far satisfy *Base Choice Coverage*. If needed add new test cases. Describe below how you evaluated the logic coverage and the new test cases you added.
-4. Use PIT to evaluate the test suite you have so far. Describe below the mutation score and the live mutants. Add new test cases or refactor the existing ones to achieve a high mutation score.
-
-Use the project in [tp3-date](../code/tp3-date) to complete this exercise.
-
-## Answer
-
+All the mutations were killed, so all the tests passed with every mutation.
+As all the mutation are killed the coverage is good.

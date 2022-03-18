@@ -26,3 +26,35 @@ Use the project in [tp3-balanced-strings](../code/tp3-balanced-strings) to compl
 
 ## Answer
 
+1 -
+
+|Charactersitics|Blocks|
+|---------------|------|
+|Value of string| null; Empty; no '(' '['...;length=1; starts with ),]or...;  		      starts with ( or [ or { and length>=2
+
+We used our method signature to define the characteristics
+We identified different cases of string values could be interresting => null value, Empty value has the border effects, case of a string with none of the wanted characters, case of a string length equal to 1 has it can't be balanced, string composed only of our characters and starting with a closing one, case of a string of a length > 2 and starting with an opening bracket
+
+We wrote test cases for each Block in a test class which are include in our test suite.
+
+2 - With IntelliJ Idea the coverage of statements was 91% and we then added cases for strings which contains characters. And it increased statement coverage to 100%
+
+
+4 -
+When we first runed the PIT analysis we got :
+
+```
+- Statistics
+================================================================================
+>> Generated 22 mutations Killed 22 (100%)
+>> Ran 42 tests (1.91 tests per mutation)
+
+```
+
+All the mutations were killed, so all the tests passed with every mutation.
+
+As all the mutation are killed the coverage is good.
+
+
+
+
