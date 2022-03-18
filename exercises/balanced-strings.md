@@ -26,3 +26,10 @@ Use the project in [tp3-balanced-strings](../code/tp3-balanced-strings) to compl
 
 ## Answer
 
+1. La partition est : null, vide et cas simple qui fonctionne et d’erreur.
+
+2.  Ajouts de tests simple et plus complexe.
+
+3.  Ajout de nombreux cas d’erreur pour passer dans tous les cas des if.
+
+4.  PIT a généré 20 mutations avec un score de 100%.

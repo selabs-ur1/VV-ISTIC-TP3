@@ -40,3 +40,14 @@ Use the following steps to design the test suite:
 Use the project in [tp3-heap](../code/tp3-heap) to complete this exercise.
 
 ## Answer
+
+1. La partition est : Pour pop() on a si il renvoie un élément ou renvoie une exception. Pour peek() renvoie un élément sans l'enlever ou une exception. Pour push() ajouter et tri les éléments.
+
+
+2. Pour cette étape, on a ajouté l'appel de la méthode count().
+
+3. Pas de condition à 2 conditions
+
+4. PIT a généré 6 mutations pour un score de 100%.
+
+

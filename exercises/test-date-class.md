@@ -2,6 +2,7 @@
 
 Implement a class `Date` with the interface shown below:
 
+
 ```java
 class Date implements Comparable<Date> {
 
@@ -53,3 +54,10 @@ Use the project in [tp3-date](../code/tp3-date) to complete this exercise.
 
 ## Answer
 
+1.  La partition est : Pour isValidDate() on a les dates valides ou non. Pour isLeapYear() on vérifie si c’est bissextile ou non. Pour nextDate() et previousDate() on fait un cas simple et un qui change de mois. Et pour compareTo() on fais les 3 cas possible plus on vérifie si il renvoie une null exception.
+
+2.  Ajout de test pour les leaps year pour passer dans tous les cas:
+
+3.  Ajout de test pour nextDate() et previousDate() avec les années qui changent:
+
+4.  PIT a généré 49 mutations pour un score de 76%. Après l’ajout d’un test pour compareTo en fonction du mois on passe à 80%.
