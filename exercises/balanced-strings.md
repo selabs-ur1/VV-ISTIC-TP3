@@ -26,3 +26,28 @@ Use the project in [tp3-balanced-strings](../code/tp3-balanced-strings) to compl
 
 ## Answer
 
+###1
+ - null : chaine null = NOK
+ - "" : chaine vide = OK
+ - "{[][]}({})" : chaine équilibrée = OK
+ - "][" : symbole fermant avant symbole ouvrant = NOK
+ - "(" : symbole ouvrant sans symbole fermant = NOK
+ - "([)]" : sous chaîne non équilibrée = NOK
+ - "{a(b[c]b)a}" : chaine équilibrée contenant d'autre caractère = OK
+ 
+ ###2
+ Nous avons créé un test pour chaque blocks identifié. Le coverage est à 100%.
+ 
+ ###3
+ Toutes les conditions sont testées avec les tests que nous avons écrits.
+ 
+ ###4
+ ````
+================================================================================
+- Statistics
+================================================================================
+>> Line Coverage: 35/36 (97%)
+>> Generated 23 mutations Killed 12 (52%)
+>> Mutations with no coverage 0. Test strength 52%
+>> Ran 38 tests (1.65 tests per mutation)
+````
