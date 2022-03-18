@@ -52,4 +52,11 @@ Use the following steps to design the test suite:
 Use the project in [tp3-date](../code/tp3-date) to complete this exercise.
 
 ## Answer
+De la même façon que fait dans les questions précédentes, le processus a été itératif. Parti d'une base de tests simples, on développe au fur et à mesure que les tests passent. Bien sûr il arrive
+que certains développement soient fait avant le codage, on ne peut donc pas vraiment parler de <i>Test Driven Development</i> ici. Les tests nommés <i>inputSpacePartionning_n</i> gère les cas de 
+la méthode de tests du même nom.
 
+Avec l'usage précédent de PIT, il a été préférable de s'y rapporter directement, sans passer par les outils de l'IDE. On voit donc ici un résultats plutôt satisfaisant quant à la couverture et aux mutations
+tuées avec le programme PIT. Bien sûr, on pourrait mieux faire ! Mais ce résultats est encore plus intéressant que dans la partie 3 de ce TP.
+#### PIT Results
+![PIT statistics results](media/PIT-results.png)

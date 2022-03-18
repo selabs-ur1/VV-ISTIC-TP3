@@ -15,3 +15,11 @@ Include the improved test code in this file.
 
 ## Answer
 
+JUnit test should inclue assert
+
+not too many asserts per test
+
+euse assert equals instread of true ==
+
+use asser true if using boolean testing
+
