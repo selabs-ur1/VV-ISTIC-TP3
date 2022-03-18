@@ -53,3 +53,42 @@ Use the project in [tp3-date](../code/tp3-date) to complete this exercise.
 
 ## Answer
 
+###1
+IsValidDate :
+ - date valide : OK
+ - date non valide avec 29 février : OK
+ - date non valide avec mois non valide : NOK
+ - date non valide avec jour non valide : NOK
+ 
+isLeapYear :
+ - année bissextile : OK
+ - année non bissextile : NOK
+
+nextDate :
+ - date suivante
+ - date suivante avec changement de mois
+ - date suivante avec changement d'année
+ - date suivante = 29 février
+
+previousDate :
+ - date précédente
+ - date précédente avec changement de mois
+ - date précédente avec changement d'année
+ - date précédente = 29 février
+ 
+CompareTO
+ - dates égales
+ - dates postérieurs (année)
+ - dates postérieurs (mois)
+ - dates postérieurs (jour)
+
+````
+================================================================================
+- Statistics
+================================================================================
+>> Line Coverage: 168/171 (98%)
+>> Generated 134 mutations Killed 74 (55%)
+>> Mutations with no coverage 2. Test strength 56%
+>> Ran 241 tests (1.8 tests per mutation)
+````
+On pourrait améliorer le coverage en testant chaque condition de la méthode isLeap.
