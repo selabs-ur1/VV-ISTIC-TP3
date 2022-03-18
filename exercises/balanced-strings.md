@@ -26,3 +26,15 @@ Use the project in [tp3-balanced-strings](../code/tp3-balanced-strings) to compl
 
 ## Answer
 
+1. The method expects a string as a parameter. We identified those different characteristics and partitioning blocks:
+
+| characteristics                                                    | blocks                                                 |                                                        |                                                                |                                                                |
+|--------------------------------------------------------------------|--------------------------------------------------------|--------------------------------------------------------|----------------------------------------------------------------|----------------------------------------------------------------|
+| length of the string                                               | 0                                                      | \>0                                                     | \>0                                                             | \>0                                                             |
+| number of the same characters (opening or closing) in a same block | even                                                   | even                                                   | even                                                           | odd                                                            |
+| number of the opening characters in a same block                   | same as the number of corresponding closing characters | same as the number of corresponding closing characters | not the same as the number of corresponding closing characters | not the same as the number of corresponding closing characters |
+| number of closing characters in a same block                       | same as the number of corresponding opening characters | same as the number of corresponding opening characters | not the same as the number of corresponding opening characters | not the same as the number of corresponding opening characters |
+
+2. We wrote tests to cover each of those blocks. We have four tests : one for each block.
+3. None of our tests use double boolean assertions. However to ensure the line coverage of our tests, each test uses multiple assertions to test the same thing for the different characters.
+4. We used PIT to evaluate our test suite. we have a score of 18/21 line coverage and 6/10 mutant killed. This comes from the fact that we use a switch statement to ensure that the characters are closed in the right order. However, we currently have no solution to kill those mutants.

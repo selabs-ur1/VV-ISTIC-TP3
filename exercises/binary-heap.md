@@ -40,3 +40,92 @@ Use the following steps to design the test suite:
 Use the project in [tp3-heap](../code/tp3-heap) to complete this exercise.
 
 ## Answer
+
+Nous avons commencé par développé les blocs qui doivent être conçu. Ensuite nous avons commencé à écrire des test :
+
+```
+class BinaryHeap<T> {
+
+    private int heapSize;
+    private T[] heap;
+    private Comparator<T> comparator;
+
+    public BinaryHeap(Comparator<T> comparator) {
+        this.comparator = comparator;
+    }
+
+    public BinaryHeap(Comparator<T> comparator, T[] heap) {
+        heapSize = 0;
+        this.comparator = comparator;
+        this.heap = heap;
+    }
+
+    public void isEmpty(){
+        if (heapSize == 0) throw new NoSuchElementException("Heap is empty");
+    }
+
+    public T pop() {
+        try {
+            isEmpty();
+            T newHeap = this.heap[0];
+            delete(0);
+            return newHeap;
+        }catch (NoSuchElementException e){
+            return (T) e;
+        }
+    }
+
+    public T peek() {
+        try {
+            isEmpty();
+            return this.heap[0];
+        }catch (NoSuchElementException e){
+            return (T) e;
+        }
+    }
+
+    public void push(T element) {
+        heap[heapSize++] = element;
+        heapifyUp(heapSize - 1);
+    }
+
+    public int count() {
+        return this.heap.length;
+    }
+}
+```
+
+Nous avons aussi ajouté de méthode tel que delete() qui supprime un élément et redescend le élément dans le heap
+  
+```
+    public T delete(int index) {
+        if (isEmpty()) throw new NoSuchElementException("BinaryHeap is empty");
+        T keyItem = heap[index];
+        heap[index] = heap[heapSize - 1];
+        heapSize--;
+        heapifyDown(index);
+        return keyItem;
+    }
+
+    private void heapifyDown(int index)
+    {
+        int child;
+        T tmp = heap[index];
+        while (kthChild(index, 1) < heapSize) {
+            child = minimumChild(index);
+            if (comparator.compare(heap[child],tmp)==-1)
+                heap[index] = heap[child];
+            else
+                break;
+            index = child;
+        }
+        heap[index] = tmp;
+    }
+```
+
+Nous couvrons la majoutiré des lignes de code de la classe BinaryHeap 46/56. le reste des lignes c'est les initialisations des champs.
+Cependant nous couvrons seulement 47% des mutations.
+
+Ci-dessous une capture d'ecran.
+
+![coverage test](../photo/exercice5.png)

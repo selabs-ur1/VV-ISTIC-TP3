@@ -53,3 +53,24 @@ Use the project in [tp3-date](../code/tp3-date) to complete this exercise.
 
 ## Answer
 
+Pour le set de tests initial nous avons :
+
+Deux test pour la validation de isValidateDate(int day, int month, int year) :
+    - un test avec un bonne date (20, 10, 2022)
+    - un test avec un date incorrect (35, 10, 2022)
+
+On ne test pas la création de Date car le constructeur appelle isValidateDate dedans. 
+
+Pour isLeapYear(): on vérifie que l'on retourne vrai si la date est une année bisextille 
+
+Pour nextDate() : On vérifie que l'on augmente d'un jour, si c'est le dernier jour du mois, on change de mois et on met le jour à 01, et si on est le dernier jour de l'année on augmente l'année de 1 et on met le mois et le jour à 01
+
+Pour previousDate() : On fait l'inverse que pour nextDate()
+
+On utilise compareTo() pour comparer deux dates (utilisez dans les tests de nextDate et previousDate)
+
+Avec la commande : mvn test-compile org.pitest:pitest-maven:mutationCoverage
+
+Nous avons un score de couverture des lignes de 100% et un score de mutation de 66%.
+
+![coverage test](../photo/exercice4.png)

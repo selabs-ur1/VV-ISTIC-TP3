@@ -15,3 +15,32 @@ Include the improved test code in this file.
 
 ## Answer
 
+DetachedTestCase = Aucune annotation pour un test
+
+JUnit4SuitesShouldUseSuiteAnnotation, JUnit4TestShouldUseAfterAnnotation, JUnit4TestShouldUseBeforeAnnotation, JUnit4TestShouldUseTestAnnotation, JUnitSpelling, JUnitTestsShouldIncludeAssert = Permet de vérifier l'utilisation des bonnes annotations pour l'automatisations des tests
+
+JUnitTestContainsTooManyAsserts = Trop d'assertions dans un seul test : Le Free ride ( il y a trop de fonctionnalités testées ).
+
+JUnitUseExpected = Happy path, utilisation des bons catcheur d'exeption
+
+UseAssertEqualsInsteadOfAssertTrue, UseAssertNullInsteadOfAssertTrue, UseAssertSameInsteadOfAssertTrue, UseAssertTrueInsteadOfAssertEquals = utilisation du mauvais assert
+
+Comme example nous avons dans le Apache Commons Lang, dans la classe de test AnnotationUtilsTest.java, et à la ligne 218, le test suivant :
+```
+   @Test
+    public void testOneArgNull() {
+        assertFalse(AnnotationUtils.equals(field1.getAnnotation(TestAnnotation.class), null));
+        assertFalse(AnnotationUtils.equals(null, field1.getAnnotation(TestAnnotation.class)));
+    }
+```    
+Pour corriger ce test smell nous pouvons faire :
+```
+   @Test
+    public void testOneArgNull() {
+        assertFalse(AnnotationUtils.equals(field1.getAnnotation(TestAnnotation.class), null));
+    }
+    @Test
+    public void testOneNullArg() {
+        assertFalse(AnnotationUtils.equals(null, field1.getAnnotation(TestAnnotation.class)));
+    }
+```
