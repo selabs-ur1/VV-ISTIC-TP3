@@ -40,3 +40,8 @@ Use the following steps to design the test suite:
 Use the project in [tp3-heap](../code/tp3-heap) to complete this exercise.
 
 ## Answer
+
+1. La partition commence avec les 2 cas de pop(), renvoie un élément ou renvoie l'exception NoSuchElementException. Puis si peek() renvoie un élément sans l'enlever. Enfin si push() ajouter et tri les éléments.
+2. J'ai ajouté l'appelle de la méthode count() pour augmenter le test coverage.
+3. Le push a un while avec 2 conditions mais les tests de base testais déjà ces cas.
+4. PIT a généré 20 mutations pour un score de 95%.

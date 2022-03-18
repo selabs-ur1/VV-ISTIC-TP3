@@ -53,3 +53,7 @@ Use the project in [tp3-date](../code/tp3-date) to complete this exercise.
 
 ## Answer
 
+1. La partition est basique pour les différentes méthodes. Pour isValidDate() on a les dates valide (leap year or not) si elle n'est pas valide en fonction du jour, mois. Pour isLeapYear() il y a juste 2 cas. Pour nextDate() et previousDate() il y a un test d'un nouveau mois ou non. Et pour compareTo() on fais les 4 cas(equal posterior and anterior and null)
+2. Je n'ai pas eu a ajouté de test pour augmenter le coverage car il était déjà à 100%.
+3. Il n'y avais pas de if dans mon code.
+4. PIT a généré 11 mutations pour un score de 100%.

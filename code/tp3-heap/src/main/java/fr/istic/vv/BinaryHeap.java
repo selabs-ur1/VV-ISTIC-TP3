@@ -1,17 +1,53 @@
 package fr.istic.vv;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.Comparator;
+import java.util.NoSuchElementException;
 
 class BinaryHeap<T> {
+    
+    private Comparator<T> comparator;
+	private T[] heap;
+	private int len;
 
-    public BinaryHeap(Comparator<T> comparator) {  }
+    @SuppressWarnings("unchecked")
+    public BinaryHeap(Comparator<T> comparator) {
+        this.comparator = comparator;
+    	heap = (T[]) Array.newInstance(clazz, 0);
+    	len = -1;
+    }
 
-    public T pop() { return null; }
+    public T pop() {
+        if(len<0) throw new NoSuchElementException();
+    	T t = heap[len];
+    	len--;
+    	heap = Arrays.copyOf(heap, len+1);
+    	return t;
+    }
 
-    public T peek() { return null; }
+    public T peek() {
+        if(len<0) throw new NoSuchElementException();
+    	return heap[len];
+    }
 
-    public void push(T element) {  }
+    public void push(T element) {
+        len++;
+    	heap = Arrays.copyOf(heap, len+1);
+    	heap[len] = element;
+    	if(len == 0) return;
+    	
+    	int tmpLen = len;
+    	while(tmpLen > 0 && comparator.compare(heap[tmpLen], heap[tmpLen-1]) > 0) {
+    		T tmp = heap[tmpLen];
+    		heap[tmpLen] = heap[tmpLen-1];
+    		heap[tmpLen-1] = tmp;
+    		tmpLen--;
+    	}
+    }
 
-    public int count() { return 0; }
+    public int count() {
+        return len+1;
+    }
 
 }

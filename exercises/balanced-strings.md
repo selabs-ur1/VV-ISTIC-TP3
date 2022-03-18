@@ -26,3 +26,7 @@ Use the project in [tp3-balanced-strings](../code/tp3-balanced-strings) to compl
 
 ## Answer
 
+1. La partition est en fonction de l'argument donnée à isBalanced(). Il y a donc null et une chaîne vide. Il y a ensuite les cas simple qui fonctionne `(), [], {}` puis un cas plus complexe `({[]})` qui prends tous les charactères. Et enfin une erreur `(, [, {`.
+2. J'ai ajouté un test qui prend n'importe quel charactère pour augmenter le coverage.
+3. Pour le if qui vérifie la fermeture j'ai rajouté `][` qui m'a permis de trouver un bug et de le corriger. J'ai aussi rajouter `(}` pour passer dans tous les cas.
+4. PIT a généré 27 mutations pour un score de 89% qui est quasiment de 100%. Les 10% manquant sont à cause du switch, avec un if pour chaque charactère le coverage aurais été de 100%.
