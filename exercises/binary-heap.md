@@ -40,3 +40,29 @@ Use the following steps to design the test suite:
 Use the project in [tp3-heap](../code/tp3-heap) to complete this exercise.
 
 ## Answer
+1. - Test d'insertion
+        - test d'un insertion
+        - test de plusieurs insertions
+        - test d'insertion après un pop
+        - test d'insertion avec des numéros random
+        - ...
+        - Vérification de tout ces tests avec 
+
+2.  Couverture a 93%, j'ai rajouté une méthode qui push 15 valeurs a la suite avant de faire 15 pop et de vérifier a chaque fois qu'on récupère bien la valeur attendue (testPopItAll).
+    Ce test a permis de couvrir tous les cas de la méthode smallerChild qui permet de récupérer l'enfant avec le plus petit numéro pour le tri avec le parent (note, ce test kill aussi quelques mutants au pitest).
+    La couverture est mainteant de 98%, il n'est pas possible de faire plus a cause de la dernière ligne de smaller child qui est une sécuritée au cas ou la méthode serait appelée sur un noeud sans enfant (ce n'est pas possible dans l'implé actuelle mais on sais jamais ce que les collègues peuvent bidouiller).
+
+3.  Pas plus de deux prédicats :/
+
+4.  Origine:
+        - Line Coverage : 99% 66/67
+        - Mutation Coverage : 88% 57/65
+        - Test Strength : 90% 57/63
+    
+    Après ajout d'un test ajoutant une dixaine de nombres aléatoires dans la heap et qui vérifie ensuite qu'ils sont bien dans l'ordre attendu dans la liste heap deux mutants suplémentaire sont éliminés. Il s'agisait de la négation de la condition a la ligne 100 (if (i == 0)) et du remplacement par 0 du retour a la ligne 103 (même fonction).
+    Le test d'intégritée de la heap complète a donc permis d'éliminer des mutants.
+
+    Le nouveau score est:
+        - Line Coverage : 99% 66/67
+        - Mutation Coverage : 91% 59/65
+        - Test Strength : 94% 59/63

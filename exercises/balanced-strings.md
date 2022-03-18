@@ -26,3 +26,38 @@ Use the project in [tp3-balanced-strings](../code/tp3-balanced-strings) to compl
 
 ## Answer
 
+1.
+    - {]]({))]]]}
+    - {([])}
+    - {[][]}({})
+    - single opening sign
+    - single closing sign
+    - empty string
+    - string with no signs
+    - open then closing matching sings
+    - (pouet[cacah{chipolata}uette])
+
+2. 
+    J'avais juste un else return false de non exécuté, j'ai rajouter des tests contenant une brancket seule a l'intérieur d'une autre bracket valide pour passer dessus.
+
+3. Rien a ajouter
+
+4. 
+    Statistics
+    - Line Coverage: 36/37 (97%)
+    - Generated 59 mutations Killed 42 (71%)
+    - Mutations with no coverage 3. Test strength 75%
+    - Ran 130 tests (2.2 tests per mutation)
+
+    J'ai remplacé le `return true` de isBalanced par :
+    ```java
+    return !str.contains("(") && !str.contains("[") && !str.contains("{") &&
+                !str.contains(")") && !str.contains("]") && !str.contains("}");
+    ```
+    Les statistiques sont passées a:
+    - Line Coverage: 37/38 (97%)
+    - Generated 65 mutations Killed 48 (74%)
+    - Mutations with no coverage 3. Test strength 77%
+    - Ran 198 tests (3.05 tests per mutation)
+
+    La plupart des mutants survivants sont des faux positifs, une partie est impossible a tester car les erreurs mentionnées sont forcément catchées avant et le mutant en question est impossible a reproduire avec un test.
