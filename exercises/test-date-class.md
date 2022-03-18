@@ -7,7 +7,9 @@ class Date implements Comparable<Date> {
 
     public Date(int day, int month, int year) { ... }
 
-    public static boolean isValidDate(int day, int month, int year) { ... }
+    public static boolean isValidDate(int day, int month, int year) {
+       
+    }
 
     public static boolean isLeapYear(int year) { ... }
 
@@ -52,4 +54,48 @@ Use the following steps to design the test suite:
 Use the project in [tp3-date](../code/tp3-date) to complete this exercise.
 
 ## Answer
+
+
+1. More methods than BalancedStrings so more tests. Like this exercise we were not sure to understand well what is 
+the input space partitioning that we should use for tests. Because first we understand that we should test for all 
+the domain, so we tried to cover it with random tests, but it was hard to determine if they are going to be wrong or not.
+So finally we wrote test and tried to cover classic and specific case.
+
+For us the main method is `isValidDate()` because others depend on this one, so we focus the tests for this method
+wrote random test. 
+
+`nextDate()`, `previousDate()` and `compareTo(Date)` are complex method because there were many case to cover. Depend on
+the current month if it is a 31 ending one, if we are on february, if we are the first or last day on year... So obviously 
+they have such commons things, conditions and if we had more time we could write it better and maybe take more time 
+to reflect on how to write it using a switch conditions if possible.
+
+2. Find below the coverage of our test for `Date` class. 
+
+![ coverage image](../assets/img/date-coverage.png "date-coverage")
+
+We can see that we have 3 methods that are not tested but it should be getters and/or setters and maybe `equals(Object)`
+
+
+
+4. Find below the result of pitest:mutationCoverage algorithms.
+
+![ pitest image](../assets/img/date-pitest.png "date-pitest:mutationCoverage")
+
+As we can see we have some mutators that survived, for example those that are generated for a specific algorithms-test
+and no one is killed. But despite the percentage of surviving mutators is quite good, 87%. 
+
+![ some surviving mutators image](../assets/img/date-survivedMutators.png "date-survivedMutators")
+
+We can see that ConditionalBoundary pitest algo told us that our test are not sufficient.
+So we wrote more test to upgrade pitest mutators killed (poor mutators) in objectives
+to killed one or more ConditionalBoundaryMutators. I look in the code where we used 
+inferior or superior conditions, `compareTo(Date)` is the only one, so I write more tests for this class.
+Here you can see pitest:mutationCoverage after writing new tests.
+
+![ pitest upgrade image](../assets/img/date-pitestUpgrade.png "date-pitestUpgrade")
+
+Unfortunately it did not kill the target, but someone took a stray bullet. Sorry for him but 
+our suit test is better now. 
+
+
 

@@ -1,9 +1,20 @@
 package fr.istic.vv;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
 public class TLSSocketFactory {
+
+    public String[] getTarget() {
+        return target;
+    }
+
+    public void setTarget(String[] target) {
+        this.target = target;
+    }
+
+    private String[] target;
 
 
     public void prepareSocket(SSLSocket socket) {
@@ -12,7 +23,7 @@ public class TLSSocketFactory {
         String[] enabled = socket.getEnabledProtocols();
 
 
-        List<String> target = new ArrayList<String>();
+        /*List<String> target = new ArrayList<String>();
         if (supported != null) {
             // Append the preferred protocols in descending order of preference
             // but only do so if the protocols are supported
@@ -38,7 +49,7 @@ public class TLSSocketFactory {
         if (target.size() > 0) {
             String[] enabling = target.toArray(new String[target.size()]);
             socket.setEnabledProtocols(enabling);
-        }
+        }*/
 
     }
 
@@ -52,6 +63,44 @@ public class TLSSocketFactory {
             }
         }
         return false;
+    }
+
+    public void prepareSocketUpgrade(SSLSocket socket) {
+
+        String[] supported = socket.getSupportedProtocols();
+        String[] enabled = socket.getEnabledProtocols();
+
+        this.setTarget(new String[]{});
+        List<String> target = new ArrayList<String>();
+
+        if (supported != null) {
+            // Append the preferred protocols in descending order of preference
+            // but only do so if the protocols are supported
+            TLSProtocol[] values = TLSProtocol.values();
+            for (int i = 0; i < values.length; i++) {
+                final String pname = values[i].getProtocolName();
+                if (existsIn(pname, supported)) {
+                    target.add(pname);
+                }
+            }
+        }
+
+        if (enabled != null) {
+            // Append the rest of the already enabled protocols to the end
+            // if not already included in the list
+            for (String pname : enabled) {
+                if (!target.contains(pname)) {
+                    target.add(pname);
+                }
+            }
+        }
+
+        if (target.size() > 0) {
+            String[] enabling = target.toArray(new String[target.size()]);
+            this.setTarget(enabling);
+            socket.setEnabledProtocols(enabling);
+        }
+
     }
 
 

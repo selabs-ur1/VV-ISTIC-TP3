@@ -40,3 +40,14 @@ Use the following steps to design the test suite:
 Use the project in [tp3-heap](../code/tp3-heap) to complete this exercise.
 
 ## Answer
+ 
+Unfortunately we did not have time to finish this exercise. In fact, we did not finish writing the class.
+We wrote `push(T)` and `peek()` method, but push did not have the behaviour we want. It seems to work for 
+a heap that has a size of 4, and then we could call peek. It is possible that this last one isn't working for 
+a higher heap.
+
+This exercise was a little more difficult than other because of the work we had to do to write the class and 
+job it should be done. And also because we ahd to take time to understand how did a BinaryHeap work.
+But to be honest I start to write it yesterday so of course I could take more time to do the job. 
+
+We apologise for not having end this part.
