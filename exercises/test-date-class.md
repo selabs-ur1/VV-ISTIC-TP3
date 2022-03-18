@@ -53,3 +53,18 @@ Use the project in [tp3-date](../code/tp3-date) to complete this exercise.
 
 ## Answer
 
+1. Pour designer le set d'entrée de donnée, il faut faire attention aux bornes des dates.
+L'année doit forcément être positive ou nulle.
+Les mois doivent être compris entre 1 et 12.
+Les jours sont entre 1 et 28,29,30 ou 31 suivant le mois.
+Il faut donc faire attention au mois et a l'année lors de l'incrémentation des jours
+Pour prendre un set d'entrée utile, il faut prendre en compte tous les cas possibles.
+
+2. Le coverage est de 100%
+
+3. La seule fonction qui utilise des comparaisons booléennes en masse est le ValidDate. Toutes possibilités sont testées.
+4. D'après l'outil PITtest nous obtenons **>>> Generated 64 mutations Killed 56 (88%)** ce qui est un bon score de mutation.
+Les mutants vivants sont situés sur 
+- BooleanTrueReturnValsMutator (75%)
+- ConditionalsBoundaryMutator (62%)
+- MathMutator (78%)

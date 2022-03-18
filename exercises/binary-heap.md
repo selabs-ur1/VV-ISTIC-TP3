@@ -40,3 +40,11 @@ Use the following steps to design the test suite:
 Use the project in [tp3-heap](../code/tp3-heap) to complete this exercise.
 
 ## Answer
+
+L'implémentation de BinaryHeap se trouve [ici](../code/tp3-heap) partie main, et les tests associés se trouvent dans la partie test.
+
+Les tests reprennent des cas sur des entiers allant de cas basiques, à des cas plus complexes. Il n'y a pas le temps de tests des centaines de cas, bien que cela pourrait être intéressant de pousser des tests sur des objets complexes, ou dans des cas plus spécifiques.
+
+La courverture de code est actuellement de 88%. Cela est dû à un manque de quelques cas de tests assez spécifiques, qui ne sont pas détaillés dans la classe de test (mais qui pourraient l'être si plus de temps). Nous estimons ce résultat convenable dans le cadre d'un TP.
+
+La commande ``mvn test-compile org.pitest:pitest-maven:mutationCoverage`` pour utiliser PIT afin de générer des mutants, renvoie 76% des mutants tués. Ce résultat est du en raison des mutants générés sur les changement de condition ``ConditionalsBoundaryMutator`` qui est de 17% de mutants tués. Tous les autres types de mutants créés par PIT sont cependant tous tués (100% partout).
