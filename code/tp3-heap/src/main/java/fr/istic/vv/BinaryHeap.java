@@ -1,10 +1,11 @@
 package fr.istic.vv;
 
 
-import java.lang.management.GarbageCollectorMXBean;
 import java.util.Comparator;
 import java.util.Objects;
 
+//Spoiler : ne marche pas passé une profondeur de 1 ...
+//si l'arbre est 2(g=0,d=3) et qu'on push 1, il ira a la gauche de 0 mais il faudrait qu'ils inversent leurs places
 class BinaryHeap<T> {
 
     private T value;
