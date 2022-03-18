@@ -15,3 +15,54 @@ Include the improved test code in this file.
 
 ## Answer
 
+## Test Smells 
+
+The only rule discussed in classes that are implemented in the pmd-documentation is the piggybacking rule in the JUnitTestContainsTooManyAsserts.md
+
+## JUnitTestContainsTooManyAsserts in commons-collection
+
+```bash=
+~/commons-collections/src/test/java/org/apache/commons/collections4/BagUtilsTest.java:60:	JUnitTestContainsTooManyAsserts:	Unit tests should not contain more than 1 assert(s).
+```
+
+#### Avant
+
+```java=
+@Test 
+public void testUnmodifiableBag() {
+    final Bag<Object> bag = BagUtils.unmodifiableBag(new HashBag<>());
+    assertTrue(bag instanceof UnmodifiableBag, "Returned object should be an UnmodifiableBag.");
+    try {
+        BagUtils.unmodifiableBag(null);
+        fail("Expecting NullPointerException for null bag.");
+    } catch (final NullPointerException ex) {
+        // expected
+    }
+    assertSame(bag, BagUtils.unmodifiableBag(bag), "UnmodifiableBag shall not be decorated");
+}
+```
+
+#### Après
+
+Une autre implémentation possible est de supprimer le premier assert qui sert de vérification et de créer un nouveau test dont le principe sera de vérifier cette assert
+```java=
+@Test 
+public void testUnmodifiableBag() {
+    final Bag<Object> bag = BagUtils.unmodifiableBag(new HashBag<>());
+    try {
+        BagUtils.unmodifiableBag(null);
+        fail("Expecting NullPointerException for null bag.");
+    } catch (final NullPointerException ex) {
+        // expected
+    }
+
+    assertSame(bag, BagUtils.unmodifiableBag(bag), "UnmodifiableBag shall not be decorated");
+}
+```
+```java=
+@Test 
+public void testShouldBeUnmodifiableBag() {
+    final Bag<Object> bag = BagUtils.unmodifiableBag(new HashBag<>());
+    assertTrue(bag instanceof UnmodifiableBag, "Returned object should be an UnmodifiableBag.");
+}
+```

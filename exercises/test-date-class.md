@@ -53,3 +53,80 @@ Use the project in [tp3-date](../code/tp3-date) to complete this exercise.
 
 ## Answer
 
+#### 1
+#####  ```isValidDate(...)``` common with ```nextDate(...)``` & ```previousDate(...)``` 
+| Characteristics           | b1 | b2 | b3 | b4 | b5 |
+| ------------------------- | ----- | ----- | ----- |----- | -
+| Day    | <=0 | >= 1 & <= max month | > max month    |
+| Month  | <=0 | 31 days month = {1,3,5,7,8,10,12}     | 30 days month =  {4,6,9,11}| >12 | 2
+| Year   |  Leap year   |  Not leap year
+
+#####  ```isLeapYear(...)```
+| Characteristics           | b1 | b2 | b3 |
+| ------------------------- | ----- | ----- | ----- | 
+| Year   |  Leap year   |  Not leap year
+
+#####  ```compareTo(...)```
+
+| Characteristics           | b1 | b2 | b3 | b4 |
+| ------------------------- | ----- | ----- | ----- |----- | 
+| Day    | <=0 | >= 1 & <= max month | > max month    |
+| Month  | <=0 | 31day month = {1,3,5,7,8,10,12}     | 30day month =  {4,6,9,11}| >12 |
+| Year   |  Leap year   |  Not leap year
+| Day of other    | <=0 | >= 1 & < max month | > max month    |
+| Month of other  | <=0  | 31day month = {1,3,5,7,8,10,12}     | 30day month =  {4,6,9,11}| >12 |
+| Year of other  |  Leap year   |  Not leap year
+
+
+### 2
+
+| Characteristics           | b1 | b2 | b3 | b4 | b5 |
+| ------------------------- | ----- | ----- | ----- |----- | -
+| q1    | <=0 | >= 1 & <= max month | > max month    |
+| q2  | <=0 | 31day month = {1,3,5,7,8,10,12}     | 30day month =  {4,6,9,11}| >12 | 2
+| q3   |  Leap year   |  Not leap year
+
+| Input:  day month year        | Blocks | Description | Assert |
+| ------------------------- | ----- | -| -|
+| 0 1 0    | q1b1, q2b2, q3b1 | Day is zero | false
+| 1 0 -1  | q1b2, q2b1, q3b2 | Month is zero | false
+| 1 13 2022   | q1b2, q2b4, q3b2 | Month is > 12 | false
+| 29 2 2024   |q1b2, q2b5, q3b1 | Valid leap year | true
+| 29 2 2022   | q1b2, q2b5, q3b2| Not valid yeap lear | false
+| 30 4 2022   |q1b2, q2b3, q3b2 | Valid 30 days month | true
+| 31 12 2022   | q1b2, q2b2, q3b2 | Valid 31 days month | true
+| 31 4 2022   | q1b3, q2b3,q3b2 | Not valid 30 days month | false
+| 32 12 2022   | q1b3, q2b2,q3b2 | Not valid 31 days month | false
+
+
+
+L'objectif de ces inputs est d'avoir une combinaison de blocks et characteristics qui vérifie chaques conditions de chaques méthodes. 
+
+### 3 
+Ici on a ajouté les tests correspondant aux assertions inverse de chaque condition utilisée dans le code par exemple pour une condition >= 0, on ajouté le test d'une valeur <0. 
+Plusieurs des prédicats dans nos méthodes utilise plus de deux opérateurs booléens, on a donc appliqué le Base Choice Coverage pour imaginer différents cas de tests.
+
+```java=
+Prédicat : (year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0)
+@Test
+void testIsLeapYearNotValid(){
+    assertFalse(isLeapYear(2022));
+}
+@Test
+void testIsLeapYearValid(){
+    assertTrue(isLeapYear(2024));
+}
+@Test
+void testIsLeapYearValid2(){
+    assertTrue(isLeapYear(400));
+}
+@Test
+void testIsLeapYearNotValid2(){
+    assertFalse(isLeapYear(100));
+}
+```
+### 4 
+
+Au premier lancement de PIT, nous avions 71% de mutations éliminées, la plupart étant reliée à la méthode compareTo que nous n'avions pas vérifié et quelques autres conditions dans des prédicats par exemple : pour le ```equals()```, nous ne vérifions pas si la fonction retournait bien ```false``` si l'object comparé n'était pas une classe ```Date```. Nous avons donc étudiés le rapport créé par PIT pour compléter nos tests et atteindre 91%. 
+
+![](https://i.imgur.com/kMsPoPz.png)
