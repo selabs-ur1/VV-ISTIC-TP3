@@ -40,3 +40,79 @@ Use the following steps to design the test suite:
 Use the project in [tp3-heap](../code/tp3-heap) to complete this exercise.
 
 ## Answer
+
+
+### 1. Input Space Partitioning
+
+- Characteristics and blocks identified for pop()
+
+|Characteristics  |  Blocks  |   |  |
+|---|---|---|---|
+| size of items    | 0 | 1 |  &gt; 1 | 
+
+- Characteristics and blocks identified for peek()
+
+|Characteristics  |  Blocks  |   |  |
+|---|---|---|---|
+| size of items    | 0 | 1 |  &gt; 1 | 
+
+- Characteristics and blocks identified for push(T element)
+
+|Characteristics  |  Blocks  |   | 
+|---|---|---|
+| element is null  | True | False |  
+| element is the minimum object   | True | False |  
+| element is the maximum object   | True | False | 
+
+- Characteristics and blocks identified for count()
+
+|Characteristics  |  Blocks  |   |  |
+|---|---|---|---|
+| size of items    | 0 | 1 |  &gt; 1 | 
+
+- Characteristics and blocks identified for siftDown(int i)
+
+|Characteristics  |  Blocks  |   |  |
+|---|---|---|---|
+| i  | 0 | &gt; 0 and &lt; count() |  count()|
+
+- Characteristics and blocks identified for siftUp(int i)
+
+|Characteristics  |  Blocks  |   |  |
+|---|---|---|---|
+| i  | 0 | &gt; 0 and &lt; count() |  count() |
+
+The characteristics *size of items* are common to pop(), peek(), and count().
+The characteristic of *i* is common to siftDown(int i) and siftUp(int i)
+
+### 2. Statement coverage
+Les cas de test qui utilisent un push() et puis un pop() déclenchent l'exception :
+java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0.
+Par conséquent, j'ai ajouté une condition if(count()==1) pour la méthode pop() et peek().
+Suite à la correction, la coverage est 83%(44/53).
+En suite, la méthode non utilisée rightChildIndex(int i) est enlevé. 
+Le nouveau cas de test testPushPop6() est ajouté pour augmenter la coverage à 98%.
+
+### 3. Logic coverage
+Il n'y a pas de prédicat qui utilise plus de 2 opérateurs booléens dans mon code.
+
+### 4. PIT
+Mutation score :
+>> Generated 37 mutations Killed 28 (76%)
+>> Ran 105 tests (2.84 tests per mutation)
+
+Live mutants :
+1. siftDown(0); : removed call to fr/istic/vv/BinaryHeap::siftDown → SURVIVED
+2. else if (count() == 1) : negated conditional → SURVIVED
+3. return (i-1)/2; : replaced int return with 0 for fr/istic/vv/BinaryHeap::parentIndex → SURVIVED
+4. int rightIndex = leftIndex + 1; : Replaced integer addition with subtraction → SURVIVED
+5. if (compare(items.get(rightIndex), selectedE) < 0) : 
+   1. changed conditional boundary → SURVIVED
+   2. negated conditional → SURVIVED
+6. if (compare(e, items.get(parentIndex)) < 0) : changed conditional boundary → SURVIVED
+7. if (compare(selectedE, e) < 0) : changed conditional boundary → SURVIVED
+8. if (compare(e, items.get(parentIndex)) < 0) : changed conditional boundary → SURVIVED
+
+Les nouveaux cas de test sont ajoutés : testPushPopPeek5() et testPushPop7() qui augmentent le mutation score à 86%.
+>> Generated 35 mutations Killed 30 (86%)
+>> Ran 91 tests (2.6 tests per mutation)

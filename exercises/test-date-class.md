@@ -53,3 +53,114 @@ Use the project in [tp3-date](../code/tp3-date) to complete this exercise.
 
 ## Answer
 
+### 1. Input Space Partitioning
+- Characteristics and blocks identified for isValidDate() 
+
+|Characteristics  |  Blocks  |   | | | | |  
+|---|---|---|---|---|---|---|
+| Value of year  | &lt; 0 |  0 | valid leap year | valid common year | | | 
+| Value of month | &lt; 0 |  0 | {1, 3, 5, 7, 8, 10, 12} | {4, 6, 9, 11} | 2 | &gt; 12 | 
+| Value of day   | &lt; 0 |  0 | &ge; 1 and &le; maxDay(month, year)| &gt; maxDay(month, year) | | | 
+
+- Characteristics and blocks identified for isLeapYear(int year)
+
+|Characteristics  |  Blocks  |   | 
+|---|---|---|
+| Value of year is multiple of 4    | True | False |  
+| Value of year is multiple of 100  | True | False |  
+| Value of year is multiple of 400  | True | False |  
+
+
+- Characteristics and blocks identified for nextDate()
+
+|Characteristics  |  Blocks  |   | | |
+|---|---|---|---|---|
+| Value of year  | valid leap year | valid common year | | |
+| Value of month | {1, 3, 5, 7, 8, 10} | {4, 6, 9, 11}|2|12|
+| Value of day | &lt; maxDay(month, year) |maxDay(month, year)| ||
+
+- Characteristics and blocks identified for previousDate()
+
+|Characteristics  |  Blocks  |   | | |
+|---|---|---|---|---|
+| Value of year  | valid leap year | valid common year | | |
+| Value of month | {3, 5, 7, 8, 10, 12} | {4, 6, 9, 11}|2|1|
+| Value of day | 1|&gt; 1 and &le; maxDay(month, year) || |
+
+- Characteristics and blocks identified for compareTo(Date other)
+
+|Characteristics  |  Blocks  |   | | ||
+|---|---|---|---|---|---|
+| Value of year of other  | valid leap year | valid common year | | |
+| Value of month of other | {3, 5, 7, 8, 10} | {4, 6, 9, 11}|2|1|12|
+| Value of day | 1|&gt; 1 and &lt; maxDay(month, year) |maxDay(month, year)| |
+
+- Characteristics and blocks identified for maxDay(int month, int year)
+
+|Characteristics  |  Blocks  |   | | 
+|---|---|---|---|
+| Value of year | valid leap year | valid common year | |
+| Value of month | {1, 3, 5, 7, 8, 10, 12} | {4, 6, 9, 11}|2|
+
+Les caractéristiques communes à plus d'une méthode :
+La caractéristique "value of year" est commune à isValidDate(), isLeapYear(int year), nextDate(), previousDate(), compareTo(Date other), maxDay(int month, int year).
+La caractéristique "value of month" est commune à isValidDate(), nextDate(), previousDate(), compareTo(Date other), maxDay(int month, int year).
+La caractéristique "value of day" est commune à isValidDate(), nextDate(), previousDate(), compareTo(Date other).
+
+### 2. Statement coverage
+Dans un premier temps, j'ai créé 6 cas de test pour tester la méthode isValidDate() avec la coverage criteria "Each Choice Coverage (ECC)". 
+Suite à l'exécution avec Coverage, j'ai ajouté le cas de test test29DaysFebruaryLeapYear() pour augmenter la coverage.
+En plus, j'ai trouvé une erreur dans la méthode maxDay() via un cas de test testMar1LeapYear() qui a le but de tester la méthode previousDate(). 
+L'erreur était qu'il manquait un else dans le deuxième if statement. 
+A la fin, j'ai ajouté des cas de test pour tester le lancement des exceptions afin d'augmenter la coverage à 100%
+
+### 3. Logic coverage
+J'ai un prédicat dans la méthode isLeapYear() qui utilise plus de deux opérateurs booléens : 
+```
+return (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0));
+```
+Les cas de tests pour tester la méthode ne satisfait pas *Base Choice Coverage*.
+Le test avec la valeur de 2021 a pris le block year % 4 != 0, le block year % 100 != 0 et le block year % 400 != 0.
+Le test avec la valeur de 2000 a pris le block year % 4 == 0, le block year % 100 == 0 et le block year % 400 == 0.
+Mais les autres inputs étant formés par changer un seul block par partition et garder les autres ne sont pas testés, 
+par exemple, le block year % 4 == 0, le block year % 100 != 0 et le block year % 400 != 0.
+
+Le critère de coverage *Modified Condition/Decision Coverage (MC/DC)* est utilisé pour évaluer la logic coverage. 
+J'ai ajouté 2 nouveaux cas de test augmenter la coverage.
+```
+    @Test
+    @DisplayName("test isLeapYear 2")
+    public void testIsLeapYear2() {
+        assertFalse(Date.isLeapYear(1900), "Leap years should not be multiple of 4 and 100");
+    }
+
+    @Test
+    @DisplayName("test isLeapYear 3")
+    public void testIsLeapYear3() {
+        assertTrue(Date.isLeapYear(2020), "Leap years could be multiple of 4, not 100 and 400");
+    }
+
+```
+
+
+### 4. PIT
+Mutation score :
+>> Generated 78 mutations Killed 60 (77%)
+>> Ran 312 tests (4 tests per mutation)
+
+Une partie des Live mutants :
+1. if (year > MAX_VALID_YR || : changed conditional boundary → SURVIVED
+2. if (month < 1 || month > 12) { : changed conditional boundary → SURVIVED
+3. if (day < 1 || day > 31) { : changed conditional boundary → SURVIVED
+4. return (day <= 29); : replaced boolean return with true for fr/istic/vv/Date::isValidDate → SURVIVED
+5. return (day <= 28); : changed conditional boundary → SURVIVED
+6. if (month == 4 || month == 6 || month == 9 || month == 11) { : negated conditional → SURVIVED
+7. return (day <= 30); : 
+   1. replaced boolean return with true for fr/istic/vv/Date::isValidDate → SURVIVED 
+   2. changed conditional boundary → SURVIVED 
+   3. negated conditional → SURVIVED
+8. nextDay = this.day + 1; :  Replaced integer addition with subtraction → SURVIVED
+
+Suite à l'ajout des nouveaux cas test, le mutation score est augmenté à 90%.
+>> Generated 78 mutations Killed 70 (90%)
+>> Ran 318 tests (4.08 tests per mutation)
