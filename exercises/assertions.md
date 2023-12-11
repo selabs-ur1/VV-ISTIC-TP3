@@ -11,3 +11,34 @@ Answer the following questions:
 4. In JUnit 4, an exception was expected using the `@Test` annotation, while in JUnit 5 there is a special assertion method `assertThrows`. In your opinion, what are the advantages of this new way of checking expected exceptions?
 
 ## Answer
+
+1)
+Flottant donc faut regarder une fouchette genre 1.2 cest 1.2000000003
+? Sortir le calcul de l'oracle ?
+
+2)
+assertEquals = vérifie les datas des objets
+assertSame = vérifie la référence
+
+3)
+'fail' est utile pour récupérer une exception particuliere.
+?    Use fail in conjunction with a try-catch block to explicitly indicate that an expected exception was not thrown when it should have been. ?
+```
+@Test
+public void testExceptionHandling() {
+    try {
+        // Code that should throw a specific exception
+        throw new CustomException("Expected exception");
+    } catch (CustomException expected) {
+        // Exception caught, test passes
+    } catch (Exception unexpected) {
+        fail("Unexpected exception: " + unexpected.getMessage());
+    }
+}
+```
+
+4)
+- c'est plus clair, simple
+- Support les lambdas
+
+
