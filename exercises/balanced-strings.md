@@ -26,3 +26,57 @@ Use the project in [tp3-balanced-strings](../code/tp3-balanced-strings) to compl
 
 ## Answer
 
+```java
+import java.util.Stack;
+
+public class BalancedString {
+
+    public static boolean isBalanced(String str) {
+        Stack<Character> stack = new Stack<>();
+
+        for (char c : str.toCharArray()) {
+            if (isOpenSymbol(c)) {
+                stack.push(c);
+            } else if (isCloseSymbol(c)) {
+                if (stack.isEmpty() || !isMatchingPair(stack.pop(), c)) {
+                    return false;
+                }
+            }
+        }
+
+        // Check if there are any unmatched opening symbols
+        return stack.isEmpty();
+    }
+
+    private static boolean isOpenSymbol(char c) {
+        return c == '(' || c == '[' || c == '{';
+    }
+
+    private static boolean isCloseSymbol(char c) {
+        return c == ')' || c == ']' || c == '}';
+    }
+
+    private static boolean isMatchingPair(char open, char close) {
+        return (open == '(' && close == ')') || (open == '[' && close == ']') || (open == '{' && close == '}');
+    }
+
+    public static void main(String[] args) {
+        System.out.println(isBalanced("{[][]}({})")); // true
+        System.out.println(isBalanced("][")); // false
+        System.out.println(isBalanced("([)]")); // false
+        System.out.println(isBalanced("{")); // false
+        System.out.println(isBalanced("{(}{}")); // false
+    }
+}
+
+```
+
+1)
+Chaine vide : "" = true,
+Chaine balance : "[]" "([]){}" = true,
+Chaine unbalance : "[" "({)}" = false
+
+2)
+
+
+
