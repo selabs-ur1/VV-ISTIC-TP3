@@ -53,3 +53,113 @@ Use the project in [tp3-date](../code/tp3-date) to complete this exercise.
 
 ## Answer
 
+1. Methods: Date, isValidDate, previousDate, nextDate
+They have the same *Input Space Partitioning* because they use the same attributes in the same way.
+
+| characteristics | blocks |                                           |             |
+| --------------- | ------ | ----------------------------------------- | ----------- |
+| day             | <=0    | [1;MAX_DAY]                               | \>= MAX_DAY |
+| month           | < 1    | [1;12]                                    | \> 12       |
+| year            | < 0    | leap year                                 | other       |
+
+Method isLeapYear only uses the year.
+
+| characteristics | blocks |                                           |             |
+| --------------- | ------ | ----------------------------------------- | ----------- |
+| year            | < 0    | leap year                                 | other       |
+
+Method compareTo (uses all attributes but in a different way than the other methods).
+
+| characteristics     | blocks |           |      |
+| ------------------- | ------ | --------- | ---- |
+| day - other.day     | < 0    | \= 0      | \> 0 |
+| month - other.month | < 0    | \= 0      | \> 0 |
+| year - other.year   | < 0    | \= 0      | \> 0 |
+
+2. At first try, we only reached a line coverage of 95%. We were missing the case of the first of January when we have to change the year during the previousDate method. We added the test:
+```java
+@Test
+public void testPreviousDateYear() {
+    assertEquals(new Date(DAY_MAX_31, MONTH_VALID_12, YEAR_VALID), DATE_PREVIOUS_01_01.previousDate());
+}
+```
+
+3. This does not apply to our code.
+
+4. Our initial run of PIT gave us the following resutls:
+
+```
+================================================================================
+13:25:22 PIT >> INFO : Completed in 7 seconds
+- Mutators
+================================================================================
+> org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator
+>> Generated 3 Killed 3 (100%)
+> KILLED 3 SURVIVED 0 TIMED_OUT 0 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 0 
+--------------------------------------------------------------------------------
+> org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator
+>> Generated 12 Killed 6 (50%)
+> KILLED 6 SURVIVED 6 TIMED_OUT 0 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 0 
+--------------------------------------------------------------------------------
+> org.pitest.mutationtest.engine.gregor.mutators.IncrementsMutator
+>> Generated 6 Killed 6 (100%)
+> KILLED 6 SURVIVED 0 TIMED_OUT 0 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 0 
+--------------------------------------------------------------------------------
+> org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanTrueReturnValsMutator
+>> Generated 8 Killed 4 (50%)
+> KILLED 4 SURVIVED 2 TIMED_OUT 0 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 2 
+--------------------------------------------------------------------------------
+> org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator
+>> Generated 2 Killed 2 (100%)
+> KILLED 2 SURVIVED 0 TIMED_OUT 0 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 0 
+--------------------------------------------------------------------------------
+> org.pitest.mutationtest.engine.gregor.mutators.MathMutator
+>> Generated 11 Killed 9 (82%)
+> KILLED 9 SURVIVED 1 TIMED_OUT 0 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 1 
+--------------------------------------------------------------------------------
+> org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator
+>> Generated 1 Killed 1 (100%)
+> KILLED 1 SURVIVED 0 TIMED_OUT 0 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 0 
+--------------------------------------------------------------------------------
+> org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator
+>> Generated 33 Killed 32 (97%)
+> KILLED 32 SURVIVED 0 TIMED_OUT 0 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 1 
+--------------------------------------------------------------------------------
+================================================================================
+- Timings
+================================================================================
+> pre-scan for mutations : < 1 second
+> scan classpath : < 1 second
+> coverage and dependency analysis : 1 seconds
+> build mutation tests : < 1 second
+> run mutation analysis : 5 seconds
+--------------------------------------------------------------------------------
+> Total  : 7 seconds
+--------------------------------------------------------------------------------
+================================================================================
+- Statistics
+================================================================================
+>> Line Coverage (for mutated classes only): 48/48 (100%)
+>> Generated 76 mutations Killed 63 (83%)
+>> Mutations with no coverage 4. Test strength 88%
+>> Ran 194 tests (2.55 tests per mutation)
+```
+
+
+

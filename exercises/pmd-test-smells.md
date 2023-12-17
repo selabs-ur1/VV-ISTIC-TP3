@@ -15,3 +15,31 @@ Include the improved test code in this file.
 
 ## Answer
 
+Test smells seen in class and present in the pmd documentation:
+- JUnitTestContainsTooManyAsserts corresponds to the Assertion Roulette
+
+After running pmd on commons-collections, we detected this test smell on the following test:
+```java
+@Test
+public void testDecorateFactory() {
+    final Trie<String, V> trie = makeFullMap();
+    assertSame(trie, UnmodifiableTrie.unmodifiableTrie(trie));
+
+    assertThrows(NullPointerException.class, () -> UnmodifiableTrie.unmodifiableTrie(null));
+}
+```
+
+We can correct it by splitting it into two tests:
+```java
+@Test 
+public void testDecorateFactory() {
+    final Trie<String, V> trie = makeFullMap();
+    assertSame(trie, UnmodifiableTrie.unmodifiableTrie(trie));
+}
+
+@Test
+public void testDecorateFactoryNull() {
+    assertThrows(NullPointerException.class, () -> UnmodifiableTrie.unmodifiableTrie(null));
+}
+```
+
