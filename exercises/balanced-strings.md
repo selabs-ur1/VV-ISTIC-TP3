@@ -25,4 +25,25 @@ Write below the actions you took on each step and the results you obtained.
 Use the project in [tp3-balanced-strings](../code/tp3-balanced-strings) to complete this exercise.
 
 ## Answer
+1/-
+
+Chaînes avec uniquement des symboles ouvrants : [{(
+
+Chaînes avec uniquement des symboles fermants : ]})
+
+Chaînes avec des symboles ouvrants et fermants mélangés : {}[]()
+
+2/-
+Les cas de test sont disponible dans StringUtilsTest.java et sont tous de la forme suivante:
+```java
+public void testBalancedString() {
+assertTrue(StringUtils.isBalanced("{[()]}"));
+assertTrue(StringUtils.isBalanced("({})"));
+}
+```
+On obtient 100% de coverage d'apres sonarlint en 31 lignes
+
+3/-
+La méthode isBalanced a une seule expression booléenne qui vérifie si la pile est vide ou si l'élément extrait de la pile correspond au crochet attendu. 
+La couverture des choix de base est satisfaite car nous avons couvert les deux résultats possibles (true/false).
 

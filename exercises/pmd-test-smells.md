@@ -15,3 +15,10 @@ Include the improved test code in this file.
 
 ## Answer
 
+
+DetachedTestCase nécessite une intervention manuelle car il n'y a pas d'annotation associée. 
+Les règles concernant l'utilisation d'annotations spécifiques dans les tests JUnit, telles que @Suite, @After, @Before, @Test,
+ainsi que des aspects liés à l'orthographe correcte et à l'inclusion appropriée d'assertions, exigent également une intervention manuelle pour améliorer l'automatisation du processus de test.
+L'indication de la présence de trop d'assertions dans les tests reflète une situation de "Free ride" ou "PiggyBack", où la complexité rend difficile l'identification de la cause d'une défaillance, tout en pouvant également correspondre à un test "Eager" impliquant un nombre excessif d'assertions et testant trop de fonctionnalités. 
+Les règles liées à l'utilisation d'annotations "expected" et à des assertions spécifiques évoquent le Happy Path, où le programme est testé pour sa réaction en présence d'erreurs, dépassant le simple scénario prévu.
+Enfin, l'utilisation de suites statiques dans les tests JUnit est associée à la pratique de tester des méthodes privées ou d'adopter une perspective "X-Ray specs".

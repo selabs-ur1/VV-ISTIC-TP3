@@ -52,4 +52,53 @@ Use the following steps to design the test suite:
 Use the project in [tp3-date](../code/tp3-date) to complete this exercise.
 
 ## Answer
+1/-
+Caractéristiques et blocs identifiés pour chaque méthode :
 
+Date(int day, int month, int year) (Constructeur) :
+
+Caractéristiques :
+Validité de la date.
+Année négative, mois hors de la plage, jour hors de la plage.
+isValidDate(int day, int month, int year) :
+
+Caractéristiques :
+Année négative.
+Mois hors de la plage.
+Jour hors de la plage.
+Validité normale (cas valide).
+isLeapYear(int year) :
+
+Caractéristiques :
+Année bissextile.
+Année non bissextile.
+nextDate() :
+
+Caractéristiques :
+Jour < 31.
+Mois < 12.
+Jour = 31, Mois = 12.
+previousDate() :
+
+Caractéristiques :
+Jour > 1.
+Mois > 1.
+Jour = 1, Mois = 1.
+Jour = 1, Mois = 3, Année bissextile.
+Jour = 1, Mois = 3, Année non bissextile.
+compareTo(Date other) :
+
+Caractéristiques :
+Dates égales.
+Date actuelle < Date autre.
+Date actuelle > Date autre.
+
+2/- Évaluation de la couverture de l'instruction :
+
+Les tests actuels couvrent la plupart des instructions.
+
+3/-
+Évaluation de la couverture de la décision (Base Choice Coverage) :
+
+Aucun prédicat avec plus de deux opérateurs booléens n'est présent dans le code.
+la Base Choice Coverage est déjà satisfaite.

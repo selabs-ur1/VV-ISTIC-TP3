@@ -40,3 +40,37 @@ Use the following steps to design the test suite:
 Use the project in [tp3-heap](../code/tp3-heap) to complete this exercise.
 
 ## Answer
+
+Caractéristiques et blocs identifiés pour chaque méthode :
+1/-
+
+BinaryHeap(Comparator<T> comparator) (Constructeur):
+
+Caractéristiques : Comparator non null.
+Blocs :
+Comparator non null (normal case).
+Comparator null.
+pop() :
+
+Caractéristiques : Heap vide, Heap non vide.
+Blocs :
+Heap vide (exception).
+Heap non vide.
+peek() :
+
+Caractéristiques : Heap vide, Heap non vide.
+Blocs :
+Heap vide (exception).
+Heap non vide.
+push(T element) :
+
+Caractéristiques : Aucune (car la méthode ajoute simplement un élément).
+Blocs : Aucun.
+count() :
+Caractéristiques : Aucune.
+Blocs : Aucun.
+
+2/-
+On obtient 100% de coverage d'apres sonarlint en 87 lignes
+
+3/-Aucun prédicat avec plus de deux opérateurs booléens n'est présent dans le code.
