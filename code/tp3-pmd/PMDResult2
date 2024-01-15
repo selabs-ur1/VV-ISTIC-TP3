@@ -1,0 +1,316 @@
+<html><head><title>PMD</title></head><body>
+<center><h3>PMD report</h3></center><center><h3>Problems found</h3></center><table align="center" cellspacing="0" cellpadding="3"><tr>
+<th>#</th><th>File</th><th>Line</th><th>Problem</th></tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">1</td>
+<td width="*%">/home/asuka/Project/VV/VV-ISTIC-TP3/code/commons-collections/src/test/java/org/apache/commons/collections4/PredicateUtilsTest.java</td>
+<td align="center" width="5%">191</td>
+<td width="*"><a href="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_bestpractices.html#junittestsshouldincludeassert">JUnit tests should include assert() or fail()</a></td>
+</tr>
+<tr> 
+<td align="center">2</td>
+<td width="*%">/home/asuka/Project/VV/VV-ISTIC-TP3/code/commons-collections/src/test/java/org/apache/commons/collections4/PredicateUtilsTest.java</td>
+<td align="center" width="5%">277</td>
+<td width="*"><a href="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_bestpractices.html#junittestsshouldincludeassert">JUnit tests should include assert() or fail()</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">3</td>
+<td width="*%">/home/asuka/Project/VV/VV-ISTIC-TP3/code/commons-collections/src/test/java/org/apache/commons/collections4/PredicateUtilsTest.java</td>
+<td align="center" width="5%">365</td>
+<td width="*"><a href="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_bestpractices.html#junittestsshouldincludeassert">JUnit tests should include assert() or fail()</a></td>
+</tr>
+<tr> 
+<td align="center">4</td>
+<td width="*%">/home/asuka/Project/VV/VV-ISTIC-TP3/code/commons-collections/src/test/java/org/apache/commons/collections4/PredicateUtilsTest.java</td>
+<td align="center" width="5%">448</td>
+<td width="*"><a href="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_bestpractices.html#junittestsshouldincludeassert">JUnit tests should include assert() or fail()</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">1</td>
+<td width="*%">/home/asuka/Project/VV/VV-ISTIC-TP3/code/commons-collections/src/test/java/org/apache/commons/collections4/bidimap/AbstractBidiMapTest.java</td>
+<td align="center" width="5%">151</td>
+<td width="*"><a href="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_bestpractices.html#junittestsshouldincludeassert">JUnit tests should include assert() or fail()</a></td>
+</tr>
+<tr> 
+<td align="center">2</td>
+<td width="*%">/home/asuka/Project/VV/VV-ISTIC-TP3/code/commons-collections/src/test/java/org/apache/commons/collections4/bidimap/AbstractBidiMapTest.java</td>
+<td align="center" width="5%">156</td>
+<td width="*"><a href="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_bestpractices.html#junittestsshouldincludeassert">JUnit tests should include assert() or fail()</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">3</td>
+<td width="*%">/home/asuka/Project/VV/VV-ISTIC-TP3/code/commons-collections/src/test/java/org/apache/commons/collections4/bidimap/AbstractBidiMapTest.java</td>
+<td align="center" width="5%">191</td>
+<td width="*"><a href="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_bestpractices.html#junittestsshouldincludeassert">JUnit tests should include assert() or fail()</a></td>
+</tr>
+<tr> 
+<td align="center">4</td>
+<td width="*%">/home/asuka/Project/VV/VV-ISTIC-TP3/code/commons-collections/src/test/java/org/apache/commons/collections4/bidimap/AbstractBidiMapTest.java</td>
+<td align="center" width="5%">290</td>
+<td width="*"><a href="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_bestpractices.html#junittestsshouldincludeassert">JUnit tests should include assert() or fail()</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">5</td>
+<td width="*%">/home/asuka/Project/VV/VV-ISTIC-TP3/code/commons-collections/src/test/java/org/apache/commons/collections4/bidimap/AbstractBidiMapTest.java</td>
+<td align="center" width="5%">310</td>
+<td width="*"><a href="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_bestpractices.html#junittestsshouldincludeassert">JUnit tests should include assert() or fail()</a></td>
+</tr>
+<tr> 
+<td align="center">1</td>
+<td width="*%">/home/asuka/Project/VV/VV-ISTIC-TP3/code/commons-collections/src/test/java/org/apache/commons/collections4/bloomfilter/AbstractBloomFilterTest.java</td>
+<td align="center" width="5%">463</td>
+<td width="*"><a href="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_bestpractices.html#junittestsshouldincludeassert">JUnit tests should include assert() or fail()</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">1</td>
+<td width="*%">/home/asuka/Project/VV/VV-ISTIC-TP3/code/commons-collections/src/test/java/org/apache/commons/collections4/bloomfilter/LayeredBloomFilterTest.java</td>
+<td align="center" width="5%">172</td>
+<td width="*"><a href="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_bestpractices.html#junittestsshouldincludeassert">JUnit tests should include assert() or fail()</a></td>
+</tr>
+<tr> 
+<td align="center">1</td>
+<td width="*%">/home/asuka/Project/VV/VV-ISTIC-TP3/code/commons-collections/src/test/java/org/apache/commons/collections4/comparators/BooleanComparatorTest.java</td>
+<td align="center" width="5%">65</td>
+<td width="*"><a href="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_bestpractices.html#junittestsshouldincludeassert">JUnit tests should include assert() or fail()</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">2</td>
+<td width="*%">/home/asuka/Project/VV/VV-ISTIC-TP3/code/commons-collections/src/test/java/org/apache/commons/collections4/comparators/BooleanComparatorTest.java</td>
+<td align="center" width="5%">72</td>
+<td width="*"><a href="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_bestpractices.html#junittestsshouldincludeassert">JUnit tests should include assert() or fail()</a></td>
+</tr>
+<tr> 
+<td align="center">1</td>
+<td width="*%">/home/asuka/Project/VV/VV-ISTIC-TP3/code/commons-collections/src/test/java/org/apache/commons/collections4/functors/CatchAndRethrowClosureTest.java</td>
+<td align="center" width="5%">69</td>
+<td width="*"><a href="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_bestpractices.html#junittestsshouldincludeassert">JUnit tests should include assert() or fail()</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">1</td>
+<td width="*%">/home/asuka/Project/VV/VV-ISTIC-TP3/code/commons-collections/src/test/java/org/apache/commons/collections4/iterators/FilterListIteratorTest.java</td>
+<td align="center" width="5%">114</td>
+<td width="*"><a href="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_bestpractices.html#junittestsshouldincludeassert">JUnit tests should include assert() or fail()</a></td>
+</tr>
+<tr> 
+<td align="center">2</td>
+<td width="*%">/home/asuka/Project/VV/VV-ISTIC-TP3/code/commons-collections/src/test/java/org/apache/commons/collections4/iterators/FilterListIteratorTest.java</td>
+<td align="center" width="5%">180</td>
+<td width="*"><a href="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_bestpractices.html#junittestsshouldincludeassert">JUnit tests should include assert() or fail()</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">3</td>
+<td width="*%">/home/asuka/Project/VV/VV-ISTIC-TP3/code/commons-collections/src/test/java/org/apache/commons/collections4/iterators/FilterListIteratorTest.java</td>
+<td align="center" width="5%">186</td>
+<td width="*"><a href="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_bestpractices.html#junittestsshouldincludeassert">JUnit tests should include assert() or fail()</a></td>
+</tr>
+<tr> 
+<td align="center">4</td>
+<td width="*%">/home/asuka/Project/VV/VV-ISTIC-TP3/code/commons-collections/src/test/java/org/apache/commons/collections4/iterators/FilterListIteratorTest.java</td>
+<td align="center" width="5%">192</td>
+<td width="*"><a href="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_bestpractices.html#junittestsshouldincludeassert">JUnit tests should include assert() or fail()</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">5</td>
+<td width="*%">/home/asuka/Project/VV/VV-ISTIC-TP3/code/commons-collections/src/test/java/org/apache/commons/collections4/iterators/FilterListIteratorTest.java</td>
+<td align="center" width="5%">198</td>
+<td width="*"><a href="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_bestpractices.html#junittestsshouldincludeassert">JUnit tests should include assert() or fail()</a></td>
+</tr>
+<tr> 
+<td align="center">6</td>
+<td width="*%">/home/asuka/Project/VV/VV-ISTIC-TP3/code/commons-collections/src/test/java/org/apache/commons/collections4/iterators/FilterListIteratorTest.java</td>
+<td align="center" width="5%">204</td>
+<td width="*"><a href="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_bestpractices.html#junittestsshouldincludeassert">JUnit tests should include assert() or fail()</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">7</td>
+<td width="*%">/home/asuka/Project/VV/VV-ISTIC-TP3/code/commons-collections/src/test/java/org/apache/commons/collections4/iterators/FilterListIteratorTest.java</td>
+<td align="center" width="5%">210</td>
+<td width="*"><a href="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_bestpractices.html#junittestsshouldincludeassert">JUnit tests should include assert() or fail()</a></td>
+</tr>
+<tr> 
+<td align="center">8</td>
+<td width="*%">/home/asuka/Project/VV/VV-ISTIC-TP3/code/commons-collections/src/test/java/org/apache/commons/collections4/iterators/FilterListIteratorTest.java</td>
+<td align="center" width="5%">216</td>
+<td width="*"><a href="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_bestpractices.html#junittestsshouldincludeassert">JUnit tests should include assert() or fail()</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">9</td>
+<td width="*%">/home/asuka/Project/VV/VV-ISTIC-TP3/code/commons-collections/src/test/java/org/apache/commons/collections4/iterators/FilterListIteratorTest.java</td>
+<td align="center" width="5%">225</td>
+<td width="*"><a href="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_bestpractices.html#junittestsshouldincludeassert">JUnit tests should include assert() or fail()</a></td>
+</tr>
+<tr> 
+<td align="center">10</td>
+<td width="*%">/home/asuka/Project/VV/VV-ISTIC-TP3/code/commons-collections/src/test/java/org/apache/commons/collections4/iterators/FilterListIteratorTest.java</td>
+<td align="center" width="5%">234</td>
+<td width="*"><a href="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_bestpractices.html#junittestsshouldincludeassert">JUnit tests should include assert() or fail()</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">11</td>
+<td width="*%">/home/asuka/Project/VV/VV-ISTIC-TP3/code/commons-collections/src/test/java/org/apache/commons/collections4/iterators/FilterListIteratorTest.java</td>
+<td align="center" width="5%">243</td>
+<td width="*"><a href="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_bestpractices.html#junittestsshouldincludeassert">JUnit tests should include assert() or fail()</a></td>
+</tr>
+<tr> 
+<td align="center">12</td>
+<td width="*%">/home/asuka/Project/VV/VV-ISTIC-TP3/code/commons-collections/src/test/java/org/apache/commons/collections4/iterators/FilterListIteratorTest.java</td>
+<td align="center" width="5%">256</td>
+<td width="*"><a href="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_bestpractices.html#junittestsshouldincludeassert">JUnit tests should include assert() or fail()</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">1</td>
+<td width="*%">/home/asuka/Project/VV/VV-ISTIC-TP3/code/commons-collections/src/test/java/org/apache/commons/collections4/iterators/NodeListIteratorTest.java</td>
+<td align="center" width="5%">124</td>
+<td width="*"><a href="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_bestpractices.html#junittestsshouldincludeassert">JUnit tests should include assert() or fail()</a></td>
+</tr>
+<tr> 
+<td align="center">2</td>
+<td width="*%">/home/asuka/Project/VV/VV-ISTIC-TP3/code/commons-collections/src/test/java/org/apache/commons/collections4/iterators/NodeListIteratorTest.java</td>
+<td align="center" width="5%">133</td>
+<td width="*"><a href="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_bestpractices.html#junittestsshouldincludeassert">JUnit tests should include assert() or fail()</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">1</td>
+<td width="*%">/home/asuka/Project/VV/VV-ISTIC-TP3/code/commons-collections/src/test/java/org/apache/commons/collections4/keyvalue/MultiKeyTest.java</td>
+<td align="center" width="5%">149</td>
+<td width="*"><a href="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_bestpractices.html#junittestsshouldincludeassert">JUnit tests should include assert() or fail()</a></td>
+</tr>
+<tr> 
+<td align="center">2</td>
+<td width="*%">/home/asuka/Project/VV/VV-ISTIC-TP3/code/commons-collections/src/test/java/org/apache/commons/collections4/keyvalue/MultiKeyTest.java</td>
+<td align="center" width="5%">224</td>
+<td width="*"><a href="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_bestpractices.html#junittestsshouldincludeassert">JUnit tests should include assert() or fail()</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">1</td>
+<td width="*%">/home/asuka/Project/VV/VV-ISTIC-TP3/code/commons-collections/src/test/java/org/apache/commons/collections4/keyvalue/TiedMapEntryTest.java</td>
+<td align="center" width="5%">48</td>
+<td width="*"><a href="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_bestpractices.html#junittestsshouldincludeassert">JUnit tests should include assert() or fail()</a></td>
+</tr>
+<tr> 
+<td align="center">1</td>
+<td width="*%">/home/asuka/Project/VV/VV-ISTIC-TP3/code/commons-collections/src/test/java/org/apache/commons/collections4/keyvalue/UnmodifiableMapEntryTest.java</td>
+<td align="center" width="5%">100</td>
+<td width="*"><a href="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_bestpractices.html#junittestsshouldincludeassert">JUnit tests should include assert() or fail()</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">1</td>
+<td width="*%">/home/asuka/Project/VV/VV-ISTIC-TP3/code/commons-collections/src/test/java/org/apache/commons/collections4/list/AbstractListTest.java</td>
+<td align="center" width="5%">616</td>
+<td width="*"><a href="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_bestpractices.html#junittestsshouldincludeassert">JUnit tests should include assert() or fail()</a></td>
+</tr>
+<tr> 
+<td align="center">2</td>
+<td width="*%">/home/asuka/Project/VV/VV-ISTIC-TP3/code/commons-collections/src/test/java/org/apache/commons/collections4/list/AbstractListTest.java</td>
+<td align="center" width="5%">626</td>
+<td width="*"><a href="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_bestpractices.html#junittestsshouldincludeassert">JUnit tests should include assert() or fail()</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">3</td>
+<td width="*%">/home/asuka/Project/VV/VV-ISTIC-TP3/code/commons-collections/src/test/java/org/apache/commons/collections4/list/AbstractListTest.java</td>
+<td align="center" width="5%">1072</td>
+<td width="*"><a href="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_bestpractices.html#junittestsshouldincludeassert">JUnit tests should include assert() or fail()</a></td>
+</tr>
+<tr> 
+<td align="center">4</td>
+<td width="*%">/home/asuka/Project/VV/VV-ISTIC-TP3/code/commons-collections/src/test/java/org/apache/commons/collections4/list/AbstractListTest.java</td>
+<td align="center" width="5%">1107</td>
+<td width="*"><a href="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_bestpractices.html#junittestsshouldincludeassert">JUnit tests should include assert() or fail()</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">1</td>
+<td width="*%">/home/asuka/Project/VV/VV-ISTIC-TP3/code/commons-collections/src/test/java/org/apache/commons/collections4/list/LazyListTest.java</td>
+<td align="center" width="5%">48</td>
+<td width="*"><a href="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_bestpractices.html#junittestsshouldincludeassert">JUnit tests should include assert() or fail()</a></td>
+</tr>
+<tr> 
+<td align="center">2</td>
+<td width="*%">/home/asuka/Project/VV/VV-ISTIC-TP3/code/commons-collections/src/test/java/org/apache/commons/collections4/list/LazyListTest.java</td>
+<td align="center" width="5%">54</td>
+<td width="*"><a href="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_bestpractices.html#junittestsshouldincludeassert">JUnit tests should include assert() or fail()</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">3</td>
+<td width="*%">/home/asuka/Project/VV/VV-ISTIC-TP3/code/commons-collections/src/test/java/org/apache/commons/collections4/list/LazyListTest.java</td>
+<td align="center" width="5%">60</td>
+<td width="*"><a href="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_bestpractices.html#junittestsshouldincludeassert">JUnit tests should include assert() or fail()</a></td>
+</tr>
+<tr> 
+<td align="center">4</td>
+<td width="*%">/home/asuka/Project/VV/VV-ISTIC-TP3/code/commons-collections/src/test/java/org/apache/commons/collections4/list/LazyListTest.java</td>
+<td align="center" width="5%">66</td>
+<td width="*"><a href="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_bestpractices.html#junittestsshouldincludeassert">JUnit tests should include assert() or fail()</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">1</td>
+<td width="*%">/home/asuka/Project/VV/VV-ISTIC-TP3/code/commons-collections/src/test/java/org/apache/commons/collections4/list/SetUniqueListTest.java</td>
+<td align="center" width="5%">156</td>
+<td width="*"><a href="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_bestpractices.html#junittestsshouldincludeassert">JUnit tests should include assert() or fail()</a></td>
+</tr>
+<tr> 
+<td align="center">1</td>
+<td width="*%">/home/asuka/Project/VV/VV-ISTIC-TP3/code/commons-collections/src/test/java/org/apache/commons/collections4/map/AbstractSortedMapTest.java</td>
+<td align="center" width="5%">68</td>
+<td width="*"><a href="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_bestpractices.html#junittestsshouldincludeassert">JUnit tests should include assert() or fail()</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">1</td>
+<td width="*%">/home/asuka/Project/VV/VV-ISTIC-TP3/code/commons-collections/src/test/java/org/apache/commons/collections4/map/Flat3MapTest.java</td>
+<td align="center" width="5%">353</td>
+<td width="*"><a href="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_bestpractices.html#junittestsshouldincludeassert">JUnit tests should include assert() or fail()</a></td>
+</tr>
+<tr> 
+<td align="center">1</td>
+<td width="*%">/home/asuka/Project/VV/VV-ISTIC-TP3/code/commons-collections/src/test/java/org/apache/commons/collections4/map/LazyMapTest.java</td>
+<td align="center" width="5%">54</td>
+<td width="*"><a href="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_bestpractices.html#junittestsshouldincludeassert">JUnit tests should include assert() or fail()</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">1</td>
+<td width="*%">/home/asuka/Project/VV/VV-ISTIC-TP3/code/commons-collections/src/test/java/org/apache/commons/collections4/map/PassiveExpiringMapTest.java</td>
+<td align="center" width="5%">193</td>
+<td width="*"><a href="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_bestpractices.html#junittestsshouldincludeassert">JUnit tests should include assert() or fail()</a></td>
+</tr>
+<tr> 
+<td align="center">1</td>
+<td width="*%">/home/asuka/Project/VV/VV-ISTIC-TP3/code/commons-collections/src/test/java/org/apache/commons/collections4/properties/EmptyPropertiesTest.java</td>
+<td align="center" width="5%">134</td>
+<td width="*"><a href="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_bestpractices.html#junittestsshouldincludeassert">JUnit tests should include assert() or fail()</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">2</td>
+<td width="*%">/home/asuka/Project/VV/VV-ISTIC-TP3/code/commons-collections/src/test/java/org/apache/commons/collections4/properties/EmptyPropertiesTest.java</td>
+<td align="center" width="5%">252</td>
+<td width="*"><a href="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_bestpractices.html#junittestsshouldincludeassert">JUnit tests should include assert() or fail()</a></td>
+</tr>
+<tr> 
+<td align="center">1</td>
+<td width="*%">/home/asuka/Project/VV/VV-ISTIC-TP3/code/commons-collections/src/test/java/org/apache/commons/collections4/properties/OrderedPropertiesTest.java</td>
+<td align="center" width="5%">151</td>
+<td width="*"><a href="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_bestpractices.html#junittestsshouldincludeassert">JUnit tests should include assert() or fail()</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">2</td>
+<td width="*%">/home/asuka/Project/VV/VV-ISTIC-TP3/code/commons-collections/src/test/java/org/apache/commons/collections4/properties/OrderedPropertiesTest.java</td>
+<td align="center" width="5%">190</td>
+<td width="*"><a href="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_bestpractices.html#junittestsshouldincludeassert">JUnit tests should include assert() or fail()</a></td>
+</tr>
+<tr> 
+<td align="center">1</td>
+<td width="*%">/home/asuka/Project/VV/VV-ISTIC-TP3/code/commons-collections/src/test/java/org/apache/commons/collections4/queue/SynchronizedQueueTest.java</td>
+<td align="center" width="5%">49</td>
+<td width="*"><a href="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_bestpractices.html#junittestsshouldincludeassert">JUnit tests should include assert() or fail()</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">1</td>
+<td width="*%">/home/asuka/Project/VV/VV-ISTIC-TP3/code/commons-collections/src/test/java/org/apache/commons/collections4/set/MapBackedSet2Test.java</td>
+<td align="center" width="5%">90</td>
+<td width="*"><a href="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_bestpractices.html#junittestsshouldincludeassert">JUnit tests should include assert() or fail()</a></td>
+</tr>
+<tr> 
+<td align="center">2</td>
+<td width="*%">/home/asuka/Project/VV/VV-ISTIC-TP3/code/commons-collections/src/test/java/org/apache/commons/collections4/set/MapBackedSet2Test.java</td>
+<td align="center" width="5%">95</td>
+<td width="*"><a href="https://docs.pmd-code.org/pmd-doc-7.0.0-rc4/pmd_rules_java_bestpractices.html#junittestsshouldincludeassert">JUnit tests should include assert() or fail()</a></td>
+</tr>
+</table></body></html>
