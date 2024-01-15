@@ -40,3 +40,35 @@ Use the following steps to design the test suite:
 Use the project in [tp3-heap](../code/tp3-heap) to complete this exercise.
 
 ## Answer
+
+#### `BinaryHeap(Comparator<T> comparator)`
+
+- Characteristics:
+  - Valid comparator (non-null)
+  - Invalid comparator (null)
+
+#### `pop()`
+
+- Characteristics:
+  - Heap is not empty
+  - Heap is empty (NoSuchElementException)
+
+#### `peek()`
+
+- Characteristics:
+  - Heap is not empty
+  - Heap is empty (NoSuchElementException)
+
+#### `push(T element)`
+
+- Characteristics:
+  - Element is inserted in an empty heap
+  - Element is inserted in a non-empty heap
+  - Valid comparator (non-null)
+  - Invalid comparator (null)
+
+#### `count()`
+
+- Characteristics:
+  - Count on an empty heap
+  - Count on a non-empty heap

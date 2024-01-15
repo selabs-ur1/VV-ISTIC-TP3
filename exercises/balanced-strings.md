@@ -26,3 +26,65 @@ Use the project in [tp3-balanced-strings](../code/tp3-balanced-strings) to compl
 
 ## Answer
 
+### 1. Input Space Partitioning:
+
+- **Characteristics:**
+    1. Presence of `{`, `[`, `(` (open symbols) and `}`, `]`, `)` (close symbols).
+    2. Correct pairing of open and close symbols.
+    3. Substrings between pairs.
+    4. Empty string.
+
+- **Partition Blocks:**
+    1. Open symbols only.
+    2. Close symbols only.
+    3. Correctly paired symbols.
+    4. Incorrectly paired symbols.
+    5. Substrings between pairs.
+    6. Empty string.
+
+### 2. Statement Coverage::
+### 3. Base Choice Coverage: 
+```java
+@Test
+public void testIsBalanced() {
+    // 1. Open symbols only
+    assertTrue(isBalanced("{"));
+    assertTrue(isBalanced("["));
+    assertTrue(isBalanced("("));
+
+    // 2. Close symbols only
+    assertFalse(isBalanced("}"));
+    assertFalse(isBalanced("]"));
+    assertFalse(isBalanced(")"));
+
+    // 3. Correctly paired symbols
+    assertTrue(isBalanced("{}"));
+    assertTrue(isBalanced("[]"));
+    assertTrue(isBalanced("()"));
+
+    // 4. Incorrectly paired symbols
+    assertFalse(isBalanced("{]"));
+    assertFalse(isBalanced("[)"));
+    assertFalse(isBalanced("(}"));
+    assertFalse(isBalanced("[}"));
+    assertFalse(isBalanced("(]"));
+    assertFalse(isBalanced("{)"));
+
+    // 5. Substrings between pairs
+    assertTrue(isBalanced("{bear}"));
+    assertTrue(isBalanced("[bear]"));
+    assertTrue(isBalanced("(bear)"));
+
+    // 6. Empty string
+    assertTrue(isBalanced(""));
+}
+```
+
+### 4. PIT Mutation Testing:
+
+```java
+@Test
+public void testMutant() {
+    assertFalse(isBalanced("[["));
+}
+```

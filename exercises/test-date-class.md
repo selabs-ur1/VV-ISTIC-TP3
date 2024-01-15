@@ -53,3 +53,55 @@ Use the project in [tp3-date](../code/tp3-date) to complete this exercise.
 
 ## Answer
 
+#### a. Constructor (`Date(int day, int month, int year)`)
+- **Characteristics:**
+    1. Valid date (normal case).
+    2. Invalid date (e.g., day > 31, month > 12, etc.).
+
+- **Common Characteristics with Other Methods:**
+    - Valid year (needed for various methods).
+
+#### b. `isValidDate(int day, int month, int year)`
+- **Characteristics:**
+    1. Valid date.
+    2. Invalid date.
+
+- **Common Characteristics with Other Methods:**
+    - Valid year.
+
+#### c. `isLeapYear(int year)`
+- **Characteristics:**
+    1. Leap year.
+    2. Non-leap year.
+
+- **Common Characteristics with Other Methods:**
+    - Valid year.
+
+#### d. `nextDate()`
+- **Characteristics:**
+    1. Next day within the same month.
+    2. Next day crossing into the next month.
+    3. Next day crossing into the next year.
+
+- **Common Characteristics with Other Methods:**
+    - Valid date.
+    - Valid year.
+
+#### e. `previousDate()`
+- **Characteristics:**
+    1. Previous day within the same month.
+    2. Previous day crossing into the previous month.
+    3. Previous day crossing into the previous year.
+
+- **Common Characteristics with Other Methods:**
+    - Valid date.
+    - Valid year.
+
+#### f. `compareTo(Date other)`
+- **Characteristics:**
+    1. Same date.
+    2. Date is posterior.
+    3. Date is anterior.
+
+- **Common Characteristics with Other Methods:**
+    - Valid date.
