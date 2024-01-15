@@ -53,3 +53,11 @@ Use the project in [tp3-date](../code/tp3-date) to complete this exercise.
 
 ## Answer
 
+
+Les réponses sont dans le fichier de test de la classe Date.  
+Le partitionnement des entrée est spécifié dans les methodes de test.  
+Le fichier s'organise comme suit :  
+- Une Section "premier jet" avant utilisation de PIT, divisé en sous-sections, une sous-section par méthode de l'interface spécifiée dans le sujet.  
+- Une Section "après-pit" ou l'on examine les resultat de pit-report, en proposant de nouveaux tests afin d'obtenir une couverture à 100% du code et qu'aucun mutant ne survive.  
+
+
