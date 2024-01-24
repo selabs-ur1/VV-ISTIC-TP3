@@ -26,3 +26,33 @@ Use the project in [tp3-balanced-strings](../code/tp3-balanced-strings) to compl
 
 ## Answer
 
+### Question 1
+Characteristics and Partition Blocks:
+- Input Type: String
+- Valid Input: Strings with balanced grouping symbols {}, [], ().
+- Invalid Input: Strings with unbalanced or unexpected grouping symbols.
+- Empty Input: An empty string.
+
+### Question 2
+Test case are written to use each boolean private method.
+So the goal is to go in each sub-method.
+
+However it's not enough because whe should check each boolean
+in the statement.
+
+### Question 3
+
+We should test each statement of my private method as input
+of the public method isBalanced
+
+### Question 4
+
+![img.png](img.png/pitReportBalanced1.png)
+
+Over all the generated mutant, there is one mutant alive 
+. Which It was returning True in the IsCloseSymbols instead
+of the condition about close characters.
+
+The final score is 95% for the balanced Strings
+
+

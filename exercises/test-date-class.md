@@ -53,3 +53,35 @@ Use the project in [tp3-date](../code/tp3-date) to complete this exercise.
 
 ## Answer
 
+### Question 1
+
+Inputs are mostly int and they are multiple
+
+- Input Type: Int
+- Valid Input: Int based on day/month/year
+- Invalid Input: 
+  - Int under or equals 0 for day and month
+  - number over 31 for day
+  - number over 12 for month
+  - number under 0 form year
+
+
+### Question 2
+I tried to write testCase to cover all the code of the Date function.
+
+However it's not enough I may have forgot some line to cover.
+
+### Question 3
+
+Many statment use many boolean. So I surely forgot lots of
+boolean to test. We can see it in the question.
+
+### Question 4
+
+![img.png](img.png/DatePit.png)
+
+We still have more than  80 % of coverage. If the time allow me,
+I'll upgrade the Mutation coverage.
+
+
+
