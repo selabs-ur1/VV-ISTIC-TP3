@@ -1,4 +1,4 @@
-# Balanced strings
+ # Balanced strings
 
 A string containing grouping symbols `{}[]()` is said to be balanced if every open symbol `{[(` has a matching closed symbol `)]}` and the substrings before, after and between each pair of symbols is also balanced. The empty string is considered as balanced.
 
@@ -26,3 +26,50 @@ Use the project in [tp3-balanced-strings](../code/tp3-balanced-strings) to compl
 
 ## Answer
 
+1. Input Space Partitioning
+
+    Input domain: String of `{}[]()` symbols
+    Partitioning characteristic: Presence of Balanced Symbols
+    - Block 1: Strings with balanced symbols 
+    - Block 2: Strings without balanced symbols
+   
+    Test cases:
+    - `{[][]}({})` : classic false
+    - `{(}{}` : classic false
+    - ` ` : empty string
+
+2. Evaluate the statement coverage
+   
+   - I add 3 junit tests for initials tests cases.
+   - I add 2 junit tests for all switch cases.
+
+3. Predicate that uses more than two boolean operators.
+   
+   My code isn't in that case.
+
+4. Use PIT to evaluate the test suite
+
+   Mutation result after 1st PIT execution:
+   - Line Coverage : 85%	
+   - Mutation Coverage : 82%
+   ```
+   22: negated conditional → KILLED
+       negated conditional → KILLED
+   23: replaced boolean return with true for fr/istic/vv/StringUtils::isBalanced → KILLED
+   26: negated conditional → KILLED
+       negated conditional → KILLED
+   27: replaced boolean return with true for fr/istic/vv/StringUtils::isBalanced → NO_COVERAGE
+   30: negated conditional → KILLED
+       negated conditional → KILLED
+   31: replaced boolean return with true for fr/istic/vv/StringUtils::isBalanced → KILLED
+   37: replaced boolean return with false for fr/istic/vv/StringUtils::isBalanced → KILLED
+       replaced boolean return with true for fr/istic/vv/StringUtils::isBalanced → SURVIVED
+   ```
+   
+   I have 1 line non covered and 1 mutant that survive. I add this following test:
+   - non covered for true : `assertFalse(StringUtils.isBalanced("[)"));`
+   - mutation for false: `assertFalse(StringUtils.isBalanced("()["));`
+
+   Mutation result after 2nd PIT execution:
+   - Line Coverage : 92% (Constructor isn't coverage)
+   - Mutation Coverage : 100%

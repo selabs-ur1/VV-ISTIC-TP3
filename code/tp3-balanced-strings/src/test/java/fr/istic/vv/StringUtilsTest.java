@@ -7,5 +7,22 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class StringUtilsTest {
 
+    @Test
+    public void testIsBalancedPositive() {
+        assertTrue(StringUtils.isBalanced("{[][]}({})"));
+    }
 
+    @Test
+    public void testIsBalancedNegative() {
+        assertFalse(StringUtils.isBalanced("{(}{}"));
+        assertFalse(StringUtils.isBalanced("{[}{}"));
+        assertFalse(StringUtils.isBalanced("[{]{}"));
+        assertFalse(StringUtils.isBalanced("[)"));
+        assertFalse(StringUtils.isBalanced("()["));
+    }
+
+    @Test
+    public void testIsBalancedEmptyString() {
+        assertTrue(StringUtils.isBalanced(""));
+    }
 }
