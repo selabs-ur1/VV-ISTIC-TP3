@@ -15,3 +15,18 @@ Include the improved test code in this file.
 
 ## Answer
 
+    @Test
+    public void testEqualsNull() {
+        final Object obj = makeObject();
+        assertFalse(obj.equals(null)); // make sure this doesn't throw NPE either
+    }
+
+Ce code est relevé dans le rapport PMD avec la rule JUnitAssertionShouldIncludeMessage avec la ligne suivante :
+- JUnit assertions should include a message (logique).
+
+Une correction possible serait : 
+    @Test
+    public void testEqualsNull() {
+        final Object obj = makeObject();
+        assertFalse(obj.equals(null), "Message"); // make sure this doesn't throw NPE either
+    }

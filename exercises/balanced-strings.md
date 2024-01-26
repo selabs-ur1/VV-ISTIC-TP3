@@ -25,4 +25,89 @@ Write below the actions you took on each step and the results you obtained.
 Use the project in [tp3-balanced-strings](../code/tp3-balanced-strings) to complete this exercise.
 
 ## Answer
+Code :
+
+public class StringUtils {
+
+    private StringUtils() {}
+
+    public static boolean isBalanced(String str) {
+        Stack<Character> stack = new Stack<>();
+
+        for (char ch : str.toCharArray()) {
+            if (isOpenSymbol(ch)) {
+                stack.push(ch);
+            } else if (isCloseSymbol(ch)) {
+                if (stack.isEmpty() || !isMatchingPair(stack.pop(), ch)) {
+                    return false;
+                }
+            }
+        }
+
+        return stack.isEmpty();
+    }
+
+    private static boolean isOpenSymbol(char ch) {
+        return ch == '(' || ch == '{' || ch == '[';
+    }
+
+    private static boolean isCloseSymbol(char ch) {
+        return ch == ')' || ch == '}' || ch == ']';
+    }
+
+    private static boolean isMatchingPair(char open, char close) {
+        return (open == '(' && close == ')') ||
+                (open == '{' && close == '}') ||
+                (open == '[' && close == ']');
+    }
+}
+
+class StringUtilsTest {
+
+    @Test
+    public void testIsBalancedForBalancedStrings() {
+        assertTrue(StringUtils.isBalanced("{([])}"));
+    }
+
+    @Test
+    public void testIsBalancedForUnbalancedStrings() {
+        assertFalse(StringUtils.isBalanced("{[)}"));
+    }
+
+    @Test
+    public void testIsBalancedForEmptyString() {
+        assertTrue(StringUtils.isBalanced(""));
+    }
+
+    @Test
+    public void testIsBalancedForStringWithoutGroupingSymbols() {
+        assertTrue(StringUtils.isBalanced("abc"));
+    }
+
+    @Test
+    public void testIsBalancedForStringWithSpaces() {
+        assertTrue(StringUtils.isBalanced(" { [ ] } "));
+    }
+
+    @Test
+    public void testIsBalancedForStringWithOtherCharacters() {
+        assertTrue(StringUtils.isBalanced("a(b)c[d]e{f}"));
+    }
+}
+
+1) Nous avons identifé 5 blocks de partition : 
+- Chaine équilibrée : "{()}"
+- Chaine non équilibrée : "{(})"
+- Chaine vide : ""
+- Chaine sans symbole : "abc"
+- Chaine avec des espaces : "( { } )"
+- Chaine chaine valide avec des caractères : "(a{opr})"
+  
+3) On a ici un coverage de 100%, on a essayé de tester tout les cas possibles en faisant un test pour chaque block de partition relevé précedement.
+
+3) Notre code ne prennant qu'un paramètre String, il n'est pas vraiment utile d'utiliser le template Base Choice Coverage.
+
+4) PIT me dit que la mutation de la ligne "return stack.isEmpty();" survie dans il passe la valeur de retour à vrai. Si j'ai bien compris, cela signifie qu'il n'y a aucun cas ou cette ligne peut valoir faux.
+En corrigeant cette ligne on obtient un coverage de 100%. Seule une ligne n'est pas testée, celle du constructeur.
+
 
