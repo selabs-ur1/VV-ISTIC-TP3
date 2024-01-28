@@ -15,3 +15,31 @@ Include the improved test code in this file.
 
 ## Answer
 
+
+"Assertion roulette" est un test smell testé dans la règle JUnitTestContainsTooManyAsserts
+
+TP2/input/commons-collections-master/src/test/java/org/apache/commons/collections4/trie/UnmodifiableTrieTest.java:68:   
+JUnitTestContainsTooManyAsserts:        Unit tests should not contain more than 1 assert(s).
+
+code d'origine :
+```
+@Test
+public void testUnmodifiable() {
+    assertTrue(makeObject() instanceof Unmodifiable);
+    assertTrue(makeFullMap() instanceof Unmodifiable);
+}
+```
+
+-> solution apportée :
+
+```
+@Test
+public void testObjectUnmodifiable() {
+    assertTrue(makeObject() instanceof Unmodifiable);
+}
+
+@Test
+public void testFullMapUnmodifiable() {
+    assertTrue(makeFullMap() instanceof Unmodifiable);
+}
+```

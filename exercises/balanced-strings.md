@@ -26,3 +26,4 @@ Use the project in [tp3-balanced-strings](../code/tp3-balanced-strings) to compl
 
 ## Answer
 
+cf. le dossier "BalancedStrings"
