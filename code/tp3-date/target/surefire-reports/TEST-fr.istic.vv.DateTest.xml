@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="fr.istic.vv.DateTest" time="0.35" tests="509" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="21"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/home/arthurlair/Documents/Universite/M2_ILA/ProjGit/VV/VV-ISTIC-TP3/code/tp3-date/target/test-classes:/home/arthurlair/Documents/Universite/M2_ILA/ProjGit/VV/VV-ISTIC-TP3/code/tp3-date/target/classes:/home/arthurlair/.m2/repository/org/junit/jupiter/junit-jupiter/5.6.2/junit-jupiter-5.6.2.jar:/home/arthurlair/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.6.2/junit-jupiter-api-5.6.2.jar:/home/arthurlair/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/arthurlair/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/arthurlair/.m2/repository/org/junit/platform/junit-platform-commons/1.6.2/junit-platform-commons-1.6.2.jar:/home/arthurlair/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.6.2/junit-jupiter-params-5.6.2.jar:/home/arthurlair/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.6.2/junit-jupiter-engine-5.6.2.jar:/home/arthurlair/.m2/repository/org/junit/platform/junit-platform-engine/1.6.2/junit-platform-engine-1.6.2.jar:"/>
+    <property name="java.vm.vendor" value="Red Hat, Inc."/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://www.redhat.com/"/>
+    <property name="os.name" value="Linux"/>
+    <property name="java.vm.specification.version" value="21"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="FR"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-21-openjdk-21.0.0.0.35-1.rolling.fc39.x86_64/lib"/>
+    <property name="sun.java.command" value="/home/arthurlair/Documents/Universite/M2_ILA/ProjGit/VV/VV-ISTIC-TP3/code/tp3-date/target/surefire/surefirebooter4613517402156464947.jar /home/arthurlair/Documents/Universite/M2_ILA/ProjGit/VV/VV-ISTIC-TP3/code/tp3-date/target/surefire 2023-12-13T16-52-05_856-jvmRun1 surefire16790578277619466645tmp surefire_011000343691883377791tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/home/arthurlair/Documents/Universite/M2_ILA/ProjGit/VV/VV-ISTIC-TP3/code/tp3-date/target/test-classes:/home/arthurlair/Documents/Universite/M2_ILA/ProjGit/VV/VV-ISTIC-TP3/code/tp3-date/target/classes:/home/arthurlair/.m2/repository/org/junit/jupiter/junit-jupiter/5.6.2/junit-jupiter-5.6.2.jar:/home/arthurlair/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.6.2/junit-jupiter-api-5.6.2.jar:/home/arthurlair/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/arthurlair/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/arthurlair/.m2/repository/org/junit/platform/junit-platform-commons/1.6.2/junit-platform-commons-1.6.2.jar:/home/arthurlair/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.6.2/junit-jupiter-params-5.6.2.jar:/home/arthurlair/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.6.2/junit-jupiter-engine-5.6.2.jar:/home/arthurlair/.m2/repository/org/junit/platform/junit-platform-engine/1.6.2/junit-platform-engine-1.6.2.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/home/arthurlair"/>
+    <property name="user.language" value="fr"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2023-09-19"/>
+    <property name="java.home" value="/usr/lib/jvm/java-21-openjdk-21.0.0.0.35-1.rolling.fc39.x86_64"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/home/arthurlair/Documents/Universite/M2_ILA/ProjGit/VV/VV-ISTIC-TP3/code/tp3-date"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="surefire.real.class.path" value="/home/arthurlair/Documents/Universite/M2_ILA/ProjGit/VV/VV-ISTIC-TP3/code/tp3-date/target/surefire/surefirebooter4613517402156464947.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="21+35"/>
+    <property name="user.name" value="arthurlair"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="6.6.2-201.fc39.x86_64"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="(Red_Hat-21.0.0.0.35-1.rolling.fc39)"/>
+    <property name="localRepository" value="/home/arthurlair/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://bugzilla.redhat.com/enter_bug.cgi?product=Fedora&amp;component=java-latest-openjdk-portable&amp;version=39"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="21"/>
+    <property name="user.dir" value="/home/arthurlair/Documents/Universite/M2_ILA/ProjGit/VV/VV-ISTIC-TP3/code/tp3-date"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="Red Hat, Inc."/>
+    <property name="java.vm.version" value="21+35"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="65.0"/>
+  </properties>
+  <testcase name="testNextDateLastDayMonth" classname="fr.istic.vv.DateTest" time="0.014"/>
+  <testcase name="testIsNotLeapYear(int)[1]" classname="fr.istic.vv.DateTest" time="0.02"/>
+  <testcase name="testIsNotLeapYear(int)[2]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[3]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[4]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[5]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[6]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[7]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[8]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[9]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[10]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[11]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[12]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[13]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[14]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[15]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[16]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[17]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[18]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[19]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[20]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[21]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[22]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[23]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[24]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[25]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[26]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[27]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[28]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[29]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[30]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[31]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[32]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[33]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[34]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[35]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[36]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[37]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[38]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[39]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[40]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[41]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[42]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[43]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[44]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[45]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[46]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[47]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[48]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[49]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[50]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[51]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[52]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[53]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[54]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[55]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[56]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[57]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[58]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[59]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[60]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[61]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[62]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[63]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[64]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[65]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[66]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[67]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[68]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[69]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[70]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[71]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[72]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[73]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[74]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[75]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[76]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[77]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[78]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[79]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[80]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[81]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[82]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[83]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[84]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[85]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[86]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[87]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[88]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[89]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[90]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[91]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[92]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[93]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[94]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[95]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[96]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[97]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[98]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[99]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[100]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[101]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[102]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[103]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[104]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[105]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[106]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[107]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[108]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[109]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[110]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[111]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[112]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[113]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[114]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[115]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[116]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[117]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[118]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[119]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[120]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[121]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[122]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[123]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[124]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[125]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[126]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[127]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[128]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[129]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[130]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[131]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[132]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[133]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[134]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[135]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[136]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[137]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[138]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[139]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[140]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[141]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[142]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[143]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[144]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[145]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[146]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[147]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[148]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[149]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[150]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[151]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[152]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[153]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[154]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[155]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[156]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[157]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[158]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[159]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[160]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[161]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[162]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[163]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[164]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[165]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[166]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[167]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[168]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[169]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[170]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[171]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[172]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[173]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[174]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[175]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[176]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[177]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[178]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[179]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[180]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[181]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[182]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[183]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[184]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[185]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[186]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[187]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[188]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[189]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[190]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[191]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[192]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[193]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[194]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[195]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[196]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[197]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[198]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[199]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[200]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[201]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[202]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[203]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[204]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[205]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[206]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[207]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[208]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[209]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[210]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[211]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[212]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[213]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[214]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[215]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[216]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[217]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[218]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[219]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[220]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[221]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[222]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[223]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[224]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[225]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[226]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[227]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[228]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[229]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[230]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[231]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[232]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[233]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[234]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[235]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[236]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[237]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[238]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[239]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[240]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[241]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[242]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[243]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[244]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[245]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[246]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[247]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[248]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[249]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[250]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[251]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[252]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[253]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[254]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[255]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[256]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[257]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[258]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[259]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[260]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[261]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[262]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[263]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[264]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[265]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[266]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[267]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[268]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[269]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[270]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[271]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[272]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[273]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[274]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[275]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[276]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[277]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[278]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[279]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[280]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[281]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[282]" classname="fr.istic.vv.DateTest" time="0.002"/>
+  <testcase name="testIsNotLeapYear(int)[283]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[284]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[285]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[286]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[287]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[288]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[289]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[290]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[291]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[292]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[293]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[294]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[295]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[296]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[297]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[298]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[299]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[300]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[301]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[302]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[303]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[304]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[305]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[306]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[307]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[308]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[309]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[310]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[311]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[312]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[313]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[314]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[315]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[316]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[317]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[318]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[319]" classname="fr.istic.vv.DateTest" time="0.002"/>
+  <testcase name="testIsNotLeapYear(int)[320]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[321]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[322]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[323]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[324]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[325]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[326]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[327]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[328]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[329]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[330]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[331]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[332]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[333]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[334]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[335]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[336]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[337]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[338]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[339]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[340]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[341]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[342]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[343]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[344]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[345]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[346]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[347]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[348]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[349]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[350]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[351]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[352]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[353]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[354]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[355]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[356]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[357]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[358]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[359]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[360]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[361]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[362]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[363]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[364]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[365]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[366]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[367]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[368]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[369]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[370]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[371]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[372]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsNotLeapYear(int)[373]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[374]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsNotLeapYear(int)[375]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testPreviousDateLastDayYear" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testSameDate" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testInvalidDateWithMonthSupAt12" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testOtherNull" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testOtherAfter" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testInvalidDateNotLeapYear" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testNextDateBasic" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testInvalidDateWithDaytAt0" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testPreviousDateLastDayMonth" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testValidDateFebruryLeapYear" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsLeapYear(int)[1]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsLeapYear(int)[2]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[3]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsLeapYear(int)[4]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[5]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[6]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[7]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[8]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsLeapYear(int)[9]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[10]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[11]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[12]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[13]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[14]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[15]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[16]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[17]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsLeapYear(int)[18]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[19]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[20]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[21]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[22]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[23]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsLeapYear(int)[24]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[25]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[26]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[27]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[28]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[29]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[30]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[31]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[32]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[33]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[34]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[35]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[36]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsLeapYear(int)[37]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[38]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[39]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[40]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[41]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[42]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsLeapYear(int)[43]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsLeapYear(int)[44]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[45]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[46]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[47]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[48]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[49]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsLeapYear(int)[50]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[51]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[52]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[53]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[54]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[55]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[56]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[57]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[58]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[59]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[60]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsLeapYear(int)[61]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[62]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[63]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[64]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[65]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[66]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[67]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[68]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[69]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[70]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[71]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[72]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsLeapYear(int)[73]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[74]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[75]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsLeapYear(int)[76]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[77]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[78]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[79]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsLeapYear(int)[80]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[81]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[82]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[83]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[84]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[85]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[86]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[87]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[88]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[89]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[90]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsLeapYear(int)[91]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[92]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[93]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[94]" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testIsLeapYear(int)[95]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[96]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[97]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[98]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[99]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[100]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[101]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[102]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[103]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[104]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[105]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[106]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[107]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[108]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[109]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[110]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[111]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[112]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[113]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[114]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testIsLeapYear(int)[115]" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testPreviousDateBasic" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testBoundaryCasesNegativYear" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testValidDateLastDayYear" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testInvalidDateWithDaySupAt31" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testValidDateFirstDayYear" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testNextDateLastDayYear" classname="fr.istic.vv.DateTest" time="0"/>
+  <testcase name="testOtherBefore" classname="fr.istic.vv.DateTest" time="0.001"/>
+  <testcase name="testBoundaryCases0" classname="fr.istic.vv.DateTest" time="0"/>
+</testsuite>

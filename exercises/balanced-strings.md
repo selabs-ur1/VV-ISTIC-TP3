@@ -26,3 +26,35 @@ Use the project in [tp3-balanced-strings](../code/tp3-balanced-strings) to compl
 
 ## Answer
 
+### 1. Input Space : 
+
+| Partition                   | Description                                                                                          |
+|-----------------------------|------------------------------------------------------------------------------------------------------|
+| Objet null                  | La chaine n'est pas initialisé donc retourne une erreur                                              |
+| Chaîne vide                 | Aucun caractère dans la chaîne                                                                       |
+| Caractères non groupants    | Chaîne ne contenant que des caractères autres que les symboles de groupe                             |
+| Ouvertures uniquement       | Chaîne contenant uniquement des ouvertures de groupes sans fermeture                                 |
+| Fermetures uniquement       | Chaîne contenant uniquement des fermetures de groupes sans ouverture                                 |
+| Équilibre correct/incorrect | Chaîne contenant un mélange d'ouvertures et de fermetures avec des équilibres corrects et incorrects |
+
+J'ai choisi de retourner une erreur si la chaine n'a pas été initialisé.
+
+### 2. Test Coverage :
+
+J'ai testé le coverage avec intellij et j'obtiens les résultats suivants :
+
+| Class     | Method         | Line         |
+|-----------|----------------|--------------|
+| 100% (1/1)| 100% (1/1)     | 100% (15/15) |
+
+### 3. Base Choice Coverage 
+
+Lors de la prise en compte des cas test et leur écriture j'ai pris en compte le *Base Choice Coverage* pour les écrire.
+
+### 4. PIT:
+
+PIT me retourne le résultat suivant : 
+
+| Name         | Number of Classes | Line Coverage | Mutation Coverage |
+|--------------|-------------------|---------------|-------------------|
+| fr.istic.vv  | 1                 | 94% (15/16)   | 100% (20/20)      |

@@ -52,4 +52,67 @@ Use the following steps to design the test suite:
 Use the project in [tp3-date](../code/tp3-date) to complete this exercise.
 
 ## Answer
+### 1. Input Space : 
+
+#### isValidDate:
+
+| Partition  | Description                                     | Caractéristiques et Blocages                      |
+|------------|-------------------------------------------------|---------------------------------------------------|
+| isValide: (true)   | Jour valide, Mois valide, Année valide            | Aucun blocage identifié                            |
+| isValide: (false)  | Jour invalide (> 31), Jour invalide (< 0)        | Caractéristiques communes :                       |
+|                  | Mois invalide (> 12), Mois invalide (<= 0)       | - Les mois sont invalides s'ils sont hors limites |
+|                  | Année valide, Année invalide (< 0)               | - Les années négatives sont invalides (sauf si gérées par LocalDate) |
+
+
+#### isLeapYear:
+
+| Partition              | Description                                | Caractéristiques et Blocages                       |
+|------------------------|--------------------------------------------|----------------------------------------------------|
+| Année bissextile       | Année divisible par 4 et non divisible par 100, ou divisible par 400 | Aucun blocage identifié                             |
+| Année non bissextile   | Année non divisible par 4, ou divisible par 100 mais non par 400 | Aucun blocage identifié                             |
+| Année 0                | Année égale à 0                             | Aucun blocage identifié                             |
+| Année négative         | Année inférieure à 0                        | Dépend de la gestion par LocalDate (notamment si les années négatives sont valides) |
+
+
+#### compareTo:
+
+| Partition   | Description                          | Caractéristiques et Blocages                       |
+|-------------|--------------------------------------|----------------------------------------------------|
+| Date null   | Date en entrée est nulle              | Aucun blocage identifié                             |
+| Date ==     | Dates en entrée sont égales           | Aucun blocage identifié                             |
+| Date before | Date en entrée est antérieure         | Aucun blocage identifié                             |
+| Date next   | Date en entrée est ultérieure         | Aucun blocage identifié                             |
+
+
+#### nextDate: 
+pas de param en entré
+#### previousDate: 
+pas de param en entré
+
+
+
+### 2. Test Coverage :
+
+J'ai testé le coverage avec intellij et j'obtiens les résultats suivants :
+
+| Class     | Method         | Line         |
+|-----------|----------------|--------------|
+| 100% (1/1)| 100% (7/7)     | 100% (26/26) |
+
+
+### 3. Base Choice Coverage 
+
+Lors de la prise en compte des cas test et leur écriture j'ai pris en compte le *Base Choice Coverage* pour les écrire.
+
+### 4. PIT:
+code exec:
+```shell
+mvn clean test org.pitest:pitest-maven:mutationCoverage
+```
+
+PIT me retourne le résultat suivant :
+
+| Name         | Number of Classes | Line Coverage | Mutation Coverage |
+|--------------|-------------------|---------------|-------------------|
+| fr.istic.vv  | 1                 | 100% (27/27)   | 89% (19/21)      |
 
