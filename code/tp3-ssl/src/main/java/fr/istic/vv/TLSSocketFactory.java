@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TLSSocketFactory {
-
-
+//
+//
     public void prepareSocket(SSLSocket socket) {
 
         String[] supported = socket.getSupportedProtocols();
@@ -23,7 +23,7 @@ public class TLSSocketFactory {
                     target.add(pname);
                 }
             }
-        }
+      }
 
         if (enabled != null) {
             // Append the rest of the already enabled protocols to the end
@@ -33,15 +33,15 @@ public class TLSSocketFactory {
                     target.add(pname);
                 }
             }
-        }
+       }
 
         if (target.size() > 0) {
             String[] enabling = target.toArray(new String[target.size()]);
             socket.setEnabledProtocols(enabling);
         }
 
-    }
-
+   }
+//
     /**
      * Returns true if the given element exists in the given array; false otherwise.
      */
@@ -53,6 +53,6 @@ public class TLSSocketFactory {
         }
         return false;
     }
-
-
+//
+//
 }

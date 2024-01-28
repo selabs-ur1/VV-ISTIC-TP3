@@ -25,4 +25,18 @@ Write below the actions you took on each step and the results you obtained.
 Use the project in [tp3-balanced-strings](../code/tp3-balanced-strings) to complete this exercise.
 
 ## Answer
+1.
+   |    characteristic     | block | block | block |
+   |:---------------------:|:-----:|:-----:|:-----:|
+   | number of parenthesis | even  |  odd  |       |
+   |  beginning character  |  "]"  |  "}"  |  ")"  |
+   |   number of bracket   | even  |  odd  |       |
+   |   number of braces    | even  |  odd  |       |
 
+2. I just wrote test based on the partitioning of the question 1
+
+3. Doesn't apply for my code
+
+4. Line coverage 92%
+   Mutation coverage 100%
+   Test strength 100%

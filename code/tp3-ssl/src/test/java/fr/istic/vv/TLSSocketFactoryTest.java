@@ -7,56 +7,46 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
 
 public class TLSSocketFactoryTest {
 
     /**
-     * Test when the edge case when the both supported and enabled protocols are null.
+     * Test when the edge case when both supported and enabled protocols are null.
      */
     @Test
-    public void preparedSocket_NullProtocols()  {
+    public void preparedSocket_NullProtocols() {
         TLSSocketFactory f = new TLSSocketFactory();
-        f.prepareSocket(new SSLSocket() {
+        SSLSocket mockSocket = mock(SSLSocket.class);
 
-            public String[] getSupportedProtocols() {
-                return null;
-            }
+        when(mockSocket.getSupportedProtocols()).thenReturn(null);
+        when(mockSocket.getEnabledProtocols()).thenReturn(null);
 
-            public String[] getEnabledProtocols() {
-                return null;
-            }
+        f.prepareSocket(mockSocket);
 
-            public void setEnabledProtocols(String[] protocols) {
-                fail();
-            }
-        });
+        // No need for assertions, just checking that the methods were called
+        verify(mockSocket).getSupportedProtocols();
+        verify(mockSocket).getEnabledProtocols();
+        verifyNoMoreInteractions(mockSocket);
     }
 
     @Test
-    public void typical()  {
+    public void typical() {
         TLSSocketFactory f = new TLSSocketFactory();
-        f.prepareSocket(new SSLSocket() {
-            @Override
-            public String[] getSupportedProtocols() {
-                return shuffle(new String[]{"SSLv2Hello", "SSLv3", "TLSv1", "TLSv1.1", "TLSv1.2"});
-            }
-            @Override
-            public String[] getEnabledProtocols() {
-                return shuffle(new String[]{"SSLv3", "TLSv1"});
-            }
-            @Override
-            public void setEnabledProtocols(String[] protocols) {
-                assertTrue(Arrays.equals(protocols, new String[] {"TLSv1.2", "TLSv1.1", "TLSv1", "SSLv3" }));
-            }
-        });
+        SSLSocket mockSocket = mock(SSLSocket.class);
+
+        when(mockSocket.getSupportedProtocols()).thenReturn(shuffle(new String[]{"SSLv2Hello", "SSLv3", "TLSv1", "TLSv1.1", "TLSv1.2"}));
+        when(mockSocket.getEnabledProtocols()).thenReturn(shuffle(new String[]{"SSLv3", "TLSv1"}));
+
+        f.prepareSocket((fr.istic.vv.SSLSocket) mockSocket);
+
+        // Verify that setEnabledProtocols was called with the expected arguments
+        verify(mockSocket).setEnabledProtocols(new String[]{"TLSv1.2", "TLSv1.1", "TLSv1", "SSLv3"});
     }
 
-
     private String[] shuffle(String[] in) {
-        List<String> list = new ArrayList<String>(Arrays.asList(in));
+        List<String> list = new ArrayList<>(Arrays.asList(in));
         Collections.shuffle(list);
         return list.toArray(new String[0]);
     }
-
 }

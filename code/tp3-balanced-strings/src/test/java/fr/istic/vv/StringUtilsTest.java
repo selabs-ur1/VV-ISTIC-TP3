@@ -7,5 +7,26 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class StringUtilsTest {
 
+    @Test
+    void testEmptyString() {
+        assertTrue(isBalanced(""));
+    }
 
+    @Test
+    void testBalancedString() {
+        assertTrue(isBalanced("{[][]}({})"));
+        assertTrue(isBalanced("{[()]}"));
+    }
+
+    @Test
+    void testUnbalancedString() {
+        assertFalse(isBalanced("][, ([)], {, {(}{}"));
+        assertFalse(isBalanced("({)}"));
+    }
+
+    @Test
+    void testMixedStrings() {
+        assertTrue(isBalanced("{[()]}"));
+        assertFalse(isBalanced("][, ([)], {, {(}{}"));
+    }
 }
