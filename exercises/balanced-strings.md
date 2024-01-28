@@ -26,3 +26,63 @@ Use the project in [tp3-balanced-strings](../code/tp3-balanced-strings) to compl
 
 ## Answer
 
+1) The partitions identified are balanced string, unbalanced string and empty string leading to this set of input :
+
+|                  | Balanced | Unbalanced |
+|------------------|----------|------------|
+| Raw Input        |          |      )     |
+| With Depth       |   (())   |     ([)    |
+| With other Chars |     a    |     a(     |
+| With Parenthesis |    a()   |     a)     |
+| With Brackets    |    a[]   |     a[     |
+| With Braces      |    a{}   |     a{     |
+
+We didn't make all combination of this partitioning in our tests due to his size. 
+
+2) The path coverage is 100%, each line of code is executed at least one time by the test set. Nothing done in this step.
+
+3) By using the active clause coverage on the following code :
+```java
+            if(c == '{') {
+                groupingSymbolStack.push('}');
+            } else if(c == '[') {
+                groupingSymbolStack.push(']');      // A is "{([".contains(String.valueOf(c))
+            } else if(c == '(') {
+                groupingSymbolStack.push(')');
+            } else if (")]}".contains(String.valueOf(c))) {  // B is ")]}".contains(String.valueOf(c))
+                if(groupingSymbolStack.isEmpty()) {     p(x) with p() = isEmpty() and x = groupingSymbolStack 
+                    return false;
+                }
+                else {
+                    char last = groupingSymbolStack.pop();
+                    if (c != last) {    // C is c != last
+                        return false;
+                    }
+                }
+            }
+```
+
+Here we only look one iteration of the for loop to take an example. 
+
+We used Combinatorial Coverage to have this : 
+
+|   A   |   B   |   C   |  p(x) | A v (B ^ !(p(x) v C)) |
+|:-----:|:-----:|:-----:|:-----:|:---------------------:|
+|  true |  true |  true |  true |          true         |
+|  true |  true |  true | false |          true         |
+|  true |  true | false |  true |          true         |
+|  true |  true | false | false |          true         |
+|  true | false |  true |       |          true         |
+|  true | false | false |       |          true         |
+| false |  true |  true |  true |         false         |
+| false |  true |  true | false |         false         |
+| false |  true | false |  true |         false         |
+| false |  true | false | false |          true         |
+| false | false |  true |       |         false         |
+| false | false | false |       |         false         |
+
+4)  	Line coverage      : 94% 17/18 
+
+        Mutation Coverage  : 100% 
+
+The score is high enough, no need to add tests (last line to cover is only l.5 'public class StringUtils')

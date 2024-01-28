@@ -53,3 +53,107 @@ Use the project in [tp3-date](../code/tp3-date) to complete this exercise.
 
 ## Answer
 
+1) 
+|           | 31 days month | 30 days month | February   |
+|-----------|---------------|---------------|------------|
+| Last day  | 31/01/2023    | 30/04/2023    | 28/02/2023 |
+| Leap year | 01/01/2024    | 01/04/2024    | 01/02/2024 |
+
+| Characteristics |                | Blocks |    |                               |                     |    |       |
+|-----------------|----------------|--------|----|-------------------------------|---------------------|----|-------|
+|                 |                |   b1   | b2 | b3                            | b4                  | b5 | b6    |
+|        q1       | Value of year  | < 0    | 0  | valid leap year               | valid common year   |    |       |
+|        q2       | Value of month | < 0    | 0  | { 1, 3, 5, 7, 8, 10, 12}      | { 4, 6, 9, 11 }     | 2  | \> 12 |
+|        q3       | Value of day   | < 0    | 0  | \>= 1 and <= max(month, year) | \> max(month, year) |    |       |
+
+Common characteristics : 
+
+- q1 is common to isValidDate and isLeapYear
+- q2 & q3 are only in isValidDate
+
+2) By running the coverage we have added test for previousDate on a month when result should be 30/xx/xxxx
+
+```java
+    @Test
+    public void testPreviousDateToA30DaysMonth() {
+        Date date1 = new Date(1,5,2023);
+        Date date2 = new Date(30,4,2023);
+        assert(date2.compareTo(date1.previousDate()) == 0);
+    }
+```
+
+With this test we reach 100% coverage with IntelliJ built-in coverage tool.
+
+3) All my test respects Best Choice Coverage, no tests added
+
+4) Pitest report show me 40% coverage and on mutation. By checking 
+all mutation not covered or surviving, we have added :
+```java
+@Test
+public void testNextDateWithIntegerAddition() {
+        Date date = new Date(30, 12, 2023);
+        Date nextDate = date.nextDate();
+        assertEquals(31, nextDate.getDay());
+        }
+
+@Test
+public void testNextDateWithIncrementChange() {
+        Date date = new Date(31, 12, 2023);
+        Date nextDate = date.nextDate();
+        assertEquals(1, nextDate.getDay());
+        assertEquals(1, nextDate.getMonth());
+        assertEquals(2024, nextDate.getYear());
+        }
+
+@Test
+public void testNextDateNotNull() {
+        Date date = new Date(30, 12, 2023);
+        assertNotNull(date.nextDate());
+        }
+
+@Test
+public void testPreviousDateWithIntegerSubtraction() {
+        Date date = new Date(2, 1, 2023);
+        Date prevDate = date.previousDate();
+        assertEquals(1, prevDate.getDay());
+        }
+
+@Test
+public void testPreviousDateWithIncrementChange() {
+        Date date = new Date(1, 1, 2023);
+        Date prevDate = date.previousDate();
+        assertEquals(31, prevDate.getDay());
+        assertEquals(12, prevDate.getMonth());
+        assertEquals(2022, prevDate.getYear());
+        }
+
+@Test
+public void testPreviousDateNotNull() {
+        Date date = new Date(2, 1, 2023);
+        assertNotNull(date.previousDate());
+        }
+
+@Test
+public void testCompareToWithZeroReturnValue() {
+        Date date1 = new Date(1, 1, 2023);
+        Date date2 = new Date(1, 1, 2023);
+        assertEquals(0, date1.compareTo(date2));
+        }
+
+@Test
+public void testCompareToMutation() {
+        Date date1 = new Date(1, 1, 2023);
+        Date date2 = new Date(2, 2, 2024);
+        assertTrue(date1.compareTo(date2) != 0);
+        }
+
+@Test
+public void testPreviousDateNegatedToA31DaysMonth() {
+        Date date1 = new Date(1,5,2023);
+        Date date2 = new Date(1,4,2023);
+        assert(date2.compareTo(date1.previousDate()) < 0);
+        } 
+```
+
+Finally, we had 85% line coverage and 96% Mutation coverage, but 
+the last mutation surviving is false positive.
