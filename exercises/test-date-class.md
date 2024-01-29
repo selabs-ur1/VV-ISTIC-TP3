@@ -53,3 +53,29 @@ Use the project in [tp3-date](../code/tp3-date) to complete this exercise.
 
 ## Answer
 
+1.  
+    isValidDate() :
+        Test the invalidity and validity for each parameter (day/month/year)
+    
+    isLeapYear() :
+        check if it's a leap year or not.
+    
+    nextDate() :
+        Check the invalidity and validity of the date for parameter and return date
+        check the year transition
+        check the leap year case
+    previousDate() :
+        Check the invalidity and validity of the date for parameter and return date
+        check the year transition
+        check the leap year case
+    compareTo():
+        Check for each parameters the case different and equal.
+
+    The common characteristic to each method is the format of the date, the date need to be valid.
+    We can check nullPointerException for each method too
+
+2. The statement coverage is 92 % of lines.
+
+3. for IsValidDate() for example, there is three predicate in the same condition, so we can test edge possible case of this predicate. We add some test case with different possibilities with the parameters of the   function
+
+4. There is 79% of mutation coverage

@@ -25,4 +25,10 @@ Write below the actions you took on each step and the results you obtained.
 Use the project in [tp3-balanced-strings](../code/tp3-balanced-strings) to complete this exercise.
 
 ## Answer
+ 1.       System.out.println(isBalanced("{[][]}({})")); // balanced string with all characters
+        System.out.println(isBalanced("]["));         // not balanced string with the shortest length
+        System.out.println(isBalanced("([)]"));        // not balanced string with a bad order
+        System.out.println(isBalanced("{"));           // not balanced string with one character
+        System.out.println(isBalanced("test"));      // not balanced string
 
+2.

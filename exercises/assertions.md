@@ -11,3 +11,25 @@ Answer the following questions:
 4. In JUnit 4, an exception was expected using the `@Test` annotation, while in JUnit 5 there is a special assertion method `assertThrows`. In your opinion, what are the advantages of this new way of checking expected exceptions?
 
 ## Answer
+
+1. the expression : (* .4 == 1.2) has a result wich is approximative. we should test a range of values.
+
+2. assertEquals check the values of parameters and assertSame check the reference of the parameters.
+
+3. we can use fail to test uncomplete code or unimplemented code, for example :
+
+import org.junit.Test;
+import static org.junit.Assert.fail;
+
+public class CodeTest {
+
+    public void testIncompleteFeature() {
+        fail("Feature not yet implemented");
+
+        
+    }
+
+    // code implemented to test
+}
+
+4. assertThrow is specialized for testing exception and permit a better read of the test's code.

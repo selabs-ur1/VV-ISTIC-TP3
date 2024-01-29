@@ -14,4 +14,4 @@ Discuss the test smell you found with the help of PMD and propose here an improv
 Include the improved test code in this file.
 
 ## Answer
-
+I used the rule : JUnitTestContainsTooManyAsserts and i found a bad smell on a test file: the test was using too many assertion. A possible solution is to make another test for each assertion.
