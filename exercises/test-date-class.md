@@ -1,3 +1,7 @@
+Yoann Dewilde  
+Enora Danilo  
+M2 ILa - Groupe 1  
+
 # Test the Date class
 
 Implement a class `Date` with the interface shown below:
@@ -53,3 +57,74 @@ Use the project in [tp3-date](../code/tp3-date) to complete this exercise.
 
 ## Answer
 
+1. 
+
+### isDateValid :
+Il faut que l'année soit un entier positif et que :
+
+| Jour | Février | Janvier, Mars, Mai, Juillet, Aout, Octobre, Décembre | Avril, Juin, Septembre, Novembre |
+|:--------:|:-------:|:--------:|:--------:|
+| < 1 ou > 31 | x | x | x |
+| > 1 | v | v | v |
+| = 28 | v | v | v |
+| = 29 | si année bissextile | v | v |
+| = 30 | x | v | v |
+| = 31 | x | v | x |
+
+### isLeapYear :
+| Année | Bissextile |
+|:--------:|:-------:|
+|(year % 4 == 0 ∩ year % 100 != 0) ∪ (year % 400 == 0) | v |
+| sinon | x |
+
+### getNextDay :
+Toutes les caractéristiques de isDateValid sont valables ici.
+
+| Cas particuliers | entrée | sortie |
+| :-----------: | :-----------: | :-----------: | 
+| Dernier jour du mois | 31/01/2024 | 01/02/2024 |
+| Dernier jour du mois de février année bissextile | 28/02/2024 | 29/02/2024 |
+| Dernier jour du mois de février année non bissextile | 28/02/2023 | 01/03/2023 |
+| Dernier jour du mois de l'année | 31/12/2023 | 01/01/2024 |
+| Jour suivant | 05/08/2023 | 06/08/2024 |
+
+### getPreviousDay :
+Toutes les caractéristiques de isDateValid sont valables ici.
+
+| Cas particuliers | entrée | sortie |
+| :-----------: | :-----------: | :-----------: | 
+| Premier jour du mois | 01/02/2024 | 31/01/2024 |
+| Premier jour du mois de février année bissextile | 01/03/2024 | 29/02/2024 |
+| Premier jour du mois de février année non bissextile | 01/03/2023 | 28/02/2023 |
+| Premier jour du mois de l'année | 01/01/2024 | 31/12/2023 |
+| Jour précédent | 06/08/2024 | 05/08/2023 |
+
+### compareTo :
+Toutes les caractéristiques de isDateValid sont valables ici.
+
+| d1.compareTo(d2) | sortie |
+| :-----------: | :-----------: | 
+| d2 == null | nullPointerException |
+| d1 == d2 | 0 |
+| d1.year < d2.year | -1 |
+| d1.month < d2.month (et même année) | -1 | 
+| d1.day < d2.day (et même année et même mois) | -1 |
+| d1.year > d2.year | 1 |
+| d1.month > d2.month (et même année) | 1 | 
+| d1.day > d2.day (et même année et même mois) | 1 |
+
+2. et 3. Voici la couverture des tests que nous avons décrit précédement.
+![Alt text](image-5.png)
+
+Pour ce faire, nous avons écrit nos tests avec Junit puis utilisé **Run 'la classe de test' with Coverage**. 
+Nous pouvons voir que certaines lignes ne sont pas testées. En effet, les cas d'une année invalide, d'un mois invalide et d'une inégalité de dates ne sont pas testés.
+
+![Alt text](image-2.png)
+![Alt text](image-3.png)
+![Alt text](image-4.png)
+
+Après avoir ajouté les tests nécéssaires, toutes les lignes du code sont testées. Nous avons également ajouté les tests permettant de satisfaire le *Base Choice Coverage*.
+![Alt text](image-7.png)
+
+4. 
+![Alt text](image-6.png)
