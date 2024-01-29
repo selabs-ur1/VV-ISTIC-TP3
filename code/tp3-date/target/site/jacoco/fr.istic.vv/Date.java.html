@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Date.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">tp3-date</a> &gt; <a href="index.source.html" class="el_package">fr.istic.vv</a> &gt; <span class="el_source">Date.java</span></div><h1>Date.java</h1><pre class="source lang-java linenums">package fr.istic.vv;
+
+import java.io.IOException;
+
+class Date implements Comparable&lt;Date&gt; {
+
+    private int day;
+    private int month;
+    private int year;
+
+<span class="fc" id="L11">    public Date(int day, int month, int year) throws IOException { </span>
+<span class="fc bfc" id="L12" title="All 2 branches covered.">        if(!isValidDate(day, month, year)) {</span>
+<span class="fc" id="L13">            throw new IOException(&quot;Date is not valid&quot;);</span>
+        }
+
+<span class="fc" id="L16">        this.day = day;</span>
+<span class="fc" id="L17">        this.month = month;</span>
+<span class="fc" id="L18">        this.year = year;</span>
+<span class="fc" id="L19">    }</span>
+
+    public static boolean isValidDate(int day, int month, int year) {
+<span class="fc bfc" id="L22" title="All 2 branches covered.">        if (day &lt;= 0){</span>
+<span class="fc" id="L23">            return false;</span>
+        }
+<span class="fc bfc" id="L25" title="All 4 branches covered.">        switch (month) {</span>
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+<span class="fc bfc" id="L33" title="All 2 branches covered.">                return day &lt;= 31;</span>
+            case 2:
+<span class="fc bfc" id="L35" title="All 6 branches covered.">                return (isLeapYear(year) ? day &lt;= 29 : day &lt;= 28);</span>
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+<span class="fc bfc" id="L40" title="All 2 branches covered.">                return day &lt;= 30;</span>
+            default:
+<span class="fc" id="L42">                return false;</span>
+        }
+    }
+
+    public static boolean isLeapYear(int year) { 
+<span class="fc bfc" id="L47" title="All 6 branches covered.">        return ((year%4 == 0 &amp;&amp; year%100 != 0) || year%400 == 0);</span>
+    }
+
+    public Date nextDate() throws IOException { 
+<span class="fc bfc" id="L51" title="All 2 branches covered.">        if(isValidDate(this.day+1, this.month, this.year)){</span>
+<span class="fc" id="L52">            return new Date(this.day+1, this.month, this.year);</span>
+        }
+<span class="fc bfc" id="L54" title="All 2 branches covered.">        else if(isValidDate(1, this.month+1, this.year)) {</span>
+<span class="fc" id="L55">            return new Date(1, this.month+1, this.year);</span>
+        }
+        else {
+<span class="fc" id="L58">            return new Date(1, 1, this.year+1);</span>
+        }
+     }
+
+    public Date previousDate() throws IOException {
+        
+<span class="fc bfc" id="L64" title="All 2 branches covered.">        if(this.day != 1){</span>
+<span class="fc" id="L65">            return new Date(this.day-1, this.month, this.year);</span>
+        }
+<span class="fc bfc" id="L67" title="All 2 branches covered.">        else if(this.month != 1){</span>
+<span class="fc" id="L68">            int day = 31;</span>
+<span class="fc bfc" id="L69" title="All 3 branches covered.">            switch (month-1) {</span>
+                case 2:
+<span class="fc bfc" id="L71" title="All 2 branches covered.">                    day = (isLeapYear(year) ? 29 : 28);</span>
+<span class="fc" id="L72">                    break;</span>
+                case 4:
+                case 6:
+                case 9:
+                case 11:
+<span class="fc" id="L77">                    day = 30;</span>
+                    break;
+            }
+<span class="fc" id="L80">            return new Date(day, this.month-1, this.year);</span>
+        }
+        else {
+<span class="fc" id="L83">            return new Date(31, 12, this.year-1);</span>
+        }
+    }
+
+    public int compareTo(Date other) {
+
+        // year comparaison
+<span class="fc bfc" id="L90" title="All 2 branches covered.">        if(this.year &gt; other.year){</span>
+<span class="fc" id="L91">            return 1;</span>
+        }
+<span class="fc bfc" id="L93" title="All 2 branches covered.">        else if(this.year &lt; other.year) {</span>
+<span class="fc" id="L94">            return -1;</span>
+        }
+
+        // month comparaison
+<span class="fc bfc" id="L98" title="All 2 branches covered.">        if(this.month &gt; other.month){</span>
+<span class="fc" id="L99">            return 1;</span>
+        }
+<span class="fc bfc" id="L101" title="All 2 branches covered.">        else if(this.month &lt; other.month) {</span>
+<span class="fc" id="L102">            return -1;</span>
+        }
+
+        // day comparaison
+<span class="fc bfc" id="L106" title="All 2 branches covered.">        if(this.day &gt; other.day){</span>
+<span class="fc" id="L107">            return 1;</span>
+        }
+<span class="fc bfc" id="L109" title="All 2 branches covered.">        else if(this.day &lt; other.day) {</span>
+<span class="fc" id="L110">            return -1;</span>
+        }
+
+<span class="fc" id="L113">        return 0; </span>
+    }
+
+    @Override
+    public boolean equals(Object obj){
+<span class="fc bfc" id="L118" title="All 2 branches covered.">        if(obj == null) {</span>
+<span class="fc" id="L119">            return false;</span>
+        }
+
+<span class="fc bfc" id="L122" title="All 2 branches covered.">        if(obj.getClass() != this.getClass()){</span>
+<span class="fc" id="L123">            return false;</span>
+        }
+
+<span class="fc" id="L126">        Date other = (Date) obj;</span>
+
+<span class="fc" id="L128">        return (</span>
+<span class="fc bfc" id="L129" title="All 2 branches covered.">            this.day == other.day &amp;&amp;</span>
+<span class="fc bfc" id="L130" title="All 2 branches covered.">            this.month == other.month &amp;&amp;</span>
+<span class="fc bfc" id="L131" title="All 2 branches covered.">            this.year == other.year</span>
+        );
+    }
+
+    @Override
+    public String toString() {
+<span class="fc" id="L137">        return &quot;Date [day=&quot; + day + &quot;, month=&quot; + month + &quot;, year=&quot; + year + &quot;]&quot;;</span>
+    }
+
+    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>

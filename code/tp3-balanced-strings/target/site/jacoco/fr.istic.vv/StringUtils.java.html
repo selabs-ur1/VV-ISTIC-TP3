@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>StringUtils.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">tp3-balanced-strings</a> &gt; <a href="index.source.html" class="el_package">fr.istic.vv</a> &gt; <span class="el_source">StringUtils.java</span></div><h1>StringUtils.java</h1><pre class="source lang-java linenums">package fr.istic.vv;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Stack;
+
+public class StringUtils {
+
+    private StringUtils() {}
+
+    public static boolean isBalanced(String str) {
+
+<span class="fc" id="L13">        List&lt;Character&gt; openSymbols = Arrays.asList('(', '[', '{');</span>
+<span class="fc" id="L14">        List&lt;Character&gt; closeSymbols = Arrays.asList(')', ']', '}');</span>
+<span class="fc" id="L15">        Stack&lt;Character&gt; opened = new Stack&lt;&gt;();</span>
+
+<span class="fc bfc" id="L17" title="All 2 branches covered.">        for(int i=0; i&lt;str.length(); i++) {</span>
+<span class="fc" id="L18">            char character = str.charAt(i);</span>
+            
+<span class="fc bfc" id="L20" title="All 2 branches covered.">            if(openSymbols.contains(character)) {</span>
+                // add character to opened stack
+<span class="fc" id="L22">                opened.add(character);</span>
+<span class="fc" id="L23">            }</span>
+
+<span class="fc bfc" id="L25" title="All 2 branches covered.">            else if(closeSymbols.contains(character)) {</span>
+<span class="fc bfc" id="L26" title="All 2 branches covered.">                if(opened.isEmpty()){</span>
+<span class="fc" id="L27">                    return false;</span>
+                }
+
+                // remove character to opened stack
+<span class="fc" id="L31">                char lastOpened = opened.pop();</span>
+<span class="fc bfc" id="L32" title="All 2 branches covered.">                if(openSymbols.indexOf(lastOpened) != closeSymbols.indexOf(character)){</span>
+<span class="fc" id="L33">                    return false;</span>
+                }
+            }
+        }
+
+<span class="fc" id="L38">        return opened.isEmpty();</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>

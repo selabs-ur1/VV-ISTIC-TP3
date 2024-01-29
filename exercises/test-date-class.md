@@ -53,3 +53,60 @@ Use the project in [tp3-date](../code/tp3-date) to complete this exercise.
 
 ## Answer
 
+1.
+Here's are the test cases :
+ - toString
+    - no specific date
+ - equals
+    - date and null
+    - date and not date object
+    - different dates
+    - same date
+ - Constructor
+    - Invalid date creation
+    - Valide date creation
+ - isValidDate
+    - day = 0
+    - a negative month
+    - month = 0
+    - a month > 12
+    - For each month : day too small / day too high / valid day
+    - For month 2 : day 29 on a leap and on a non leap year
+ - isLeapYear
+    - year divisable by 4
+    - year divisable by 100 and by 400
+    - year divisable by 100 and not by 400
+ - nextDate
+    - staying in same month
+    - new month
+    - new year
+ - previousDate
+    - staying in same month
+    - new month with 31 days
+    - new month with 30 days
+    - month 2 and leap year
+    - month 2 and not leap year
+    - new year
+ - compareTo
+    - date equals
+    - same month & year but day before
+    - same month & year but day after
+    - same year but month before
+    - same year but month after
+    - year before
+    - year after
+
+2.
+The statement coverage is 100%.
+No new tests case have been added, coverage report can be generate with the command `mvn jacoco:prepare-agent test install jacoco:report` from the directory `/code/tp3-date`.
+The coverage report is available [here](http://127.0.0.1:3000/code/tp3-date/target/site/jacoco/index.html).
+
+3.
+There isn't any predicate that uses more than two boolean operators in the code.
+
+4.
+PIT report can be generated with the command `mvn test-compile org.pitest:pitest-maven:mutationCoverage` from the directory `/code/tp3-date`.
+The is PIT report is available [here](http://127.0.0.1:3000/code/tp3-date/target/pit-reports/202401141612/fr.istic.vv/index.html).
+The mutation score is 100%, 75 mutants were created, and the all have been killed.
+A more detailed report is available [here](http://127.0.0.1:3000/code/tp3-date/target/pit-reports/202401141612/fr.istic.vv/Date.java.html), it show the life cycle of the mutants.
+No new tests case have been added.

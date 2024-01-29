@@ -15,3 +15,20 @@ Include the improved test code in this file.
 
 ## Answer
 
+We used this command to check test smell:
+
+```pmd check -d D:\Downloads\commons-math-master -R category/java/errorprone.xml -r result.html```
+
+Here, pmd found a violation : 
+
+```D:\Downloads\commons-math-master\commons-math-master\commons-math-legacy-core\src\test\java\org\apache\commons\math4\legacy\core\MathArraysTest.java:336: AvoidDuplicateLiterals: The String literal "Expecting NullPointerException" appears 4 times in this file; the first occurrence is on line 336 ```
+
+And the code is : 
+```
+try {
+            MathArrays.checkPositive(nullArray);
+            Assert.fail("Expecting NullPointerException");
+        }
+```
+
+The string should be defined somewhere and not overwritten.
