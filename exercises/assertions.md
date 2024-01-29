@@ -13,16 +13,16 @@ Answer the following questions:
 ## Answer
 
 1)
-Flottant donc faut regarder une fouchette genre 1.2 cest 1.2000000003
-? Sortir le calcul de l'oracle ?
+Il s'agit d'un flottant donc afin de correctemment vérifier l'égalité, il faut tester une fourchette car 1.2 peut être égale à 1.2000000003.
 
 2)
-assertEquals = vérifie les datas des objets
-assertSame = vérifie la référence
+assertEquals permet de vérifier les données membres des objets
+assertSame permet de vérifier l'égalité des références
 
 3)
 'fail' est utile pour récupérer une exception particuliere.
-?    Use fail in conjunction with a try-catch block to explicitly indicate that an expected exception was not thrown when it should have been. ?
+
+Il est possible d'utiliser 'fail' en conjonction avec un bloc try-catch pour indiquer explicitement qu'une excepetion attendue n'a pas été levée alors qu'elle aurait dû l'être.
 ```
 @Test
 public void testExceptionHandling() {
@@ -38,7 +38,6 @@ public void testExceptionHandling() {
 ```
 
 4)
-- c'est plus clair, simple
-- Support les lambdas
+De notre point de vue, ce changement permet de la clarté ainsi que de la simplicité. De plus, cette nouvelle approche support les lambdas.
 
 
