@@ -15,10 +15,14 @@ Include the improved test code in this file.
 
 ## Answer
 
-JUnitTestsShouldIncludeAssert.md
-UnnecessaryBooleanAssertion.md
-JUnitTestContainsTooManyAsserts.md
+Nous avons retrouvé 3 règles vu en cours :
 
+- JUnitTestsShouldIncludeAssert.md
+- UnnecessaryBooleanAssertion.md
+- JUnitTestContainsTooManyAsserts.md
+
+Voici nos tests effectués sur PMD.
+ 
 ![image](https://github.com/TDerudder/VV-ISTIC-TP3/assets/113186590/7343389f-1091-444d-8065-4c531fa3e1c6)
 
 Code source : 
