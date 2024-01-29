@@ -26,3 +26,29 @@ Use the project in [tp3-balanced-strings](../code/tp3-balanced-strings) to compl
 
 ## Answer
 
+| Characteristics | Blocks      |                    |                                        |                            |                          |                    |
+| --------------- | ----------- | ------------------ | -------------------------------------- | -------------------------- | ------------------------ | ------------------ |
+|                 | b1          | b2                 | b3                                     | b4                         | b5                       | b6                 |
+| Input           | Empty       | Odd number of char | Contains a not opening or closing char | Starting with closing char | Ending with opening char | Valid balanced string |
+
+| Input      | Blocks     |
+| ---------- | ---------- |
+| ` `        | b1         |
+| `{}}`      | b2         |
+| `a`        | b2 b3      |
+| `)(`       | b4 b5      |
+| `][[]`     | b4         |
+| `())(`     | b5         |
+| `()`       | b6         |
+| `[{}({})]` | b6         |
+| `[{}]()`   | b6         |
+
+For each statement above, there's a Unit test (see class `StringUtilsTest.java`), and some more for testing an other method created.
+
+First results with PIT:
+74% Line Coverage
+69% Mutation Coverage
+
+PIT results after adding test for `getBalancingChar()`:
+95% Line Coverage
+92% Mutation Coverage

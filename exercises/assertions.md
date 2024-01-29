@@ -11,3 +11,15 @@ Answer the following questions:
 4. In JUnit 4, an exception was expected using the `@Test` annotation, while in JUnit 5 there is a special assertion method `assertThrows`. In your opinion, what are the advantages of this new way of checking expected exceptions?
 
 ## Answer
+
+1. Operations on float are not the same as operations on real numbers. Floats approximate number and introduce precision errors and `3 * 0.4` might be equals to 1.20000…1 for example, which not equals to 1.2. To check the actual equality between float you could verify if the absolute value of the subtraction is lower than a value that is the acceptable difference :
+
+```java
+assertTrue(Math.abs(1.2 - (3 * 0.4) < 0.000001));
+```
+
+2. assertEquals check if the objects are equals according to their equals method, assertSame check if the objets have the same references.
+
+3. We can use fail method to ensure that test we haven’t implement yet don’t pass, so when we try to run our test we don’t forget to implement them the other reason is that we can specify why the test fail, so it is easier to understand what went wrong.
+
+4. In my opinion the main advantage is that we can easily test our custom Exception in our methods.

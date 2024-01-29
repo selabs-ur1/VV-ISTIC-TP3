@@ -53,3 +53,62 @@ Use the project in [tp3-date](../code/tp3-date) to complete this exercise.
 
 ## Answer
 
+`isValidDate()`
+| Characteristics |       | Blocks |    |                             |                    |    |      |
+| --------------- | ----- | ------ | -- | --------------------------- | ------------------ | -- | ---- |
+|                 |       | b1     | b2 | b3                          | b4                 | b5 | b6   |
+| q1              | day   | < 0    | 0  | >= 1 and < max(month, year) | > max(month, year) |    |      |
+| q2              | month | < 0    | 0  | 1, 3, 5, 7, 8, 10, 12       | 4, 6, 9, 11        | 2  | > 12 |
+| q3              | year  | < 0    | 0  | valid leap year             | valid common year  |    |      |
+
+| Inputs                           | Blocks           |
+| -------------------------------- | ---------------- |
+| { day: 1, month: 1, year: -1}    | q1b1, q2b3, q3b3 |
+| { day: -1, month: -1, year: 0}   | q1b2, q2b1, q3b1 |
+| { day: 0, month: 4, year: 2020}  | q1b3, q2b4, q3b2 |
+| { day: -2, month: 0, year: 2019} | q1b4, q2b2, q3b1 |
+| { day: 29, month: 2, year: 2019} | q1b3, q2b5, q3b4 |
+| { day: 0, month: 13, year: 2018} | q1b4, q2b6, q3b2 |
+
+`isLeapYear()`
+
+| Characteristics |       | Blocks       |                 |                  |                  |
+| --------------- | ----- | ------------ | --------------- | ---------------- | ---------------- |
+|                 |       | b1           | b2              | b3               | b4               |
+| q1              | year  | prime number | divisible by 4  | divisible by 100 | divisible by 400 |
+
+| Inputs | Blocks           |
+| ------ | ---------------- |
+| 13     | q1b1             |
+| 0      | q1b2, q1b3, q1b4 |
+| 1900   | q1b2, q1b3       |
+| 4      | q1b2             |
+| 2000   | q1b2, q1b3, q1b4 |
+
+`nextDate() / previousDate()`
+
+| Characteristics |       | Blocks          |                                 |                  |
+| --------------- | ----- | --------------- | ------------------------------- | ---------------- |
+|                 |       | b1              | b2                              | b3               |
+| q1              | day   | 1               | >= 1 and <= max(month, year)    | max(month, year) |
+| q2              | month | 1               | 2, 3, 4, 5, 6, 7, 8, 9, 10, 11  | 12               |
+| q3              | year  | valid leap year | valid common year               |                  |
+
+| Inputs                            | Blocks           |
+| --------------------------------- | ---------------- |
+| { day: 1, month: 6, year: 2000}   | q1b1, q2b2, q3b1 |
+| { day: 1, month: 12, year: 2001}  | q1b1, q2b3, q3b2 |
+| { day: 1, month: 1, year: 2000}   | q1b1, q2b1, q3b1 |
+| { day: 31, month: 1, year: 2001}  | q1b3, q2b1, q3b2 |
+| { day: 30, month: 4, year: 2000}  | q1b3, q2b2, q3b1 |
+| { day: 31, month: 12, year: 2001} | q1b3, q2b3, q3b2 |
+| { day: 28, month: 2, year: 2000}  | q1b3, q2b2, q3b1 |
+| { day: 28, month: 2, year: 2001}  | q1b3, q2b2, q3b2 |
+| { day: 1, month: 3, year: 2000}   | q1b1, q2b2, q3b1 |
+| { day: 1, month: 3, year: 2001}   | q1b1, q2b2, q3b2 |
+| { day: 20, month: 2, year: 2000}  | q1b2, q2b2, q3b1 |
+| { day: 20, month: 12, year: 2001} | q1b2, q2b3, q3b2 |
+
+PIT results:
+98% Line Coverage
+91% Mutation Coverage
