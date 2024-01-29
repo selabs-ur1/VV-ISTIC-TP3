@@ -53,3 +53,117 @@ Use the project in [tp3-date](../code/tp3-date) to complete this exercise.
 
 ## Answer
 
+1/
+
+- Method: Date(d, m, y)
+
+| Characteristics | Block |
+| :--: | :--: |
+| Date(d, m, y) | isValidDate(d, m, y) == true |
+
+- Method: isValidDate(d, m, y)
+
+| Characteristics | Block |
+| :--: | :--: |
+| Day d | if **(isLeapYear and febrery)** then d=[1;29] <br>else if **(!isLeapYear ane !febrery)** then d=[1;28]<br>else d=[1; lastDayPerMonth[m]] |
+| Month m | m=[1;12] |
+| Year y | y>0 |
+ 
+- Method: isLeapYear(y)
+
+| Characteristics | Block |
+| :--: | :--: |
+| isLeapYear(y) | (y % 4 == 0 && y % 100 != 0) \|\| (y % 400 == 0) |
+
+2/ 3/
+
+![](img/image-1.png)
+
+![](img/image-2.png)
+
+The only two uncovered lines are the validity checks for the new dates in `nextDate` and `previousDate`.
+
+We managed to cover the validation in the case of `previousDate` with this test:
+
+```java
+@Test  
+void testPreviousDateInvalidPreviousDay() {  
+    Date date = new Date(1, 1, 0);  
+    assertThrows(IllegalStateException.class, date::previousDate);  
+}
+```
+
+We did not succeed in doing the same with `nextDate()` because there is no upper bound for the 'year' attribute, so we cannot make dates invalid. 
+
+So we removed the isValidDate() check.
+
+4/
+
+```
+/================================================================================
+- Mutators
+================================================================================
+> org.pitest.mutationtest.engine.gregor.mutators.BooleanTrueReturnValsMutator
+>> Generated 6 Killed 4 (67%)
+> KILLED 4 SURVIVED 2 TIMED_OUT 0 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 0 
+--------------------------------------------------------------------------------
+> org.pitest.mutationtest.engine.gregor.mutators.EmptyObjectReturnValsMutator
+>> Generated 3 Killed 0 (0%)
+> KILLED 0 SURVIVED 3 TIMED_OUT 0 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 0 
+--------------------------------------------------------------------------------
+> org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator
+>> Generated 13 Killed 7 (54%)
+> KILLED 7 SURVIVED 6 TIMED_OUT 0 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 0 
+--------------------------------------------------------------------------------
+> org.pitest.mutationtest.engine.gregor.mutators.IncrementsMutator
+>> Generated 4 Killed 4 (100%)
+> KILLED 4 SURVIVED 0 TIMED_OUT 0 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 0 
+--------------------------------------------------------------------------------
+> org.pitest.mutationtest.engine.gregor.mutators.NullReturnValsMutator
+>> Generated 3 Killed 3 (100%)
+> KILLED 3 SURVIVED 0 TIMED_OUT 0 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 0 
+--------------------------------------------------------------------------------
+> org.pitest.mutationtest.engine.gregor.mutators.MathMutator
+>> Generated 5 Killed 3 (60%)
+> KILLED 3 SURVIVED 2 TIMED_OUT 0 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 0 
+--------------------------------------------------------------------------------
+> org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator
+>> Generated 29 Killed 28 (97%)
+> KILLED 28 SURVIVED 1 TIMED_OUT 0 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 0 
+--------------------------------------------------------------------------------
+> org.pitest.mutationtest.engine.gregor.mutators.PrimitiveReturnsMutator
+>> Generated 3 Killed 1 (33%)
+> KILLED 1 SURVIVED 0 TIMED_OUT 0 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 2 
+--------------------------------------------------------------------------------
+================================================================================
+- Timings
+================================================================================
+> scan classpath : < 1 second
+> coverage and dependency analysis : 2 seconds
+> build mutation tests : < 1 second
+> run mutation analysis : 6 seconds
+--------------------------------------------------------------------------------
+> Total  : 9 seconds
+--------------------------------------------------------------------------------
+================================================================================
+- Statistics
+================================================================================
+>> Generated 66 mutations Killed 50 (76%)
+>> Ran 156 tests (2.36 tests per mutation)
+```
