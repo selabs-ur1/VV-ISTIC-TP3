@@ -12,14 +12,16 @@ public class TLSSocketFactory {
         String[] enabled = socket.getEnabledProtocols();
 
 
-        List<String> target = new ArrayList<String>();
+        List<String> target = new ArrayList<>();
         if (supported != null) {
             // Append the preferred protocols in descending order of preference
             // but only do so if the protocols are supported
             TLSProtocol[] values = TLSProtocol.values();
-            for (int i = 0; i < values.length; i++) {
-                final String pname = values[i].getProtocolName();
-                if (existsIn(pname, supported)) {
+            for (TLSProtocol value : values)
+            {
+                final String pname = value.getProtocolName();
+                if (existsIn(pname, supported))
+                {
                     target.add(pname);
                 }
             }
@@ -35,7 +37,7 @@ public class TLSSocketFactory {
             }
         }
 
-        if (target.size() > 0) {
+        if (!target.isEmpty()) {
             String[] enabling = target.toArray(new String[target.size()]);
             socket.setEnabledProtocols(enabling);
         }

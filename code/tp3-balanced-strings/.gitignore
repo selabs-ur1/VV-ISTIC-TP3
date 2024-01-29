@@ -1,0 +1,7 @@
+.idea
+tp3-balanced-strings.iml
+target/classes
+target/generated-sources
+target/generated-test-sources
+target/report
+target/test-classes

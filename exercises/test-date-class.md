@@ -53,3 +53,101 @@ Use the project in [tp3-date](../code/tp3-date) to complete this exercise.
 
 ## Answer
 
+1. caractéristiques des tests effectués
+- Méthode `isValidDate()` :
+    * Test de le méthode avec des dates valides avec le premier jour de l'année, le dernier jour de l'année, des années positives et négatives et un 29 février d'une année bissextile.
+    * Test de la méthode avec des dates non valides telles qu'un 32 janvier, un 29 février d'une année non bissextile ainsi qu'une date avec pour jour et mois un 0.
+
+- Méthode `isLeapYear()` :
+    * Test avec une année bissextile et une année non-bissextile.
+
+- Méthode `nextYear()` :
+    * Test avec une date à la fin de l'année.
+    * Test avec un 28 février d'une année non-bissextile.
+
+- Méthode `previousYear()` :
+    * Test avec une date au début de l'année.
+    * Test avec un 1 mars d'une année bissextile.
+
+- Méthode `compareTo()` :
+    * Test dates supérieures, égales et inférieures avec des différences pendant sur l'année, le mois ou le jour. 
+
+2. Résultat des test de couverture avec les tests initiaux :
+
+![résultat test coverage](<images/coverage date.png>)
+
+Avec une couverture à 100% avec les tests initiaux, il n'y a pas besoin d'ajouter de nouveaux tests.
+
+3. Ajouts de tests pour satisfaire le Base Choice Coverage pour les méthodes `isValidDate()` et `isLeapYear()` :
+
+```java
+@Test
+void testBCCIsValidDate() {
+    assertFalse(Date.isValidDate(-1, 1, 1));
+    assertFalse(Date.isValidDate(1, -1, 1));
+    assertFalse(Date.isValidDate(1, 13, 1));
+}
+
+@Test
+void testBCCLeapYear() {
+    assertTrue(Date.isLeapYear(2020));
+    assertFalse(Date.isLeapYear(2100));
+    assertTrue(Date.isLeapYear(2000));
+    assertTrue(Date.isLeapYear(2024));
+    assertFalse(Date.isLeapYear(2021));
+}
+```
+
+4. Résultats des tests de mutation Pitest avec les tests initiaux :
+
+![](<images/pitest date.png>)
+
+Les mutants survivants : 
+
+![](<images/pitest date survivants.png>)
+
+Expliquation des mutants :
+- Changed conditional boundary : Pitest remplace les `>` par des `>=` et les `<` par des `<=`. Pour qu'un test puisse tuer un mutant dans ce cas, il faut donc un test qui qui tombe sur la valeur qui correspond au `=0`.
+- Replaced integer substraction with addition : Pitest change le `-` en `+` dans la méthode `compareTo()`. Pour tuer ce mutant, il faut faire un test dans lequel le mois de la date que l'on compare soit supérieur au mois de la date initiale.
+
+Pour obtenir un meilleur résultat aux tests de mutation, les tests suivants ont été ajoutés : 
+```java 
+@Test
+void testPitNextDate() {
+    Date date = new Date(29, 11, 2021);
+    Date nextDate = date.nextDate();
+    assertEquals(30, nextDate.getDay());
+    assertEquals(11, nextDate.getMonth());
+    assertEquals(2021, nextDate.getYear());
+
+    nextDate = nextDate.nextDate();
+    assertEquals(1, nextDate.getDay());
+    assertEquals(12, nextDate.getMonth());
+    assertEquals(2021, nextDate.getYear());
+}
+
+@Test
+void testPitPreviousDate() {
+    Date date = new Date(2, 2, 2021);
+    Date previousDate = date.previousDate();
+    assertEquals(1, previousDate.getDay());
+    assertEquals(2, previousDate.getMonth());
+    assertEquals(2021, previousDate.getYear());
+
+    previousDate = previousDate.previousDate();
+    assertEquals(31, previousDate.getDay());
+    assertEquals(1, previousDate.getMonth());
+    assertEquals(2021, previousDate.getYear());
+}
+
+@Test
+void testPitCompareTo() {
+    Date date = new Date(1, 6, 2021);
+    assertTrue(date.compareTo(new Date(1, 7, 2021)) < 0);
+}
+```
+
+
+Résultats des tests de mutation Pitest après améliorations : 
+
+![](<images/pitest date amélioration.png>)
