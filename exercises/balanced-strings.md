@@ -26,3 +26,20 @@ Use the project in [tp3-balanced-strings](../code/tp3-balanced-strings) to compl
 
 ## Answer
 
+Authors: Dufeil Jaufret & Gentile Brian
+
+1. We can split the test cases in multiple partitions:
+
+    - balanced strings: strings with balanced symbols
+
+    - unbalanced strings: strings with unbalanced symbols 
+
+    - mix of both: strings with balanced and unbalanced symbols
+
+    - strings with only one type of symbols: simplify tests and test the most basic test
+
+2. Specific cases not tested, coverage = 92%. Needed to add 2 more tests. We looked at the coverage to see where the program didn't go and figured it was because of some conditions so we added tests which go through those conditions.
+
+3. 6 tests added. Since it was || conditions, we did a test for each condition inside the if.
+
+4. 93% mutation score with 1 live mutants. We had to add another test to check the last condition of the function. We re-ran PIT and we had 100% mutation score and all mutants were killed.

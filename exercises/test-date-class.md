@@ -53,3 +53,78 @@ Use the project in [tp3-date](../code/tp3-date) to complete this exercise.
 
 ## Answer
 
+Authors: Dufeil Jaufret & Gentile Brian
+
+1.
+Method: Date(int day, int month, int year)
+Characteristics:
+
+Valid day: 1 to 31
+Valid month: 1 to 12
+Valid year: A valid range (e.g., from 0 to some future year)
+
+
+ 
+Method: isValidDate(int day, int month, int year)
+Characteristics:
+
+Valid day: 1 to 31
+Valid month: 1 to 12
+Valid year: A valid range (e.g., from 0 to some future year)
+
+
+ 
+Method: isLeapYear(int year)
+Characteristics:
+
+Leap year: A year divisible by 4 but not by 100 unless it's also divisible by 400
+
+
+ 
+Method: nextDate()
+This method generates the next date, so the characteristics for valid days, months, and years will be the same as identified in the Date constructor and isValidDate method.
+
+
+ 
+Method: previousDate()
+This method generates the previous date, so the characteristics for valid days, months, and years will be the same as identified in the Date constructor and isValidDate method.
+
+
+ 
+Method: compareTo(Date other)
+Characteristics:
+
+Null comparison: Test for handling NullPointerException.
+Comparison with another date: Test for greater than, less than, and equal scenarios.
+
+2.
+I got 75% coverage, so to improve this result, I made new tests to cover the code not tested.
+
+3.
+  I got this predicat so I tested all the possibilities.
+
+if (month == 4  month == 6  month == 9  month == 11) {
+
+
+4.
+I tested the PIT and I got this report for the IsLeapYear function : 
+
+    public static boolean isLeapYear(int year) {
+        return (year % 4 == 0 && year % 100 != 0)  (year % 400 == 0);
+    }
+
+replaced boolean return with true for fr/istic/vv/Date::isLeapYear → KILLED
+Replaced integer modulus with multiplication → KILLED
+Replaced integer modulus with multiplication → SURVIVED
+Replaced integer modulus with multiplication → KILLED
+negated conditional → KILLED
+negated conditional → KILLED
+negated conditional → KILLED
+
+I tried to make the opposite of the function to be sure that the survived test isn't an error.
+
+    public static boolean notIsLeapYear(int year) {
+        return (year * 4 != 0 || year * 100 == 0) && (year * 400 != 0);
+    }
+
+I made the same tests than on the real one and all test passed so this is just an exception for the cases I used for my tests.
