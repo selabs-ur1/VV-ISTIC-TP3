@@ -15,3 +15,91 @@ Include the improved test code in this file.
 
 ## Answer
 
+Command run:
+```bash
+pmd check -d commons-collections/src/test/ -R bestpractices.xml/JUnitTestContainsTooManyAsserts
+```
+
+Problem:
+```java
+   @Test
+    public void testComparatorChainOnMinValuedComparator() {
+        // -1 * Integer.MIN_VALUE is less than 0,
+        // test that ComparatorChain handles this edge case correctly
+        final ComparatorChain<Integer> chain = new ComparatorChain<>();
+        chain.addComparator((a, b) -> {
+            final int result = a.compareTo(b);
+            if (result < 0) {
+                return Integer.MIN_VALUE;
+            }
+            if (result > 0) {
+                return Integer.MAX_VALUE;
+            }
+            return 0;
+        }, true);
+
+        assertTrue(chain.compare(4, 5) > 0);
+        assertTrue(chain.compare(5, 4) < 0);
+        assertEquals(0, chain.compare(4, 4));
+    }
+```
+
+Here is a solution to avoid the bad smell:
+```java
+   @Test
+    public void testComparatorChainOnMinValuedComparatorInfSup() {
+        // -1 * Integer.MIN_VALUE is less than 0,
+        // test that ComparatorChain handles this edge case correctly
+        final ComparatorChain<Integer> chain = new ComparatorChain<>();
+        chain.addComparator((a, b) -> {
+            final int result = a.compareTo(b);
+            if (result < 0) {
+                return Integer.MIN_VALUE;
+            }
+            if (result > 0) {
+                return Integer.MAX_VALUE;
+            }
+            return 0;
+        }, true);
+
+        assertTrue(chain.compare(4, 5) > 0);
+    }
+    
+    @Test
+    public void testComparatorChainOnMinValuedComparatorSupInf() {
+        // -1 * Integer.MIN_VALUE is less than 0,
+        // test that ComparatorChain handles this edge case correctly
+        final ComparatorChain<Integer> chain = new ComparatorChain<>();
+        chain.addComparator((a, b) -> {
+            final int result = a.compareTo(b);
+            if (result < 0) {
+                return Integer.MIN_VALUE;
+            }
+            if (result > 0) {
+                return Integer.MAX_VALUE;
+            }
+            return 0;
+        }, true);
+
+        assertTrue(chain.compare(5, 4) < 0);
+    }
+    
+    @Test
+    public void testComparatorChainOnMinValuedComparatorEqual() {
+        // -1 * Integer.MIN_VALUE is less than 0,
+        // test that ComparatorChain handles this edge case correctly
+        final ComparatorChain<Integer> chain = new ComparatorChain<>();
+        chain.addComparator((a, b) -> {
+            final int result = a.compareTo(b);
+            if (result < 0) {
+                return Integer.MIN_VALUE;
+            }
+            if (result > 0) {
+                return Integer.MAX_VALUE;
+            }
+            return 0;
+        }, true);
+
+        assertEquals(0, chain.compare(4, 4));
+    }
+```

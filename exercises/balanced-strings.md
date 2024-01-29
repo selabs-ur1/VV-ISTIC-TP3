@@ -26,3 +26,30 @@ Use the project in [tp3-balanced-strings](../code/tp3-balanced-strings) to compl
 
 ## Answer
 
+### 1. Input space partitioning
+
+The input space can be partitioned into the following blocks:  
+Input domain:
+    Open symbols: `{ [ (`
+    Closed symbols: `} ] )`
+
+Blocks :
+    Symbols nested inside each other
+    Symbols not nested properly
+    
+String Length:
+    Empty string
+    Strings of length 1 or more
+
+
+
+### 2. Statement coverage
+
+I add tests about different cases of the input string described in the previous step and I get 100% statement coverage.
+I test empty string, null value, each symbol alone for example.
+
+### Predicate more than two boolean operators
+
+Not concerned.
+
+

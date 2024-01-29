@@ -53,3 +53,20 @@ Use the project in [tp3-date](../code/tp3-date) to complete this exercise.
 
 ## Answer
 
+### 1. Input Space Partitioning
+
+- Input domain : Int > 0
+- Characteristics : 
+    - day
+    - month
+    - year
+- Blocks False :
+    - day < 1
+    - day > 31
+    - month < 1
+    - month > 12
+    - year < 1
+
+### 2. Statement coverage
+
+In the coverage report, the coverage of methods is 100% but the coverage of lines is 82%. I don't know how to increase this value
