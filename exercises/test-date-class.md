@@ -51,5 +51,11 @@ Use the following steps to design the test suite:
 
 Use the project in [tp3-date](../code/tp3-date) to complete this exercise.
 
-## Answer
+## Answer - ILAN - AIMAN
+
+Implemented Date class can be found in the [main folder from tp3-date](../code/tp3-date/src/)
+
+Tests for Date class can be found in the test folder from [tp3-date folder](../code/tp3-date/src/)
+
+Pit report can be found in the [target folder](../code/tp3-date/target/pit-reports/202401291705/) (index file)
 

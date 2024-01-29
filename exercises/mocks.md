@@ -1,11 +1,14 @@
-# Mocks to the rescue
+# Mocks - Ilan HUCHÉ - Aiman AOUAD
 
-The classes `SSLSocket`, `TLSProtocol` and `TLSSocketFactory` are included in the `sockets` package of the [`tp3-ssl`](../code/tp3-ssl) project.
+La classe TLSSocketFactory propose une méthode prepareSocket pour configurer un objet SSLSocket en définissant ses protocoles activés en fonction des protocoles supportés et déjà activés.
 
-The test class `TLSSocketFactoryTest` tests `TLSSocketFactory` and manually builds stubs and mocks for SSLSocket objects.
+Pour garantir la fiabilité de cette méthode, des tests ont été élaborés dans la classe TLSSocketFactoryTestMocks en utilisant Mockito. 
+Ces tests, couvrant des scénarios tels que des protocoles supportés ou activés nuls, ainsi qu'un cas typique avec des valeurs spécifiques, offrent une validation complète de la logique de la méthode prepareSocket. 
 
-Rewrite these tests with the help of Mockito.
+En utilisant Mockito pour créer des simulacres d'objets SSLSocket et définir les comportements attendus de ces simulacres, les déclarations verify assurent que la méthode setEnabledProtocols est appelée avec les arguments prévus. 
 
-The initial tests fail to completely test the `TLSSockeetFactory`. In fact, if we *entirely* remove the code inside the body of `prepareSocket` no test case fails.
+Cette approche de tests, intégrant Mockito pour la simulation et le bouchonnage, renforce la fiabilité des cas de test en isolant le comportement de la méthode prepareSocket et en permettant des assertions ciblées sur ses interactions avec les objets SSLSocket. 
 
-Propose a solution to this problem in your new Mockito-based test cases.
+Dans l'ensemble, cette stratégie de test contribue à la qualité et à la justesse globales de l'implémentation de la classe TLSSocketFactory.
+
+See code in test folder. ([`TLSSocketFactoryTestMocks`](../code/tp3-ssl/src/test/java/fr/istic/vv/TLSSocketFactoryTestMocks.java))

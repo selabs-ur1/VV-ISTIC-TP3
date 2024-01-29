@@ -26,3 +26,10 @@ Use the project in [tp3-balanced-strings](../code/tp3-balanced-strings) to compl
 
 ## Answer
 
+See 
+
+- [`source code`](../code/tp3-balanced-strings/src/main) folder for implemented method in class and [`tests`](../code/tp3-balanced-strings/src/test) for this method.
+
+- [`Pit report files`](../code/tp3-balanced-strings/PIT_REPORT) for the pit report. Names of packages are org.example because the class and tests were implemented outside
+of this code folder, reocompile and rerun maven + pit commands to regenerate a pit report that will be inside a generated `target` folder.
+

@@ -39,4 +39,10 @@ Use the following steps to design the test suite:
 
 Use the project in [tp3-heap](../code/tp3-heap) to complete this exercise.
 
-## Answer
+## Answer - ILAN HUCHE - AOUAD AIMAN
+
+Implemented Date class can be found in the [main folder from tp3-heap](../code/tp3-heap/src/)
+
+Tests for Date class can be found in the test folder from [tp3-heap folder](../code/tp3-date/src/)
+
+Pit report can be found in the [target folder](../code/tp3-heap/target/pit-reports/202401291800/) (index file)
