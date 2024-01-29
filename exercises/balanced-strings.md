@@ -72,9 +72,9 @@ public class BalancedString {
 ```
 
 1)
-Chaine vide : "" = true,
-Chaine balance : "[]" "([]){}" = true,
-Chaine unbalance : "[" "({)}" = false
+- Chaine vide : ""                     // true,
+- Chaine équilibrée : "[]" "([]){}"    // true,
+- Chaine non équilibrée : "[" "({)}"   // false
 
 2)
 
