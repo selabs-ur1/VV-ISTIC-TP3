@@ -53,3 +53,50 @@ Use the project in [tp3-date](../code/tp3-date) to complete this exercise.
 
 ## Answer
 
+1.    Partitionnement de l'Espace d'Entrée :
+
+Caractéristiques et Blocs de Partition : Date(int jour, int mois, int année)
+
+Date valide (commune avec la méthode isValidDate)
+Date invalide (commune avec la méthode isValidDate)
+
+Caractéristiques et Blocs de Partition : isValidDate(int jour, int mois, int année)
+
+Date valide
+
+Partition 1 : Date valide normale
+Partition 2 : Date bissextile (commune avec la méthode isLeapYear)
+
+Date invalide
+
+Partition 3 : Jour invalide
+Partition 4 : Mois invalide
+Partition 5 : Année invalide
+
+Caractéristiques et Blocs de Partition : isLeapYear(int année)
+
+Année bissextile
+Année non bissextile
+
+Caractéristiques et Blocs de Partition : nextDate() et previousDate()
+
+Date normale
+Cas limites (début ou fin d'un mois, année)
+
+Caractéristiques et Blocs de Partition : compareTo(Date autre)
+
+La date est postérieure à une autre
+La date est antérieure à une autre
+La date est identique à une autre
+L'autre est nulle
+
+2.    Code dans la classe de tests.
+
+3.    Évaluation de la Couverture Logique (Couverture des Choix de Base):
+
+Le code des fonctions est relativement simple, avec des conditions simples et peu de prédicats complexes. Cependant, nous devons nous assurer que chaque branche du code est couverte. Étant donné qu'il n'y a pas de prédicats complexes, la couverture de base devrait déjà être atteinte avec les tests fournis dans la réponse précédente.
+
+4.    Test de Mutation PIT :
+
+Exécution de PIT (test de mutation) sur les suites de tests existantes.
+

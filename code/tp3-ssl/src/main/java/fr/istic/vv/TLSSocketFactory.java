@@ -1,5 +1,4 @@
 package fr.istic.vv;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -53,6 +52,4 @@ public class TLSSocketFactory {
         }
         return false;
     }
-
-
 }
