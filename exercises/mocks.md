@@ -18,4 +18,4 @@ Pour résoudre le problème où les tests ne détectaient pas l'absence de logiq
     La méthode setEnabledProtocols est bien appelée avec les bons paramètres.
     Tous les scénarios de combinaison de supported et enabled sont testés.
 
-Avec cette approche, une modification ou suppression de la logique interne déclencherait un échec des tests.
+Avec cette approche, une modification ou suppression de la logique interne déclencherait un échec des tests. 
