@@ -26,3 +26,34 @@ Use the project in [tp3-balanced-strings](../code/tp3-balanced-strings) to compl
 
 ## Answer
 
+L'intégralité de mon code peut être trouver dans le fichier tp3-balanced-strings.
+
+1. Pour l'input Space Partitioning nous devons diviser l'espace des entrées en blocs de partition pour couvrir les cas significatifs tel que
+- Longueur de la chaîne (vide, avec un ou plusieurs caracteres)
+- Composition des caracteres 
+- L'équilibrage des symboles (les deux cas, équilibrés et non équilibrés )
+- Le test de structure imbriqué
+
+2. Pour avoir un maximum de coverage, j'ai ajouter tout les cas significatifs dont j'ai parler au dessus dans mon fichier de test à retrouver dans tp3-balanced-strings/test
+Si il me manque des cas de tests dans mon fichier et que mon coverage est insuffisant, je pourrais utiliser JaCoCo pour trouver les cas non couvert par mes tests et ainsi les ajouter
+
+3. Un exemple de prédicat que j'ai dans mon code est le suivant :
+   if (stack.isEmpty() || !isMatchingPair(stack.pop(), c)) { ... }
+
+je dois donc faire les tests suivant nécéssaire pour s'assurer de la satisfaction du BCC de ces predicats :
+Tests nécessaires :
+
+    stack.isEmpty() : true et false
+    !isMatchingPair(...) : true et false
+
+Cas supplémentaires pour BCC :
+
+    stack.isEmpty() == true et isMatchingPair == false (exemple : ")")
+    stack.isEmpty() == false et isMatchingPair == false (exemple : "{]")
+
+4. PIT : malheuresement je n'arrive pas à faire fonctionner PIT due à des UNKNOW_ERROR
+
+
+
+
+
