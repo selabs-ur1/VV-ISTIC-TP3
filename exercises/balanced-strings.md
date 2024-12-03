@@ -26,3 +26,15 @@ Use the project in [tp3-balanced-strings](../code/tp3-balanced-strings) to compl
 
 ## Answer
 
+Cas à tester :
+- "" (Chaîne vide)
+- {[]} (Valide)
+- () (Valide)
+- ({}) (Valide)
+- }( (Invalide - parenthèse fermante en trop)
+- [({})] (Valide)
+- {( (Invalide - parenthèse ouvrante sans fermante)
+- ([)] (Invalide - imbriquées)
+- { (Invalide - uniquement une parenthèse ouvrante)
+- }} (Invalide - uniquement des parenthèses fermantes)
+- {He(l)lo} (Valide) avec du texte
