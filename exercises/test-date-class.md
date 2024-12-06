@@ -98,9 +98,17 @@ Use the project in [tp3-date](../code/tp3-date) to complete this exercise.
     - 2,1,1, 1,1,1 (1 - jour supérieur)
     - 1,1,1, null (NullPointerException)
     - 20,12,2024 31,4,2024( Exception - other date invalide)
-2 + 3.
+2.
 Nous avons essayé de donner à chaque branchement if/else une valeur de test qui le couvre, 
 pour chaque méthode. Nous avons également ajouté des cas limites comme les dates nulles, 
 les dates négatives, les dates invalides, etc.
+Après avoir lancé test de couverture, cela donne:
+
+![DateCoverage.png](Image/DateCoverage.png)
+
+Il reste toujours des branches non couvertes.
+3.
+
+![PitReportDate.png](Image/PitReportDate.png)
 
 4. mvn test-compile org.pitest:pitest-maven:mutationCoverage,
