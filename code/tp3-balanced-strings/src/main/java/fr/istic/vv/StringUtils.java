@@ -21,9 +21,7 @@ public class StringUtils {
 
                 char top = stack.pop();
 
-                if (c == '}' && top != '{' ||
-                        c == ']' && top != '[' ||
-                        c == ')' && top != '(') {
+                if (c == '}' && top != '{' || c == ']' && top != '[' || c == ')' && top != '(') {
                     return false;
                 }
             }

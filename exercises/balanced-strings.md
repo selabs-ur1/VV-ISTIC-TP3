@@ -26,7 +26,7 @@ Use the project in [tp3-balanced-strings](../code/tp3-balanced-strings) to compl
 
 ## Answer
 
-Cas à tester :
+1. Cas à tester :
 - "" (Chaîne vide)
 - {[]} (Valide)
 - () (Valide)
@@ -38,3 +38,9 @@ Cas à tester :
 - { (Invalide - uniquement une parenthèse ouvrante)
 - }} (Invalide - uniquement des parenthèses fermantes)
 - {He(l)lo} (Valide) avec du texte
+
+2. Les tests ont l'air assez complets et couvrent une grande partie du code. En effet, si on reprend chaque cas à la main, on passe dans toutes les conditionnelles en testant à chaque fois toutes les valeurs qu'elles peuvent prendre.
+
+3. Pour améliorer nos tests, nous avons ajoutés des tests matérialisant chacunes des possibilités offertes par la conditionnelle.
+
+4. 

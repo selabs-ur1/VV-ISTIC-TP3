@@ -62,5 +62,28 @@ class StringUtilsTest {
         assertTrue(isBalanced("{He(l)lo}"));
     }
 
+    @Test
+    public void testInvalidStringWithExcessClosingParentheses() {
+        assertFalse(isBalanced("({[()]}}"));
+    }
 
+    @Test
+    public void testInvalidStringWithMultipleUnmatchedParentheses() {
+        assertFalse(isBalanced("{[}"));
+    }
+
+    @Test
+    public void testInvalidStringWithAllClosedParentheses() {
+        assertFalse(isBalanced(")]}"));
+    }
+
+    @Test
+    public void testInvalidStringWithAllOpenParentheses() {
+        assertFalse(isBalanced("{[("));
+    }
+
+    @Test
+    public void testValidBalancedStringWithNestedAndSequentialParentheses() {
+        assertTrue(isBalanced("{[()]}"));
+    }
 }
