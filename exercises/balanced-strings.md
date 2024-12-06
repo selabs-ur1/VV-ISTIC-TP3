@@ -41,6 +41,8 @@ Use the project in [tp3-balanced-strings](../code/tp3-balanced-strings) to compl
 
 2. Les tests ont l'air assez complets et couvrent une grande partie du code. En effet, si on reprend chaque cas à la main, on passe dans toutes les conditionnelles en testant à chaque fois toutes les valeurs qu'elles peuvent prendre.
 
-3. Pour améliorer nos tests, nous avons ajoutés des tests matérialisant chacunes des possibilités offertes par la conditionnelle.
+3. Pour améliorer nos tests, nous avons ajouté des tests matérialisant chacunes des possibilités offertes par la conditionnelle comme commencer une chaîne de caractère par une accolade fermante.
 
-4. 
+4. <img src="Image/img.png" width="800" height="400" alt="Rapport généré par PIT"></img>
+
+On observe que tous les mutants sont bien tués à l'exécution, il n'y a donc pas besoin d'ajouter de tests.
