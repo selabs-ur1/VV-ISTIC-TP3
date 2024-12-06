@@ -9,6 +9,10 @@ public class StringUtils {
 
     public static boolean isBalanced(String str) {
 
+        if (str == null || str.length() == 0) {
+            return true;
+        }
+
         Stack<Character> stack = new Stack<>();
 
         for (char c : str.toCharArray()) {

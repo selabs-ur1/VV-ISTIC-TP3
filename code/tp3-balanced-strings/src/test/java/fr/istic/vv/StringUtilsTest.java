@@ -8,6 +8,11 @@ import static org.junit.jupiter.api.Assertions.*;
 class StringUtilsTest {
 
     @Test
+    public void testNull() {
+        assertTrue(isBalanced(null));
+    }
+
+    @Test
     public void testEmptyString() {
         assertTrue(isBalanced(""));
     }

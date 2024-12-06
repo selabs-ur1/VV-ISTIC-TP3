@@ -27,6 +27,7 @@ Use the project in [tp3-balanced-strings](../code/tp3-balanced-strings) to compl
 ## Answer
 
 1. Cas à tester :
+- null
 - "" (Chaîne vide)
 - {[]} (Valide)
 - () (Valide)
@@ -37,12 +38,12 @@ Use the project in [tp3-balanced-strings](../code/tp3-balanced-strings) to compl
 - ([)] (Invalide - imbriquées)
 - { (Invalide - uniquement une parenthèse ouvrante)
 - }} (Invalide - uniquement des parenthèses fermantes)
-- {He(l)lo} (Valide) avec du texte
+- {He(l)lo} (Valide - avec du texte)
 
 2. Les tests ont l'air assez complets et couvrent une grande partie du code. En effet, si on reprend chaque cas à la main, on passe dans toutes les conditionnelles en testant à chaque fois toutes les valeurs qu'elles peuvent prendre.
 
 3. Pour améliorer nos tests, nous avons ajouté des tests matérialisant chacunes des possibilités offertes par la conditionnelle comme commencer une chaîne de caractère par une accolade fermante.
 
-4. <img src="Image/img.png" width="800" height="400" alt="Rapport généré par PIT"></img>
+4. <img src="Image/PitReportBalancedString.png" width="800" height="400" alt="Rapport généré par PIT"></img>
 
 On observe que tous les mutants sont bien tués à l'exécution, il n'y a donc pas besoin d'ajouter de tests.
