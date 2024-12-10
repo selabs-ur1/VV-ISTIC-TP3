@@ -72,14 +72,12 @@ Use the project in [tp3-date](../code/tp3-date) to complete this exercise.
     - Février 29 jours (année bissextile)
 
 #### Blocs d'entrée :
-- **Jour valide** : 1, 15, 30, 31
-- **Jour invalide** : -1, 32
-- **Mois valide** : 1, 5, 12
-- **Mois invalide** : 0, 13
-- **Année valide** : 1000, 2024
-- **Année invalide** : -100, -2024
-- **Mois avec jours valides** :
-  - Janvier (31 jours), Février (28 ou 29 jours), Avril (30 jours)
+- **Jour valide** :  15
+- **Jour invalide** : 32
+- **Mois valide** : 1
+- **Mois invalide** : 13
+- **Année valide** : 2024
+- **Année invalide** : -2024
 - **Mois avec jours invalides** :
   - Février avec 30 jours (non valide)
 
@@ -96,8 +94,8 @@ Les entrées de la méthode `isValidDate` sont communes avec les méthodes `next
   - Année non bissextile : non divisible par 4 ou divisible par 100 mais non par 400.
 
 #### Blocs d'entrée :
-- **Année bissextile** : 2024, 2000, 1600
-- **Année non bissextile** : 2023, 2100, 1900
+- **Année bissextile** : 2024
+- **Année non bissextile** : 2023
 
 #### Caractéristiques communes avec d'autres méthodes :
 Les entrées de `isLeapYear` peuvent affecter la méthode `nextDate()` et `previousDate()` lorsque l'année change (par exemple, en février dans une année bissextile).
@@ -109,10 +107,9 @@ Les entrées de `isLeapYear` peuvent affecter la méthode `nextDate()` et `previ
 #### Caractéristiques identifiées :
 - **Changement de jour** : Transition entre les jours dans un même mois  
   - Jour suivant dans le même mois : 1 janvier → 2 janvier  
-  - Fin du mois (exemple : 31 janvier → 1 février)
 
 - **Changement de mois** : Fin du mois, transition au mois suivant  
-  - Exemple : 31 janvier → 1 février, 28 février → 1 mars
+  - Exemple : 31 janvier → 1 février
 
 - **Changement d'année** : Passage du 31 décembre au 1 janvier  
   - Exemple : 31 décembre 2024 → 1 janvier 2025
@@ -120,8 +117,8 @@ Les entrées de `isLeapYear` peuvent affecter la méthode `nextDate()` et `previ
 - **Année bissextile ou non** : Affecte le 29 février (année bissextile)
 
 #### Blocs d'entrée :
-- **Jour au début du mois** : 1 janvier, 1 avril
-- **Jour à la fin du mois** : 31 janvier, 30 avril
+- **Jour au début du mois** : 1 janvier
+- **Jour à la fin du mois** : 31 janvier
 - **Fin de l'année** : 31 décembre → 1 janvier
 - **Transition de mois sur février** :
   - 28 février 2024 → 29 février 2024 (année bissextile)
@@ -148,8 +145,8 @@ Les transitions de mois et d'année dans `nextDate()` sont aussi affectées par 
 - **Année bissextile ou non** : Retour sur le 29 février si l'année précédente était bissextile sur le 28 sinon.
 
 #### Blocs d'entrée :
-- **Jour au début du mois** : 1 janvier, 1 avril
-- **Jour du mois** : 18 janvier, 13 avril 
+- **Jour du mois** : 2 janvier -> 1 janvier
+- **Transition de mois** : 1 février -> 31 janvier
 - **Transition de mois de février dans une année bissextile** : 1 mars → 29 février
 - **Transition de mois de février dans une année non bissextile** : 1 mars → 28 février
 - **Retour à l'année précédente** : 1 janvier 2024 → 31 décembre 2023

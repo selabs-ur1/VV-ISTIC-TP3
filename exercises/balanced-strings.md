@@ -26,37 +26,26 @@ Use the project in [tp3-balanced-strings](../code/tp3-balanced-strings) to compl
 
 ## Answer
 
-1. Characteristics:
+1. Caractéristiques identifiés :
 
-        Empty Input: ""
+        Chaîne vide: ""
 
-        Single Symbol: {, [, (, ), ], }
+        Symboles seules: {, [, (, ), ], }
 
-        Balanced Symbols:
-        Simple cases: [], (), {}
-        Nested cases: {[]}, ({}), [()]
-        Mixed cases: {[()()]}
+        Symboles équilibrés:
+        Cas simples: [], (), {}
+        Cas imbriqués: {[]}, ({}), [()]
+        Cas mixés: {[()()]}
 
-        Unbalanced Symbols:
-        Incorrect order: ][, )(, }{
-        Missing closing symbols: {, [{
-        Missing opening symbols: ], )}
-        Mismatched pairs: [), {]
+        Symboles désiquilibrés:
+        Odre incorrect: ][, )(, }{
+        Sans les symboles fermants: {, [{
+        Sans les symboles ouvrants: ], )}
+        Mauvaise paires: [), {]
 
-    Partition Blocks:
+Les blocs  sont les mêmes que les caractéristiques.
 
-        Empty Strings: ""
-        Single Characters: {, [, (, ), ], }
-        Balanced Strings:
-            Short: {}, [], ()
-            Nested: {[()]}, ({}), ({[()]})
-            Mixed: {[][]}, ({})
-        Unbalanced Strings:
-            Incorrect order: ][, ({]
-            Missing symbols: {, [{
-            Mismatched pairs: [), {]
-
-2. Normalement les tests plus haut couvre tout les cas.
+2. En utilisant les tests décris plus hait nous avons 100% de statement coverage.
 
 3. Dans notre cas nous n'avons pas de prédicat qui utlise plus de 2 booléens.
 
