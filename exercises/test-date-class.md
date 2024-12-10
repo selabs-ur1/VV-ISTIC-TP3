@@ -53,3 +53,135 @@ Use the project in [tp3-date](../code/tp3-date) to complete this exercise.
 
 ## Answer
 
+### `isValidDate(int day, int month, int year)`
+
+#### Caractéristiques identifiées :
+- **Date valide ou invalide**  
+  - Jour valide : 1 ≤ jour ≤ 31 (selon le mois)
+  - Jour invalide : jour < 1 ou jour > 31 (ou dépassant les jours maximum du mois)
+  - Mois valide : 1 ≤ mois ≤ 12
+  - Mois invalide : mois < 1 ou mois > 12
+  - Année valide : année ≥ 0
+  - Année invalide : année < 0
+
+- **Mois avec un nombre limité de jours**  
+  - Mois de 30 jours : avril, juin, septembre, novembre
+  - Mois de 31 jours : janvier, mars, mai, juillet, août, octobre, décembre
+  - Février (année bissextile ou non) :
+    - Février 28 jours (année non bissextile)
+    - Février 29 jours (année bissextile)
+
+#### Blocs d'entrée :
+- **Jour valide** : 1, 15, 30, 31
+- **Jour invalide** : -1, 32
+- **Mois valide** : 1, 5, 12
+- **Mois invalide** : 0, 13
+- **Année valide** : 1000, 2024
+- **Année invalide** : -100, -2024
+- **Mois avec jours valides** :
+  - Janvier (31 jours), Février (28 ou 29 jours), Avril (30 jours)
+- **Mois avec jours invalides** :
+  - Février avec 30 jours (non valide)
+
+#### Caractéristiques communes avec d'autres méthodes :
+Les entrées de la méthode `isValidDate` sont communes avec les méthodes `nextDate()`, `previousDate()`, et `compareTo()` dans le sens où elles nécessitent des dates valides pour fonctionner.
+
+---
+
+### `isLeapYear(int year)`
+
+#### Caractéristiques identifiées :
+- **Année bissextile ou non**  
+  - Année bissextile : divisible par 4, mais si divisible par 100, elle doit aussi être divisible par 400.
+  - Année non bissextile : non divisible par 4 ou divisible par 100 mais non par 400.
+
+#### Blocs d'entrée :
+- **Année bissextile** : 2024, 2000, 1600
+- **Année non bissextile** : 2023, 2100, 1900
+
+#### Caractéristiques communes avec d'autres méthodes :
+Les entrées de `isLeapYear` peuvent affecter la méthode `nextDate()` et `previousDate()` lorsque l'année change (par exemple, en février dans une année bissextile).
+
+---
+
+### `nextDate()`
+
+#### Caractéristiques identifiées :
+- **Changement de jour** : Transition entre les jours dans un même mois  
+  - Jour suivant dans le même mois : 1 janvier → 2 janvier  
+  - Fin du mois (exemple : 31 janvier → 1 février)
+
+- **Changement de mois** : Fin du mois, transition au mois suivant  
+  - Exemple : 31 janvier → 1 février, 28 février → 1 mars
+
+- **Changement d'année** : Passage du 31 décembre au 1 janvier  
+  - Exemple : 31 décembre 2024 → 1 janvier 2025
+
+- **Année bissextile ou non** : Affecte le 29 février (année bissextile)
+
+#### Blocs d'entrée :
+- **Jour au début du mois** : 1 janvier, 1 avril
+- **Jour à la fin du mois** : 31 janvier, 30 avril
+- **Fin de l'année** : 31 décembre → 1 janvier
+- **Transition de mois sur février** :
+  - 28 février 2024 → 29 février 2024 (année bissextile)
+  - 28 février 2023 → 1 mars 2023 (année non bissextile)
+
+#### Caractéristiques communes avec d'autres méthodes :
+La méthode `nextDate()` dépend de la validité des dates, donc elle utilise les mêmes caractéristiques que `isValidDate`.
+Les transitions de mois et d'année dans `nextDate()` sont aussi affectées par le résultat de `isLeapYear`.
+
+---
+
+### `previousDate()`
+
+#### Caractéristiques identifiées :
+- **Changement de jour** : Retour au jour précédent dans un même mois  
+  - Exemple : 2 janvier → 1 janvier
+
+- **Changement de mois** : Retour au dernier jour du mois précédent  
+  - Exemple : 1 février → 31 janvier
+
+- **Changement d'année** : Retour au 31 décembre de l'année précédente  
+  - Exemple : 1 janvier 2024 → 31 décembre 2023
+
+- **Année bissextile ou non** : Retour sur le 29 février si l'année précédente était bissextile sur le 28 sinon.
+
+#### Blocs d'entrée :
+- **Jour au début du mois** : 1 janvier, 1 avril
+- **Jour du mois** : 18 janvier, 13 avril 
+- **Transition de mois de février dans une année bissextile** : 1 mars → 29 février
+- **Transition de mois de février dans une année non bissextile** : 1 mars → 28 février
+- **Retour à l'année précédente** : 1 janvier 2024 → 31 décembre 2023
+
+#### Caractéristiques communes avec d'autres méthodes :
+Semblable à `nextDate()`, mais dans la direction opposée. Utilise les mêmes partitions de mois et d'année, y compris les années bissextiles.
+
+---
+
+### `compareTo(Date other)`
+
+#### Caractéristiques identifiées :
+- **Comparaison de dates égales** : Deux dates identiques doivent retourner `0`  
+  - Exemple : 1 janvier 2024 → 1 janvier 2024
+
+- **Comparaison d'une date antérieure** : Une date plus ancienne doit être inférieure à une date plus récente et retourner un entier (int) négatif.
+  - Exemple : 1 janvier 2024 → 2 janvier 2024
+
+- **Comparaison d'une date postérieure** : Une date plus récente doit être supérieure à une date plus ancienne et retourner un entier (int) positif.  
+  - Exemple : 2 janvier 2024 → 1 janvier 2024
+
+- **Comparaison avec `null`** : Une exception `NullPointerException` doit être levée si la date à comparer est `null`.
+
+#### Blocs d'entrée :
+- **Dates égales** : 1 janvier 2024 → 1 janvier 2024
+- **Date antérieure** : 1 janvier 2024 → 2 janvier 2024
+- **Date postérieure** : 2 janvier 2024 → 1 janvier 2024
+- **Comparaison avec `null`** : Comparer une date à `null`
+
+#### Caractéristiques communes avec d'autres méthodes :
+Les méthodes `nextDate()`, `previousDate()` et `isValidDate()` utilisent toutes la notion de validité des dates, qui est utilisée pour déterminer si une comparaison est correcte.
+
+---
+
+  
