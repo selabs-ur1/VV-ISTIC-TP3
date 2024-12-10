@@ -50,6 +50,87 @@ Use the following steps to design the test suite:
 4. Use PIT to evaluate the test suite you have so far. Describe below the mutation score and the live mutants. Add new test cases or refactor the existing ones to achieve a high mutation score.
 
 Use the project in [tp3-date](../code/tp3-date) to complete this exercise.
-
+  - 
 ## Answer
+1. Cas à tester pour isValidDate
+- Date(int day, int month, int year)
+    - 0, 0, 0 (Invalide - date nulle)
+    - 1, 1, 1 (Valide)
+    - 21,12,2021 (Valide)
+    - 29,2,2024 (Valide - année bissextile)
+    - 29,2,2021 (Invalide - année non bissextile)
+    - 31,4,2021 (Invalide - mois invalide)
+    - 32,12,2021 (Invalide - jour invalide)
+    - 31,13,2021 (Invalide - mois invalide)
+    - -1,-1,-1 (Invalide - date négative)
+  
+- Cas à tester pour isLeapYear
+    - 0 (valide - bissextile)
+    - 1 (Non bissextile)
+    - 4 (Bissextile)
+    - 1700 (Non bissextile)
+    - 2000 (Bissextile)
+    - 2021 (Non bissextile)
+    - 2024 (Bissextile)
+  
+- Cas à tester pour nextDate
+    - 1,1,1 (2,1,1 - jour suivant)
+    - 31,12,2021 (1,1,2022 - mois suivant)
+    - 28,2,2021 (1,3,2021- année non bissextile, mois suivant)
+    - 29,2,2024 (1,3,2024 - année bissextile, mois suivant)
+    - 31,12,1999 (1,1,2000 - année suivante)
+    - 32,13,2022 (invalid - jour et mois invalides)
 
+- Cas à tester pour previousDate
+    - 20,12,2024 (19,12,2024 - jour précédent)
+    - 1,1,2022 (31,12,2021 - année précédente)
+    - 1,3,2021 (28,2,2021 - année non bissextile, mois précédent)
+    - 1,3,2024 (29,2,2024 - année bissextile, mois précédent)
+    - 32,13,2022 (invalid - jour et mois invalides)
+
+- Cas à tester pour compareTo
+    - 1,1,1, 1,1,1 (0 - date égale)
+    - 1,1,1, 1,1,2 (-1 - année inférieure)
+    - 1,1,2, 1,1,1 (1 - année supérieure)
+    - 1,1,1, 1,2,1 (-1 - mois inférieur)
+    - 1,2,1, 1,1,1 (1 - mois supérieur)
+    - 1,1,1, 2,1,1 (-1 - jour inférieur)
+    - 2,1,1, 1,1,1 (1 - jour supérieur)
+    - 1,1,1, null (NullPointerException)
+    - 20,12,2024 31,4,2024( Exception - other date invalide)
+2.
+Nous avons essayé de donner à chaque branchement if/else une valeur de test qui le couvre, 
+pour chaque méthode. Nous avons également ajouté des cas limites comme les dates nulles, 
+les dates négatives, les dates invalides, etc.
+Après avoir lancé test de couverture, cela donne:
+
+![DateCoverage.png](Image/DateCoverage.png)
+
+Pour amélioer la couverture, nous avons ajouté des tests pour 
+les cas suivants:
+- Pour isValidDate:
+  - 25,13,2021 (Invalide - mois invalide)
+  - 31,4,2021 (Date et mois valide - mais jour invalide)
+- Pour nextDate:
+  - 31,10,2021 (1,11,2021 - mois suivant)
+  - 30,4,2021 (1,5,2021 - mois suivant)
+- Pour previousDate:
+  - 1,7,2021 (30,6,2021 - mois précédent)
+  - 1,2,2021 (31,1,2021 - mois précédent)
+
+Après avoir ajouté ces tests, nous avons obtenu un meilleur résultat. Cependant, il reste des branches non couvertes, 
+mais ça sera pour la question suivant.
+![NewDateCoverage.png](Image/NewDateCoverage.png)
+
+3. Cas de test ajoutés pour le coverage de base:
+- Pour isValidDate
+  - 1,0,1 (Invalide - mois invalide)
+On obtient un coverage de 90% alors on se contente de ce résultat.
+  
+4. mvn test-compile org.pitest:pitest-maven:mutationCoverage,
+Sans les cas de tests ajouté au ex2 et 3:
+![PitReportDate.png](Image/PitReportDate.png)
+
+Et après avoir ajouté les cas de tests:
+![NewPit.png](Image/NewPit.png)
+Tous les mutants ont été tués, donc on s'arrête là.
