@@ -15,3 +15,5 @@ Include the improved test code in this file.
 
 ## Answer
 
+J'ai testé tout les rulesets de `pmd-documentation` sur le projet [Apache Commons Math](https://github.com/apache/commons-math).
+J'ai sois aucune erreur/warning trouvé par le ruleset, sois mon install de PMD ne trouve pas certain ruleset.

@@ -53,3 +53,112 @@ Use the project in [tp3-date](../code/tp3-date) to complete this exercise.
 
 ## Answer
 
+1. Le plan de test pour la classe Date :
+
+### Le constructeur Date(int day, int month, int year)
+
+Date valide
+Blocs: Jour, mois et année valides
+
+Date invalide
+Blocs: Jour, mois et année invalides
+
+### isValidDate(int day, int month, int year)
+
+Date valide
+Blocs: Combinaisons valides de jour, mois et année
+
+Date invalide
+Blocs: Combinaisons invalides de jour, mois et année
+
+### isLeapYear(int year)
+
+Année bissextile
+Blocs: Année divisible par 4 mais pas par 100, ou divisible par 400
+
+Année non bissextile
+Blocs: Année non divisible par 4, ou divisible par 100 mais pas par 400
+
+### nextDate()
+
+Date régulière
+Blocs: Date n'est pas à la fin du mois/année
+
+Fin de mois
+Blocs: Date à la fin du mois
+
+Fin d'année
+Blocs: Date à la fin de l'année
+
+### previousDate()
+
+Date régulière
+Blocs: Date n'est pas au début du mois/année
+
+Début de mois
+Blocs: Date au début du mois
+
+Début d'année
+Blocs: Date au début de l'année
+
+### compareTo(Date other)
+
+Même date
+Blocs: Dates sont les mêmes
+
+Dates différentes
+Blocs: Une date est avant l'autre, une date est après l'autre
+
+2. Le statement coverage des tests est de 100%. Les tests couvrent tous les blocs de code.
+
+3. La méthode `isLeapYear` utilise deux opérateurs booléens. On peut décomposer le prédiacte en trois sous-predicats: 
+- année divisible par 4
+- année non divisible par 100
+- année divisible par 400.
+
+Pour satisfaire le Base Choice Coverage, on doit tester les combinaisons de valeurs qui satisfont et ne satisfont pas chaque sous-predicat. 
+
+1. Année divisible par 4 mais pas par 100
+2. Année divisible par 4 et par 100 mais pas par 400
+3. Année divisible par 4, par 100 et par 400
+4. Année non divisible par 4
+
+```java
+@Test
+    void testIsLeapYear() {
+        // Cas 1: Année divisible par 4 mais pas par 100
+        assertTrue(Date.isLeapYear(2020)); // 2020 est une année bissextile
+
+        // Cas 2: Année divisible par 4 et par 100 mais pas par 400
+        assertTrue(Date.isLeapYear(2000)); // 2000 est une année bissextile
+
+        // Cas 3: Année divisible par 4, par 100 et par 400
+        assertFalse(Date.isLeapYear(1900)); // 1900 n'est pas une année bissextile
+
+        // Cas 4: Année non divisible par 4
+        assertFalse(Date.isLeapYear(2019)); // 2019 n'est pas une année bissextile
+    }
+```
+
+4. Résultat de PIT :
+```
+================================================================================
+- Statistics
+================================================================================
+>> Line Coverage: 50/68 (74%)
+>> Generated 86 mutations Killed 63 (73%)
+>> Mutations with no coverage 16. Test strength 90%
+>> Ran 88 tests (1.02 tests per mutation)
+```
+
+Après l'amélioration de la méthode nextDate() et previousDate() : 
+
+```
+================================================================================
+- Statistics
+================================================================================
+>> Line Coverage: 56/69 (81%)
+>> Generated 89 mutations Killed 72 (81%)
+>> Mutations with no coverage 12. Test strength 94%
+>> Ran 96 tests (1.08 tests per mutation)
+```
