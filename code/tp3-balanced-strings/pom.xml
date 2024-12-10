@@ -39,6 +39,9 @@
                         <version>0.12</version>
                     </dependency>
                 </dependencies>
+                <configuration>
+                    <threads>20</threads>
+                </configuration>
             </plugin>
         </plugins>
     </build>
