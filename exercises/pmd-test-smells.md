@@ -15,3 +15,28 @@ Include the improved test code in this file.
 
 ## Answer
 
+Voici le test smell que nous avons trouvé : 
+
+commons-collections-master/src/test/java/org/apache/commons/collections4/multimap/AbstractMultiValuedMapTest.java:660:	DetachedTestCase:	Probable detached JUnit test case.
+
+et cela correspond a ce test : 
+
+    /**
+     * Resets the {@link #map} and {@link #confirmed} fields to full.
+     */
+   
+    public void resetFull() {
+        map = makeFullMap();
+        confirmed = makeConfirmedMap();
+        final K[] k = getSampleKeys();
+        final V[] v = getSampleValues();
+        for (int i = 0; i < k.length; i++) {
+            confirmed.put(k[i], v[i]);
+        }
+    }
+
+On peut voir que c'est un méthode utilitaire et donc selon la règle de pmd elle devrait être en private.
+    
+Il suffit donc de changer sa visibilité a private pour se conformer à la règle de pmd. 
+    
+    private void resetFull() 
