@@ -26,3 +26,40 @@ Use the project in [tp3-balanced-strings](../code/tp3-balanced-strings) to compl
 
 ## Answer
 
+1. Characteristics:
+
+        Empty Input: ""
+
+        Single Symbol: {, [, (, ), ], }
+
+        Balanced Symbols:
+        Simple cases: [], (), {}
+        Nested cases: {[]}, ({}), [()]
+        Mixed cases: {[()()]}
+
+        Unbalanced Symbols:
+        Incorrect order: ][, )(, }{
+        Missing closing symbols: {, [{
+        Missing opening symbols: ], )}
+        Mismatched pairs: [), {]
+
+    Partition Blocks:
+
+        Empty Strings: ""
+        Single Characters: {, [, (, ), ], }
+        Balanced Strings:
+            Short: {}, [], ()
+            Nested: {[()]}, ({}), ({[()]})
+            Mixed: {[][]}, ({})
+        Unbalanced Strings:
+            Incorrect order: ][, ({]
+            Missing symbols: {, [{
+            Mismatched pairs: [), {]
+
+2. Normalement les tests plus haut couvre tout les cas.
+
+3. Dans notre cas nous n'avons pas de prédicat qui utlise plus de 2 booléens.
+
+4. Quand on utilise PIT voici notre taux de converture : 
+
+![test avec PIT](testPit.png)
