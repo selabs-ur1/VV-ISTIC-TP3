@@ -26,3 +26,94 @@ Use the project in [tp3-balanced-strings](../code/tp3-balanced-strings) to compl
 
 ## Answer
 
+1. 
+Fonction :
+```java
+private static boolean isMatchingPair(char character1, char character2) {
+        if (character1 == '(' && character2 == ')') {
+            return true;
+        } else if (character1 == '{' && character2 == '}') {
+            return true;
+        } else return character1 == '[' && character2 == ']';
+    }
+
+    private static boolean isOpenBracket(char c) {
+        return c == '(' || c == '[' || c == '{';
+    }
+
+    private static boolean isCloseBracket(char c) {
+        return c == ')' || c == ']' || c == '}';
+    }
+
+    public static boolean isBalanced(String str) {
+        Stack<Character> openBrackets = new Stack<>();
+
+        for(int i = 0; i < str.length(); i++) {
+            char c = str.charAt(i);
+            if(isOpenBracket(c)) {
+                openBrackets.push(c);
+            } else if(isCloseBracket(c)) {
+                if(openBrackets.isEmpty() || !isMatchingPair(openBrackets.pop(), c)) {
+                    return false;
+                }
+            }
+        }
+        return openBrackets.isEmpty();
+    }
+```
+Chaîne vide : ""
+
+Chaînes courtes :
+"()" (parenthèses, équilibrée)
+"(]" (parenthèses et crochets, déséquilibrée)
+"[]" (crochets, équilibrée)
+"[}" (crochets et accolades, déséquilibrée)
+"{}" (accolades, équilibrée)
+"{)" (accolades et parenthèses, déséquilibrée)
+
+Chaînes moyennes :
+"([])" (mélange, équilibrée)
+"([)]" (mélange, déséquilibrée)
+"{[()]}" (mélange, équilibrée)
+"{[(])}" (mélange, déséquilibrée)
+"a(b)c" (caractères non pertinents, équilibrée)
+"a(b]c" (caractères non pertinents, déséquilibrée)
+
+Chaînes longues :
+"({[({[({[({[()]})]})]})]})" (mélange, équilibrée)
+"({[({[({[({[()]})]})]})]})}" (mélange, déséquilibrée)
+"a{b[c(d)e]f}g" (caractères non pertinents, équilibrée)
+"a{b[c(d)e]f}g)" (caractères non pertinents, déséquilibrée)
+
+2. Ligne de code pas couverte par les cas de tests : 
+- `return openBrackets.isEmpty();`
+
+Ajout de tests pour couvrir cette ligne de code :
+```java
+@Test
+    void testSingleOpenParentheses() {
+        assertFalse(isBalanced("("));
+    }
+
+@Test
+    void testMediumNotEqualStack() {
+        assertFalse(isBalanced("()]"));
+    }
+```
+
+3. Aucun prédicat utilisant plus de deux opérateurs booléens.
+
+4. Commande utilisé pour PIT : `mvn org.pitest:pitest-maven:mutationCoverage`	
+
+Résultat de PIT :
+```
+================================================================================
+- Statistics
+================================================================================
+>> Line Coverage: 16/17 (94%)
+>> Generated 30 mutations Killed 30 (100%)
+>> Mutations with no coverage 0. Test strength 100%
+>> Ran 58 tests (1.93 tests per mutation)
+```
+
+Tous les mutants ont été tués.
