@@ -106,9 +106,31 @@ Après avoir lancé test de couverture, cela donne:
 
 ![DateCoverage.png](Image/DateCoverage.png)
 
-Il reste toujours des branches non couvertes.
-3.
+Pour amélioer la couverture, nous avons ajouté des tests pour 
+les cas suivants:
+- Pour isValidDate:
+  - 25,13,2021 (Invalide - mois invalide)
+  - 31,4,2021 (Date et mois valide - mais jour invalide)
+- Pour nextDate:
+  - 31,10,2021 (1,11,2021 - mois suivant)
+  - 30,4,2021 (1,5,2021 - mois suivant)
+- Pour previousDate:
+  - 1,7,2021 (30,6,2021 - mois précédent)
+  - 1,2,2021 (31,1,2021 - mois précédent)
 
+Après avoir ajouté ces tests, nous avons obtenu un meilleur résultat. Cependant, il reste des branches non couvertes, 
+mais ça sera pour la question suivant.
+![NewDateCoverage.png](Image/NewDateCoverage.png)
+
+3. Cas de test ajoutés pour le coverage de base:
+- Pour isValidDate
+  - 1,0,1 (Invalide - mois invalide)
+On obtient un coverage de 90% alors on se contente de ce résultat.
+  
+4. mvn test-compile org.pitest:pitest-maven:mutationCoverage,
+Sans les cas de tests ajouté au ex2 et 3:
 ![PitReportDate.png](Image/PitReportDate.png)
 
-4. mvn test-compile org.pitest:pitest-maven:mutationCoverage,
+Et après avoir ajouté les cas de tests:
+![NewPit.png](Image/NewPit.png)
+Tous les mutants ont été tués, donc on s'arrête là.

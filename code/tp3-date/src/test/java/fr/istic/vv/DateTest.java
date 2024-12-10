@@ -42,6 +42,18 @@ class DateTest {
         assertFalse(Date.isValidDate(-1,-1,-1));
     }
     @Test
+    public void testIsValideDate10(){
+        assertFalse(Date.isValidDate(25,13,2021));
+    }
+    @Test
+    public void testIsValideDate11(){
+        assertFalse(Date.isValidDate(31,4,2021));
+    }
+    @Test
+    public void testIsValideDate12(){
+        assertFalse(Date.isValidDate(1,0,1));
+    }
+    @Test
     public void testIsLeapYear1(){
         assertTrue(Date.isLeapYear(0));
     }
@@ -123,6 +135,24 @@ class DateTest {
         assertEquals("Invalid date", exception.getMessage());
     }
     @Test
+    public void testNextDate7(){
+        Date date = new Date(31,10,2021);
+        Date nextDate = date.nextDate();
+        Date expected = new Date(1,11,2021);
+        assertEquals(expected.day, nextDate.day);
+        assertEquals(expected.month, nextDate.month);
+        assertEquals(expected.year, nextDate.year);
+    }
+    @Test
+    public void testNextDate8(){
+        Date date = new Date(30,4,2021);
+        Date nextDate = date.nextDate();
+        Date expected = new Date(1,5,2021);
+        assertEquals(expected.day, nextDate.day);
+        assertEquals(expected.month, nextDate.month);
+        assertEquals(expected.year, nextDate.year);
+    }
+    @Test
     public void testPreviousDate1(){
         Date date = new Date(20,12,2024);
         Date previousDate = date.previousDate();
@@ -165,6 +195,24 @@ class DateTest {
             date.previousDate();
         });
         assertEquals("Invalid date", exception.getMessage());
+    }
+    @Test
+    public void testPreviousDate6(){
+        Date date = new Date(1,7,2021);
+        Date previousDate = date.previousDate();
+        Date expected = new Date(30,6,2021);
+        assertEquals(expected.day, previousDate.day);
+        assertEquals(expected.month, previousDate.month);
+        assertEquals(expected.year, previousDate.year);
+    }
+    @Test
+    public void testPreviousDate7(){
+        Date date = new Date(1,2,2021);
+        Date previousDate = date.previousDate();
+        Date expected = new Date(31,1,2021);
+        assertEquals(expected.day, previousDate.day);
+        assertEquals(expected.month, previousDate.month);
+        assertEquals(expected.year, previousDate.year);
     }
     @Test
     public void testCompareTo1(){

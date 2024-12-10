@@ -30,11 +30,7 @@ class Date implements Comparable<Date> {
         } else if (month30.contains(month) && day > 30) {
             return false;
         } else if (month == 2 && day > 28) {
-            if(isLeapYear(year) && day == 29) {
-                return true;
-            } else {
-                return false;
-            }
+            return isLeapYear(year) && day == 29;
         }
         return true;
     }
