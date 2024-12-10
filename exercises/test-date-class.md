@@ -53,3 +53,29 @@ Use the project in [tp3-date](../code/tp3-date) to complete this exercise.
 
 ## Answer
 
+Le code produit peut se trouver dans le fichier tp3-date.
+
+Pour le design des tests, j'ai utilisé la même stratégie que pour l'exercice sur les balanced strings pour mettre en place mes cas de tests.
+malheuresement pour l'heure PIT ne marche toujours pas.
+
+Précision, mes tests previous et nextDate ne marchais pas avant, le problème était lié à assertEquals. 
+Par défaut, JUnit utilise la méthode equals pour comparer les objets, 
+mais si cette méthode n'est pas implémentée, les instances d'objets ne seront pas reconnues comme égales, même si elles ont les mêmes valeurs de champs.
+
+j'ai donc implementer les deux fonctions suivantes :
+
+        @Override
+        public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Date date = (Date) obj;
+        return day == date.day && month == date.month && year == date.year;
+        }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(day, month, year);
+    }
+
+et ainsi les tests ont fonctionner.
+
