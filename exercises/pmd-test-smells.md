@@ -15,7 +15,7 @@ Include the improved test code in this file.
 
 ## Answer
 
-Voici les règles pmd triées selon 3 catégories qui je trouve permet de voir les "categories" de code smells vu en court.
+Voici les règles pmd triées selon 3 catégories qui je trouve permet de voir les "categories" de code smells vu en cours.
 
 - Avoir des tests utils et bien formé(simple et maintenable)
   - Un test doit être simple/court et ne vérifier qu'un comportement et ne doit donc pas contenir trop d'assertions.
