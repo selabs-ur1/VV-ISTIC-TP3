@@ -61,21 +61,30 @@ class DateTest {
         public void testNextDateNextDay() throws Exception {
             Date date = new Date(1, 1, 2024);
             Date nextDate = date.nextDate();
-            assertEquals(new Date(2, 1, 2024), nextDate); // 1 janvier 2024 -> 2 janvier 2024 
+            Date dateExpected = new Date(2, 1, 2024);
+            assertEquals(dateExpected.getDay(), nextDate.getDay()); // 1 janvier 2024 -> 2 janvier 2024
+            assertEquals(dateExpected.getMonth(), nextDate.getMonth()); // 1 janvier 2024 -> 2 janvier 2024
+            assertEquals(dateExpected.getYear(), nextDate.getYear()); // 1 janvier 2024 -> 2 janvier 2024
         }
 
         @Test
         public void testNextDateNextMonth() throws Exception {
             Date date = new Date(31, 1, 2024);
             Date nextDate = date.nextDate();
-            assertEquals(new Date(1, 2, 2024), nextDate); // 31 janvier 2024 -> 1 février 2024
+            Date dateExpected = new Date(1, 2, 2024);
+            assertEquals(dateExpected.getDay(), nextDate.getDay()); // 31 janvier 2024 -> 1 février 2024
+            assertEquals(dateExpected.getMonth(), nextDate.getMonth()); // 31 janvier 2024 -> 1 février 2024
+            assertEquals(dateExpected.getYear(), nextDate.getYear()); // 31 janvier 2024 -> 1 février 2024
         }
 
         @Test
         public void testNextDateNextYear() throws Exception {
             Date date = new Date(31, 12, 2024);
             Date nextDate = date.nextDate();
-            assertEquals(new Date(1, 1, 2025), nextDate); // 31 décembre 2024 -> 1 janvier 2025
+            Date dateExpected = new Date(1, 1, 2025);
+            assertEquals(dateExpected.getDay(), nextDate.getDay()); // 31 décembre 2024 -> 1 janvier 2025
+            assertEquals(dateExpected.getMonth(), nextDate.getMonth()); // 31 décembre 2024 -> 1 janvier 2025
+            assertEquals(dateExpected.getYear(), nextDate.getYear()); // 31 décembre 2024 -> 1 janvier 2025
 
         }
 
@@ -83,14 +92,20 @@ class DateTest {
         public void testNextDayNextBisextileDay() throws Exception {
             Date date = new Date(28, 2, 2024);
             Date nextDate = date.nextDate();
-            assertEquals(new Date(29, 2, 2024), nextDate); // 28 février 2024 -> 29 février 2024 (année bissextile)
+            Date dateExpected = new Date(29, 2, 2024);
+            assertEquals(dateExpected.getDay(), nextDate.getDay()); // 28 février 2024 -> 29 février 2024 (année bissextile)
+            assertEquals(dateExpected.getMonth(), nextDate.getMonth()); // 28 février 2024 -> 29 février 2024 (année bissextile)
+            assertEquals(dateExpected.getYear(), nextDate.getYear()); // 28 février 2024 -> 29 février 2024 (année bissextile)
         }
 
         @Test
         public void testNextDayNextNonBisextileDay() throws Exception {
             Date date = new Date(28, 2, 2023);
             Date nextDate = date.nextDate();
-            assertEquals(new Date(1, 3, 2023), nextDate); // 28 février 2023 -> 1 mars 2023 (année non bissextile)
+            Date dateExpected = new Date(1, 3, 2023);
+            assertEquals(dateExpected.getDay(), nextDate.getDay()); // 28 février 2023 -> 1 mars 2023 (année non bissextile)
+            assertEquals(dateExpected.getMonth(), nextDate.getMonth()); // 28 février 2023 -> 1 mars 2023 (année non bissextile)
+            assertEquals(dateExpected.getYear(), nextDate.getYear()); // 28 février 2023 -> 1 mars 2023 (année non bissextile)
         }
 
         /*
@@ -101,14 +116,20 @@ class DateTest {
         public void testPreviousDatePreviousDay() throws Exception {
             Date date1 = new Date(2, 1, 2024);
             Date previousDate1 = date1.previousDate();
-            assertEquals(new Date(1, 1, 2024), previousDate1); // 2 janvier 2024 -> 1 janvier 2024
+            Date dateExpected = new Date(1, 1, 2024);
+            assertEquals(dateExpected.getDay(), previousDate1.getDay()); // 2 janvier 2024 -> 1 janvier 2024
+            assertEquals(dateExpected.getMonth(), previousDate1.getMonth()); // 2 janvier 2024 -> 1 janvier 2024
+            assertEquals(dateExpected.getYear(), previousDate1.getYear()); // 2 janvier 2024 -> 1 janvier 2024
         }
 
         @Test
         public void testPreviousDatePreviousMonth() throws Exception {
             Date date = new Date(1, 2, 2024);
             Date previousDate = date.previousDate();
-            assertEquals(new Date(31, 1, 2024), previousDate); // 1 février 2024 -> 31 janvier 2024
+            Date dateExpected = new Date(31, 1, 2024);
+            assertEquals(dateExpected.getDay(), previousDate.getDay());
+            assertEquals(dateExpected.getMonth(), previousDate.getMonth()); // 1 février 2024 -> 31 janvier 2024
+            assertEquals(dateExpected.getYear(), previousDate.getYear()); // 1 février 2024 -> 31 janvier 2024
 
         }
         
@@ -116,21 +137,30 @@ class DateTest {
         public void testPreviousDatePreviousYear() throws Exception {
             Date date = new Date(1, 1, 2024);
             Date previousDate = date.previousDate();
-            assertEquals(new Date(31, 12, 2023), previousDate); // 1 janvier 2024 -> 31 décembre 2023
+            Date dateExpected = new Date(31, 12, 2023);
+            assertEquals(dateExpected.getDay(), previousDate.getDay()); // 1 janvier 2024 -> 31 décembre 2023
+            assertEquals(dateExpected.getMonth(), previousDate.getMonth()); // 1 janvier 2024 -> 31 décembre 2023
+            assertEquals(dateExpected.getYear(), previousDate.getYear()); // 1 janvier 2024 -> 31 décembre 2023
         }
 
         @Test
         public void testPreviousDatePreviousBisextileDay() throws Exception {
             Date date = new Date(1, 3, 2024);
             Date previousDate = date.previousDate();
-            assertEquals(new Date(29, 2, 2024), previousDate); // 1 mars 2024 -> 29 février 2024
+            Date dateExpected = new Date(29, 2, 2024);
+            assertEquals(dateExpected.getDay(), previousDate.getDay()); // 1 mars 2024 -> 29 février 2024
+            assertEquals(dateExpected.getMonth(), previousDate.getMonth()); // 1 mars 2024 -> 29 février 2024
+            assertEquals(dateExpected.getYear(), previousDate.getYear()); // 1 mars 2024 -> 29 février 2024
         }
 
         @Test
         public void testPreviousDatePreviousNonBisextileDay() throws Exception {
-            Date date = new Date(1, 3, 2024);
+            Date date = new Date(1, 3, 2023);
             Date previousDate = date.previousDate();
-            assertEquals(new Date(28, 2, 2024), previousDate); // 1 mars 2024 -> 28 février 2024
+            Date dateExpected = new Date(28, 2, 2023);
+            assertEquals(dateExpected.getDay(), previousDate.getDay()); // 1 mars 2024 -> 28 février 2024
+            assertEquals(dateExpected.getMonth(), previousDate.getMonth()); // 1 mars 2024 -> 28 février 2024
+            assertEquals(dateExpected.getYear(), previousDate.getYear()); // 1 mars 2024 -> 28 février 2024
         }
 
         /*
@@ -140,10 +170,10 @@ class DateTest {
         @Test
         public void testCompareToEqual() throws Exception {
             Date date = new Date(1, 1, 2024);
-            Date date = new Date(1, 1, 2024);
+            Date dateEquals = new Date(1, 1, 2024);
     
             // Cas d'égalité
-            assertEquals(0, date.compareTo(date)); // 1 janvier 2024 == 1 janvier 2024
+            assertEquals(0, date.compareTo(dateEquals)); // 1 janvier 2024 == 1 janvier 2024
         }
 
         @Test

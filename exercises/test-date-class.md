@@ -52,7 +52,7 @@ Use the following steps to design the test suite:
 Use the project in [tp3-date](../code/tp3-date) to complete this exercise.
 
 ## Answer
-
+1.
 ### `isValidDate(int day, int month, int year)`
 
 #### Caractéristiques identifiées :
@@ -181,4 +181,10 @@ Les méthodes `nextDate()`, `previousDate()` et `isValidDate()` utilisent toutes
 
 ---
 
-  
+2. Les cas listés plus hauts couvre la majorité des cas possibles et quand nous lançons les tests nous avons un coverage de 92% des lignes.
+
+3. Nous ne sommes pas de ce cas.
+
+4. Quand nous utilisons PIT notre taux de converture est: 
+
+![test avec PIT](testPitDate.png)
