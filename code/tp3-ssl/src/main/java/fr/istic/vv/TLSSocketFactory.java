@@ -1,6 +1,7 @@
 package fr.istic.vv;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class TLSSocketFactory {
@@ -9,6 +10,7 @@ public class TLSSocketFactory {
     public void prepareSocket(SSLSocket socket) {
 
         String[] supported = socket.getSupportedProtocols();
+        System.out.println("Supported Protocols: " + Arrays.toString(supported));
         String[] enabled = socket.getEnabledProtocols();
 
 
@@ -34,7 +36,7 @@ public class TLSSocketFactory {
                 }
             }
         }
-
+System.out.println("Target: " + Arrays.toString(target.toArray()));
         if (target.size() > 0) {
             String[] enabling = target.toArray(new String[target.size()]);
             socket.setEnabledProtocols(enabling);
