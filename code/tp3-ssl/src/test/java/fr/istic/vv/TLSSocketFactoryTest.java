@@ -9,13 +9,13 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class TLSSocketFactoryTest {
+class TLSSocketFactoryTest {
 
     /**
      * Test when the edge case when the both supported and enabled protocols are null.
      */
     @Test
-    public void preparedSocket_NullProtocols()  {
+    void preparedSocket_NullProtocols()  {
         TLSSocketFactory f = new TLSSocketFactory();
         f.prepareSocket(new SSLSocket() {
 
@@ -34,7 +34,7 @@ public class TLSSocketFactoryTest {
     }
 
     @Test
-    public void typical()  {
+    void typical()  {
         TLSSocketFactory f = new TLSSocketFactory();
         f.prepareSocket(new SSLSocket() {
             @Override
