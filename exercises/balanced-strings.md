@@ -26,3 +26,29 @@ Use the project in [tp3-balanced-strings](../code/tp3-balanced-strings) to compl
 
 ## Answer
 
+1. Caractéristiques identifiés :
+
+        Chaîne vide: ""
+
+        Symboles seules: {, [, (, ), ], }
+
+        Symboles équilibrés:
+        Cas simples: [], (), {}
+        Cas imbriqués: {[]}, ({}), [()]
+        Cas mixés: {[()()]}
+
+        Symboles désiquilibrés:
+        Odre incorrect: ][, )(, }{
+        Sans les symboles fermants: {, [{
+        Sans les symboles ouvrants: ], )}
+        Mauvaise paires: [), {]
+
+Les blocs  sont les mêmes que les caractéristiques.
+
+2. En utilisant les tests décris plus hait nous avons 100% de statement coverage.
+
+3. Dans notre cas nous n'avons pas de prédicat qui utlise plus de 2 booléens.
+
+4. Quand on utilise PIT voici notre taux de converture : 
+
+![test avec PIT](testPit.png)
