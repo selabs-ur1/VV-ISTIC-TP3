@@ -14,4 +14,40 @@ Discuss the test smell you found with the help of PMD and propose here an improv
 Include the improved test code in this file.
 
 ## Answer
+Pour le test ``UnitTestContainsTooManyAsserts`` PMD retourne `.\src\test\java\org\apache\commons\collections4\IteratorUtilsTest.java:381:	UnitTestContainsTooManyAsserts:	Unit tests should not contain more than 1 assert(s).
+`
+Le test est le suivant : 
+````java
+@Test
+public void testAsIterator() {
+    final Vector<String> vector = new Vector<>();
+    vector.addElement("zero");
+    vector.addElement("one");
+    final Enumeration<String> en = vector.elements();
+    assertTrue(IteratorUtils.asIterator(en) instanceof Iterator, "create instance fail");
+    assertThrows(NullPointerException.class, () -> IteratorUtils.asIterator(null));
+}
+````
+On peut séparer les assert et faire 2 tests pour soit : 
 
+````java
+@Test
+public void testAsIterator() {
+    final Vector<String> vector = new Vector<>();
+    vector.addElement("zero");
+    vector.addElement("one");
+    final Enumeration<String> en = vector.elements();
+    assertThrows(NullPointerException.class, () -> IteratorUtils.asIterator(null));
+}
+````
+et 
+````java
+@Test
+public void testAsIterator() {
+    final Vector<String> vector = new Vector<>();
+    vector.addElement("zero");
+    vector.addElement("one");
+    final Enumeration<String> en = vector.elements();
+    assertTrue(IteratorUtils.asIterator(en) instanceof Iterator, "create instance fail");
+}
+````

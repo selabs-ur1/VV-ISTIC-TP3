@@ -2,10 +2,11 @@ package fr.istic.vv;
 
 public interface SSLSocket {
 
-    public String[] getSupportedProtocols() ;
+    String[] getSupportedProtocols();
 
-    public String[] getEnabledProtocols();
+    String[] getEnabledProtocols();
 
-    public void setEnabledProtocols(String[] protocols);
+    void setEnabledProtocols(String[] protocols);
 
 }
+

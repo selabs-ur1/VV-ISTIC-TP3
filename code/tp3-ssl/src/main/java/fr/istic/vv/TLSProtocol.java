@@ -14,7 +14,7 @@ public enum TLSProtocol {
     ;
     private final String protocolName;
 
-    private TLSProtocol(String protocolName) {
+    TLSProtocol(String protocolName) {
         this.protocolName = protocolName;
     }
 
