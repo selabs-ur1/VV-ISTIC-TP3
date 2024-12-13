@@ -11,12 +11,18 @@ class DateTest {
         assertTrue(Date.isValidDate(10,12,2024));
         assertTrue(Date.isValidDate(12,02,2001));
         assertTrue(Date.isValidDate(12,2,-2001));
+        assertTrue(Date.isValidDate(12,2,0));
+
     }
 
     @Test
     void isValideInvalideDateTest(){
         assertFalse(Date.isValidDate(10,-12,2024));
         assertFalse(Date.isValidDate(-12,2,2001));
+        assertFalse(Date.isValidDate(0,2,2001));
+        assertFalse(Date.isValidDate(0,0,0));
+        assertFalse(Date.isValidDate(1,0,2001));
+
     }
 
     @Test
@@ -178,5 +184,47 @@ class DateTest {
         assertEquals(2001,prevDate.getYear());
     }
 
+
+    @Test
+    void compareToNominal1(){
+        Date date1 = new Date(1,6,2001);
+        Date date2 = new Date(1,6,2002);
+        assertTrue(date1.compareTo(date2)<0);
+    }
+
+    @Test
+    void compareToSameDate(){
+        Date date1 = new Date(1,6,2001);
+        Date date2 = new Date(1,6,2001);
+        assertEquals(0, date1.compareTo(date2));
+    }
+
+    @Test
+    void compareToSameDateInferiorToYear0(){
+        Date date1 = new Date(1,6,-500);
+        Date date2 = new Date(1,6,-500);
+        assertEquals(0, date1.compareTo(date2));
+    }
+
+    @Test
+    void compareToBissextileInferiorToNextYear(){
+        Date date1 = new Date(29,2,2000);
+        Date date2 = new Date(30,6,2001);
+        assertTrue(date1.compareTo(date2)<0);
+    }
+
+    @Test
+    void compareToBissextileSuperiorToPreviousYear(){
+        Date date1 = new Date(29,2,2000);
+        Date date2 = new Date(30,6,1999);
+        assertTrue(date1.compareTo(date2)>0);
+    }
+
+    @Test
+    void compareToYearInferiorTo0(){
+        Date date1 = new Date(25,2,-500);
+        Date date2 = new Date(30,6,1999);
+        assertTrue(date1.compareTo(date2)<0);
+    }
 
 }

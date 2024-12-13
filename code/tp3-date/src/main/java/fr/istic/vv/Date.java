@@ -65,8 +65,9 @@ class Date implements Comparable<Date> {
     }
 
     public int compareTo(Date other) {
-
-        return 0;
+        int thisDate = year*10000+month*100+day;
+        int otherDate = other.getYear()*10000+other.month*100+other.day;
+        return Integer.compare(thisDate,otherDate);
     }
 
     public int getDay() {
