@@ -2,14 +2,11 @@ package fr.istic.vv;
 
 public class Date implements Comparable<Date> {
 
-    private int day;
-    private int month;
-    private int year;
+    private final int day;
+    private final int month;
+    private final int year;
 
     public Date(int day, int month, int year) {
-        if (!isValidDate(day, month, year)) {
-            throw new IllegalArgumentException("Invalid date");
-        }
         this.day = day;
         this.month = month;
         this.year = year;
@@ -40,9 +37,18 @@ public class Date implements Comparable<Date> {
 
     private static int getDaysInMonth(int month, int year) {
         switch (month) {
-            case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
                 return 31;
-            case 4: case 6: case 9: case 11:
+            case 4:
+            case 6:
+            case 9:
+            case 11:
                 return 30;
             case 2:
                 return isLeapYear(year) ? 29 : 28;
@@ -102,5 +108,22 @@ public class Date implements Comparable<Date> {
     @Override
     public String toString() {
         return day + "/" + month + "/" + year;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Date other = (Date) obj;
+        return day == other.day && month == other.month && year == other.year;
+    }
+
+    @Override
+    public int hashCode() {
+        return java.util.Objects.hash(day, month, year);
     }
 }
