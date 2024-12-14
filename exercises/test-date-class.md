@@ -53,3 +53,13 @@ Use the project in [tp3-date](../code/tp3-date) to complete this exercise.
 
 ## Answer
 
+1. Classe Date
+    - isValidDate :
+      - Date(31,12,2024) : dernier jour de l'année => true
+      - Date(1,12,2024) : premier jour de l'année => true
+      - Date(15,06,2024) : jour de l'année => true
+      - Date(29,2,2024) : 29 février bisextile => true
+      - Date(31,11,2024) : jour trop grand => false
+      - Date(0,11,2024) : jour trop petit => false
+      - Date(15,13,2024) : mois trop grand => false
+      - Date(15,0,2024) : mois trop petit => false

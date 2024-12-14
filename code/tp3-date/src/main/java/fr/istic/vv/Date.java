@@ -1,17 +1,106 @@
 package fr.istic.vv;
 
-class Date implements Comparable<Date> {
+public class Date implements Comparable<Date> {
 
-    public Date(int day, int month, int year) { }
+    private int day;
+    private int month;
+    private int year;
 
-    public static boolean isValidDate(int day, int month, int year) { return false; }
+    public Date(int day, int month, int year) {
+        if (!isValidDate(day, month, year)) {
+            throw new IllegalArgumentException("Invalid date");
+        }
+        this.day = day;
+        this.month = month;
+        this.year = year;
+    }
 
-    public static boolean isLeapYear(int year) { return false; }
+    public static boolean isValidDate(int day, int month, int year) {
+        if (year < 1) {
+            return false;
+        }
 
-    public Date nextDate() { return null; }
+        if (month < 1 || month > 12) {
+            return false;
+        }
 
-    public Date previousDate() { return null; }
+        int daysInMonth = getDaysInMonth(month, year);
+        return day >= 1 && day <= daysInMonth;
+    }
 
-    public int compareTo(Date other) { return 0; }
+    public static boolean isLeapYear(int year) {
+        if (year % 4 == 0) {
+            if (year % 100 == 0) {
+                return year % 400 == 0;
+            }
+            return true;
+        }
+        return false;
+    }
 
+    private static int getDaysInMonth(int month, int year) {
+        switch (month) {
+            case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+                return 31;
+            case 4: case 6: case 9: case 11:
+                return 30;
+            case 2:
+                return isLeapYear(year) ? 29 : 28;
+            default:
+                return 0;
+        }
+    }
+
+    public Date nextDate() {
+        int daysInMonth = getDaysInMonth(month, year);
+        if (day < daysInMonth) {
+            return new Date(day + 1, month, year);
+        } else {
+            if (month == 12) {
+                return new Date(1, 1, year + 1);
+            } else {
+                return new Date(1, month + 1, year);
+            }
+        }
+    }
+
+    public Date previousDate() {
+        if (day > 1) {
+            return new Date(day - 1, month, year);
+        } else {
+            if (month == 1) {
+                return new Date(31, 12, year - 1);
+            } else {
+                return new Date(getDaysInMonth(month - 1, year), month - 1, year);
+            }
+        }
+    }
+
+    @Override
+    public int compareTo(Date other) {
+        if (this.year != other.year) {
+            return Integer.compare(this.year, other.year);
+        }
+        if (this.month != other.month) {
+            return Integer.compare(this.month, other.month);
+        }
+        return Integer.compare(this.day, other.day);
+    }
+
+    public int getDay() {
+        return day;
+    }
+
+    public int getMonth() {
+        return month;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    @Override
+    public String toString() {
+        return day + "/" + month + "/" + year;
+    }
 }
