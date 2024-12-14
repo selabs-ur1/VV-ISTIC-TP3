@@ -26,3 +26,12 @@ Use the project in [tp3-balanced-strings](../code/tp3-balanced-strings) to compl
 
 ## Answer
 
+ 1: Il existe plusieurs cas de figure, 
+ -équilibré : le cas où le le string est vide,  2 symbols corrects, une liste de symboles correctes
+ -dééquilibré : le cas avec un seul sympbol,  2 symbols inversés, 2 symbols inversés,  symboles imbriqués incorectes.
+
+ 2: j'ai fait des tests qui parcourent chaque cas de figure de la question 1 avec chacun 2-3 versions différentes. Le code comporte 3 if donc les tests font en sortent de passer forcemment dans chacune des conditions.
+
+ 3: Les if servent à savoir si la pile est vide ou que la pile ne contient pas le bon symbole d'ouverture, les tests parcourent donc chacun des if où nous avons des symbols qui ne se suivent pas.
+
+ 4: J'ai en testant avec PIT, 90% de Line coverage pour la class StringUtils. Les 10% restant sont parce que je ne test pas la class StringUtils, elle n'est pas static donc je ne peux pas la tester ? 
