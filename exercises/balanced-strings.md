@@ -26,3 +26,12 @@ Use the project in [tp3-balanced-strings](../code/tp3-balanced-strings) to compl
 
 ## Answer
 
+1. 
+Les impairs par définition ne peuvent pas être équilibrés. Les pairs par contre peuvent l'être ou ne pas l'être, il faut tester plus finement. Par exemple un pair du style "{}(}" ne retourne pas vrai. Il faut obligatoirement le même nombre de symboles ouvrants et fermants, et de manière plus précise, le même nombre pour chaque type.
+
+2. Après évaluation, nous avons atteint un pourcentage de couverture de 78.26%, que nous avions précédemment amélioré en modifiant nos cas de test. Ensuite nous avons relancé le coverage, pour obtenir le pourcentage mentionné précédemment. Afin d'améliorer le pourcentage à 81.16%, nous avons ajouté un test qui vérifie que la fonction renvoie "true" quand un String vide lui ait donné en paramètre.
+Nous avons considéré que ce pourcentage était satisfaisant. Pour établir la couverture des tests, nous avons utilisé un plugin de test Java inclus dans le pack de développement Java sur VSCode.
+
+3. En considérant que nous n'utilisons que trois booléens dans prédicats, et en comparant avec les actions effectuées par nos tests, nous pouvons affirmer que nos cas de tests satisfont le "Base Choice Coverage". Nos cas de test testent toutes les combinaisons possibles de nos booléens. 
+
+4. Notre score de mutation évalué par PIT est de 77%. Il reste un mutant vivant, qui change un incrément de 1 en -1. Les autres sont des cas non traités de retours de booléens mis à vrai au lieu de faux. Nous avons estimé que cela était un score très acceptable.
