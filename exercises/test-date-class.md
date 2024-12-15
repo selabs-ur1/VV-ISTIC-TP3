@@ -53,3 +53,57 @@ Use the project in [tp3-date](../code/tp3-date) to complete this exercise.
 
 ## Answer
 
+1.
+
+Constructor :  		
+DAY   :       <= 0 && 31 <     0 > && <= 31  	>= 1 and <= max(month, year)		> max(month, year)	
+MONTH :	      <= 0 && 12 <     0 > && <= 12	{1, 3, 5, 7, 8, 10, 12}			{ 4, 6, 9, 11 }		2
+YEAR  :       <= 0		isLeapYear	 !isLeapYear && 0 <	
+
+isValidDate :
+same as constructor
+
+isLeapYear :
+YEAR  :       <= 0 		Divisible by 400    Divisible by 4 but not 100   Divisible by 100 but not 400
+
+nextDate :
+no inputs (by virtue of the Constructor, manipulates a validDate)
+
+previousDate :
+no inputs (by virtue of the Constructor, manipulates a validDate)
+
+compareTo :
+DATE : isValidDate()   !isValidDate()
+
+maxDays :
+MONTH :         <= 0           > 12           1, 3, 5, 7, 8, 10, 12    4, 6, 9, 11        2
+YEAR  :         <= 0           isLeapYear     !isLeapYear            0 < 
+
+all getters:
+no inputs
+
+We can see that Day Month and Year are commons to a lot of methods
+
+2.
+I was missing line coverage for compareTo because my test only tested in the case where the days where different, i added a test for the months and a test for the years
+
+3.
+i added tests for isValidDate and isLeapYear to cover for those manually (i didn't add for maxDays which is a method i have made)
+i made sure to go through every || or && branches to be able to increase my base coverage.
+
+4. 
+Mutation coverage of 94%
+60/64 mutants killed
+
+
+
+
+
+
+
+
+					
+
+
+
+

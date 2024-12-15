@@ -14,4 +14,8 @@ Discuss the test smell you found with the help of PMD and propose here an improv
 Include the improved test code in this file.
 
 ## Answer
+pmd check -f html -R category/java/errorprone.xml/UnnecessaryBooleanAssertion -d C:\Users\Ethan\Documents\TPVV\projectExamples\commons-collections -r C:\Users\Ethan\Documents\TPVV\projectExamples\reports\report-tp3-common-collection.html
 
+The test smell implemented by these rules are :
+Eager test and Assertion roulette 
+(UnitTestContainsTooManyAsserts.md,
