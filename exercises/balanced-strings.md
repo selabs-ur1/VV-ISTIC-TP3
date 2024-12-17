@@ -26,3 +26,49 @@ Use the project in [tp3-balanced-strings](../code/tp3-balanced-strings) to compl
 
 ## Answer
 
+1.
+Here for the input space partitioning of the isBalanced function we only work on one input which is
+the String given.
+
+let's identify all the possible values of the String :
+
+Empty String : True (empty string is balanced (said in the specification)
+
+Sole Symbol : False
+
+Extra Symbol / Unmatched Symbol (closing or opening) : False (case where we have an odd amount of closing or opening symbol)
+
+Incorrect Symbol : False (case where we have an even number of symbols but they aren't matching "(]")
+
+Balanced String with Symbols : True 
+
+Balanced String with Symbols and other characters : True
+
+2.
+IntelliJ IDEA, right click on class test, "More Run/Debug" -> "Run 'StringUtilsTest' with Coverage" 
+got 100% everywhere on the first try
+
+3.
+for : (ch == '{' || ch == '[' || ch == '(')
+i have tests that return false and true for each case (it means i had at least one opening bracket of each for assertTrue and assertFalse tests)
+for : else if (ch == '}' || ch == ']' || ch == ')')
+same is true but for tests with closing symbols
+for : if ((ch == '}' && top != '{') || (ch == ']' && top != '[') || (ch == ')' && top != '(')) 
+the test assertTrue(StringUtils.isBalanced("{[({[]})]}")); should cover all the possible values where that if statement is true and 
+in the test testMismatchedSymbols() i cover when top isn't the value it should have been.
+
+4.
+The report says it has a 13/15 line coverage and a 19/19 mutation coverage 
+
+the line coverage is 13/15 because of the constructor which i didn't test out.
+
+    private StringUtils() {
+    }
+
+
+
+
+
+
+
+
