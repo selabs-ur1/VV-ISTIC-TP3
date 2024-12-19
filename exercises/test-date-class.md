@@ -53,3 +53,49 @@ Use the project in [tp3-date](../code/tp3-date) to complete this exercise.
 
 ## Answer
 
+1. 
+
+Pour chaque méthode, nous avons fait des tests gérant les cas possibles avec certaines valeurs d'erreurs communes comme les Exceptions et au moins un cas par test qui passe ou ne passe pas. En soi ces tests utilisent souvent des dates et ont donc besoin de dates instanciées pour fonctionner, ils testent souvent sur les trois composantes du type Date, voire au moins sur l'une des composantes.
+
+2. 
+Grace au coverage de VSCode, nous obtenons un total de couverture de 76.85% qui est très satisfaisant.
+Suite à quelques bugs dans les tests nous avons fait un "override" de "equals" pour pouvoir faire ce dont nous avions besoin.
+
+3. 
+
+Dans notre code il y a des fonctions contenant plusieurs opérateurs booléens, dont tous les cas ne sont pas forcément testés car les prérequis sont impossibles ou redondant. Notamment dans le cas de la fonction "isLeapYear()" où nous avons procédé à un raisonnement de logique pour trouver les cas à tester:
+
+Q = a || (b && c)
+=> a= year%400==0 , b= year%4==0 , c= year%100!=0
+=> 0 équivaut à faux, et 1 équivaut à vrai
+
+Q = a si: b=0 ou c=0
+Q = b si: a=0 et c=1
+Q = c si: a=0 et b=1
+-----
+abc
+
+100 -> impossible, 2)
+101 -> impossible, 1)
+110 -> impossible, 2)
+
+011 -> impossible, 3)
+001 -> impossible, 1)
+
+011 -> doublon
+010 -> cas de test (Vrai et Faux)
+
+1) impossible de trouver divisible par 100 sans trouver divisible par 4
+    -> pas de X01
+2) impossible, divisible par 400 force une fin de nombre en 00 donc divisible par 100
+    -> pas de 1X0
+3) Si divisible par 4 et 100, alors divisible par 400
+    -> pas de 011
+
+Le reste des cas représentaient des cas de tests redondants que nous avons décidé d'ignorer. Sinon nos cas de tests satisfont bien le "Base Choice Coverage" car nous testons les cas nécessaires.
+
+4. 
+Le rapport de PIT est disponible dans le dossier target/pit-reports.
+Nous avons obtenu comme score de mutation: 83%, qui est très élevé.
+Les types de "live mutants" relevés sont ceux-ci: "changed conditional boundary", "negated conditional", "replaced integer modulus with multiplication".
+
